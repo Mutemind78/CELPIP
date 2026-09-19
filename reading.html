@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reading Section — SelfPIP</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body data-theme="light">
+    <div class="app-container">
+        <!-- Reusable Navigation Bar -->
+        <header>
+            <div class="nav-container">
+                <a href="index.html" class="logo-link">
+                    Self<span class="logo-accent">PIP</span>
+                </a>
+                <nav class="desktop-nav">
+                    <a href="index.html" class="nav-item">Home</a>
+                    <a href="listening.html" class="nav-item">Listening</a>
+                    <a href="reading.html" class="nav-item active">Reading</a>
+                    <a href="writing.html" class="nav-item">Writing</a>
+                    <a href="speaking.html" class="nav-item">Speaking</a>
+                    <a href="language.html" class="nav-item">Language</a>
+                    <a href="practice.html" class="nav-item">Practice</a>
+                </nav>
+                <button class="menu-toggle" aria-label="Toggle Navigation Menu" onclick="toggleMobileMenu()">
+                    ☰
+                </button>
+            </div>
+            <div class="mobile-nav" id="mobileNav">
+                <a href="index.html" class="nav-item">Home</a>
+                <a href="listening.html" class="nav-item">Listening</a>
+                <a href="reading.html" class="nav-item active">Reading</a>
+                <a href="writing.html" class="nav-item">Writing</a>
+                <a href="speaking.html" class="nav-item">Speaking</a>
+                <a href="language.html" class="nav-item">Language</a>
+                <a href="practice.html" class="nav-item">Practice</a>
+            </div>
+        </header>
+
+        <!-- Main Content Area -->
+        <main class="main-content">
+            <div class="page-header">
+                <h1 class="page-title">📖 Reading Section</h1>
+                <p class="page-desc">Master skimming, scanning, and deep-reading strategies to tackle all 4 parts of the CELPIP Reading module.</p>
+            </div>
+
+            <!-- Placeholders for Reading Parts -->
+            <div class="placeholder-grid">
+                <!-- PART 1 -->
+                <div class="task-card" id="reading-part-1">
+                    <div>
+                        <div class="task-header">
+                            <span class="task-badge">Part 1</span>
+                        </div>
+                        <h3 class="task-title">Reading Correspondence</h3>
+                        <p class="task-desc">Read a personal or professional letter/email and answer comprehension questions. Practice tracking relationships and key messages.</p>
+                    </div>
+                    <button class="btn btn-disabled">Study this part (Coming Soon)</button>
+                </div>
+
+                <!-- PART 2 -->
+                <div class="task-card" id="reading-part-2">
+                    <div>
+                        <div class="task-header">
+                            <span class="task-badge">Part 2</span>
+                        </div>
+                        <h3 class="task-title">Reading to Apply a Diagram</h3>
+                        <p class="task-desc">Analyze visual information such as flyers, schedules, maps, or charts, and map them to textual descriptions or choices.</p>
+                    </div>
+                    <button class="btn btn-disabled">Study this part (Coming Soon)</button>
+                </div>
+
+                <!-- PART 3 -->
+                <div class="task-card" id="reading-part-3">
+                    <div>
+                        <div class="task-header">
+                            <span class="task-badge">Part 3</span>
+                        </div>
+                        <h3 class="task-title">Reading for Information</h3>
+                        <p class="task-desc">Read a factual passage split into multiple paragraphs. Learn to align specific statements with their corresponding paragraphs.</p>
+                    </div>
+                    <button class="btn btn-disabled">Study this part (Coming Soon)</button>
+                </div>
+
+                <!-- PART 4 -->
+                <div class="task-card" id="reading-part-4">
+                    <div>
+                        <div class="task-header">
+                            <span class="task-badge">Part 4</span>
+                        </div>
+                        <h3 class="task-title">Reading for Viewpoints</h3>
+                        <p class="task-desc">Read an editorial style debate or article exploring a specific viewpoint. Practice tracking abstract arguments and drawing logical conclusions.</p>
+                    </div>
+                    <button class="btn btn-disabled">Study this part (Coming Soon)</button>
+                </div>
+            </div>
+        </main>
+
+        <!-- Shared Footer -->
+        <footer>
+            <div class="footer-content">
+                <div class="footer-title">SelfPIP</div>
+                <div>Personal CELPIP Study Companion</div>
+            </div>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

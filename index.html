@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SelfPIP — Personal CELPIP Study Companion</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body data-theme="light">
+    <div class="app-container">
+        <!-- Reusable Navigation Bar -->
+        <header>
+            <div class="nav-container">
+                <a href="index.html" class="logo-link">
+                    Self<span class="logo-accent">PIP</span>
+                </a>
+                <nav class="desktop-nav">
+                    <a href="index.html" class="nav-item active">Home</a>
+                    <a href="listening.html" class="nav-item">Listening</a>
+                    <a href="reading.html" class="nav-item">Reading</a>
+                    <a href="writing.html" class="nav-item">Writing</a>
+                    <a href="speaking.html" class="nav-item">Speaking</a>
+                    <a href="language.html" class="nav-item">Language</a>
+                    <a href="practice.html" class="nav-item">Practice</a>
+                </nav>
+                <button class="menu-toggle" aria-label="Toggle Navigation Menu" onclick="toggleMobileMenu()">
+                    ☰
+                </button>
+            </div>
+            <div class="mobile-nav" id="mobileNav">
+                <a href="index.html" class="nav-item active">Home</a>
+                <a href="listening.html" class="nav-item">Listening</a>
+                <a href="reading.html" class="nav-item">Reading</a>
+                <a href="writing.html" class="nav-item">Writing</a>
+                <a href="speaking.html" class="nav-item">Speaking</a>
+                <a href="language.html" class="nav-item">Language</a>
+                <a href="practice.html" class="nav-item">Practice</a>
+            </div>
+        </header>
+
+        <!-- Main Content Area -->
+        <main class="main-content">
+            <!-- Hero Dashboard Header -->
+            <section class="dashboard-hero">
+                <h1>SelfPIP</h1>
+                <p>Personal CELPIP Study Companion — Prepare for CELPIP successfully with structured exercises, targeted sentence patterns, and micro-learning routines.</p>
+            </section>
+
+            <!-- Section Title -->
+            <h2 class="section-heading">📚 Study Sections</h2>
+
+            <!-- Dashboard Navigation Cards -->
+            <div class="dashboard-grid">
+                <a href="listening.html" class="nav-card">
+                    <div>
+                        <h3 class="nav-card-title">🎧 Listening</h3>
+                        <p class="nav-card-desc">6 Parts — Problem solving, daily conversation, news items, viewpoints, and discussion forums.</p>
+                    </div>
+                    <span class="nav-card-footer">Go to Listening →</span>
+                </a>
+
+                <a href="reading.html" class="nav-card">
+                    <div>
+                        <h3 class="nav-card-title">📖 Reading</h3>
+                        <p class="nav-card-desc">4 Parts — Correspondence, applying diagrams, reading for information, and reading viewpoints.</p>
+                    </div>
+                    <span class="nav-card-footer">Go to Reading →</span>
+                </a>
+
+                <a href="writing.html" class="nav-card">
+                    <div>
+                        <h3 class="nav-card-title">✍️ Writing</h3>
+                        <p class="nav-card-desc">2 Tasks — Professional emails and responding to survey/opinion questions.</p>
+                    </div>
+                    <span class="nav-card-footer">Go to Writing →</span>
+                </a>
+
+                <a href="speaking.html" class="nav-card">
+                    <div>
+                        <h3 class="nav-card-title">🗣️ Speaking</h3>
+                        <p class="nav-card-desc">8 Tasks — Giving advice, personal experience, predictions, comparisons, and difficult decisions.</p>
+                    </div>
+                    <span class="nav-card-footer">Go to Speaking →</span>
+                </a>
+
+                <a href="language.html" class="nav-card">
+                    <div>
+                        <h3 class="nav-card-title">📚 Language</h3>
+                        <p class="nav-card-desc">Grammar corrections, active vocabulary database, transition connectors, and pronunciation tips.</p>
+                    </div>
+                    <span class="nav-card-footer">Go to Language →</span>
+                </a>
+
+                <a href="practice.html" class="nav-card">
+                    <div>
+                        <h3 class="nav-card-title">📝 Practice</h3>
+                        <p class="nav-card-desc">Personalized practice templates and future mock simulations.</p>
+                    </div>
+                    <span class="nav-card-footer">Go to Practice →</span>
+                </a>
+            </div>
+
+            <!-- Header for Preserved Existing Material -->
+            <h2 class="section-heading">
+                <span>⚙️ Your Study Tools</span>
+                <button class="theme-toggle" id="themeToggleBtn" onclick="toggleTheme()">🌙 Dark Mode</button>
+            </h2>
+
+            <!-- Interactive Control Panel -->
+            <div class="control-panel">
+                <div class="control-group">
+                    <button class="btn" onclick="window.print()">🖨️ Print / Save PDF</button>
+                    <button class="btn btn-secondary" onclick="resetProgress()">🔄 Reset Tracker</button>
+                </div>
+            </div>
+
+            <!-- Progress Bar -->
+            <div class="progress-container">
+                <div class="progress-header">
+                    <span>STUDY MASTERED PROGRESS</span>
+                    <span id="progressText">0 / 10 Cards Completed</span>
+                </div>
+                <div class="progress-bar-bg">
+                    <div class="progress-bar-fill" id="progressBarFill"></div>
+                </div>
+            </div>
+
+            <!-- Card Stack (Preserved Existing Study Cards) -->
+            <div class="card-stack">
+                <!-- CARD 0 -->
+                <div class="card card-rule" id="card-0">
+                    <div class="card-header">
+                        <span>🟦 CARD 0 — THE RULE (Most Important Card)</span>
+                        <label class="card-master-toggle"><input type="checkbox" onchange="toggleCardMaster(0)"> Mastered</label>
+                    </div>
+                    <div class="card-subtitle">Put this one at the front of your stack</div>
+                    <p style="margin: 0 0 10px 0; font-weight: bold; font-size: 10.5pt; color: var(--primary);">I DON'T NEED FANCY ENGLISH. I NEED:</p>
+                    <ul style="margin: 0; padding-left: 20px;">
+                        <li>✅ Correct grammar</li>
+                        <li>✅ Clear sentences</li>
+                        <li>✅ Natural vocabulary</li>
+                        <li>✅ Good organization</li>
+                        <li>✅ Continuous speaking</li>
+                        <li>✅ Fewer mistakes</li>
+                    </ul>
+                    <div class="tip-box" style="text-align: center; margin-top: 12px;">
+                        <strong style="font-size: 10.5pt;">Simple + accurate = CLB 9</strong>
+                    </div>
+                </div>
+
+                <!-- CARD 1 -->
+                <div class="card card-grammar" id="card-1">
+                    <div class="card-header">
+                        <span>🟦 CARD 1 — Grammar: My Common Mistakes</span>
+                        <label class="card-master-toggle"><input type="checkbox" onchange="toggleCardMaster(1)"> Mastered</label>
+                    </div>
+                    <div class="card-subtitle">MEMORIZE THE RIGHT VERSION</div>
+                    
+                    <div class="mistake-grid">
+                        <div class="mistake-row">
+                            <div class="mistake-item"><span class="wrong">❌ suggest you to</span> → <span class="right">✅ suggest that you</span></div>
+                            <div class="mistake-item"><span class="wrong">❌ recommend you to</span> → <span class="right">✅ recommend that you</span></div>
+                        </div>
+                        <div class="mistake-row">
+                            <div class="mistake-item"><span class="wrong">❌ interested to</span> → <span class="right">✅ interested in</span></div>
+                            <div class="mistake-item"><span class="wrong">❌ did not worked</span> → <span class="right">✅ did not work</span></div>
+                        </div>
+                        <div class="mistake-row">
+                            <div class="mistake-item"><span class="wrong">❌ I have went</span> → <span class="right">✅ I have gone</span></div>
+                            <div class="mistake-item"><span class="wrong">❌ people are in a waiting</span> → <span class="right">✅ people are waiting</span></div>
+                        </div>
+                        <div class="mistake-row">
+                            <div class="mistake-item"><span class="wrong">❌ since past 2 days</span> → <span class="right">✅ for the past 2 days</span></div>
+                            <div class="mistake-item"><span class="wrong">❌ a medical problems</span> → <span class="right">✅ medical problems</span></div>
+                        </div>
+                        <div class="mistake-row">
+                            <div class="mistake-item"><span class="wrong">❌ one of my friend</span> → <span class="right">✅ one of my friends</span></div>
+                            <div class="mistake-item"><span class="wrong">❌ it gonna rain</span> → <span class="right">✅ it is going to rain</span></div>
+                        </div>
+                        <div class="mistake-row">
+                            <div class="mistake-item"><span class="wrong">❌ I was good in maths</span> → <span class="right">✅ I was good at maths</span></div>
+                            <div class="mistake-item"><span class="wrong">❌ according to me</span> → <span class="right">✅ in my opinion / from my perspective</span></div>
+                        </div>
+                    </div>
+
+                    <div class="tip-box">
+                        <strong>⭐ Rule:</strong> Don't make the sentence complicated if you're unsure. <em>Simple + correct > complicated + incorrect.</em>
+                    </div>
+                </div>
+
+                <!-- CARD 2 -->
+                <div class="card card-patterns" id="card-2">
+                    <div class="card-header">
+                        <span>🟩 CARD 2 — CELPIP Sentence Patterns</span>
+                        <label class="card-master-toggle"><input type="checkbox" onchange="toggleCardMaster(2)"> Mastered</label>
+                    </div>
+                    <div class="card-subtitle">Learn these until they become automatic.</div>
+
+                    <div style="display: table; width: 100%;">
+                        <div style="display: table-row;">
+                            <div style="display: table-cell; width: 50%; padding-right: 10px; vertical-align: top;">
+                                <div class="pattern-group">
+                                    <div class="pattern-title">Giving an opinion</div>
+                                    <ul class="pattern-list">
+                                        <li>In my opinion, ...</li>
+                                        <li>From my perspective, ...</li>
+                                        <li>I strongly believe that ...</li>
+                                    </ul>
+                                </div>
+                                <div class="pattern-group">
+                                    <div class="pattern-title">Giving reasons</div>
+                                    <ul class="pattern-list">
+                                        <li>One of the main reasons is that...</li>
+                                        <li>Another important factor is...</li>
+                                        <li>The main reason for this is...</li>
+                                    </ul>
+                                </div>
+                                <div class="pattern-group">
+                                    <div class="pattern-title">Giving examples</div>
+                                    <ul class="pattern-list">
+                                        <li>For example, ...</li>
+                                        <li>For instance, ...</li>
+                                        <li>A good example of this would be...</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div style="display: table-cell; width: 50%; padding-left: 10px; vertical-align: top;">
+                                <div class="pattern-group">
+                                    <div class="pattern-title">Explaining results</div>
+                                    <ul class="pattern-list">
+                                        <li>As a result, ...</li>
+                                        <li>This would allow people to...</li>
+                                        <li>This could lead to...</li>
+                                        <li>In the long run, ...</li>
+                                    </ul>
+                                </div>
+                                <div class="pattern-group">
+                                    <div class="pattern-title">Comparing</div>
+                                    <ul class="pattern-list">
+                                        <li>Compared with..., ...</li>
+                                        <li>On the other hand, ...</li>
+                                        <li>While X has some advantages, I believe Y would be better because...</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CARD 3 -->
+                <div class="card card-vocab-active" id="card-3">
+                    <div class="card-header">
+                        <span>🟨 CARD 3 — Vocabulary: ACTIVE (Use these)</span>
+                        <label class="card-master-toggle"><input type="checkbox" onchange="toggleCardMaster(3)"> Mastered</label>
+                    </div>
+                    <div class="card-subtitle">Master these terms to enhance your active production.</div>
+
+                    <table class="vocab-table">
+                        <tr>
+                            <th style="width: 30%;">Word & Meaning</th>
+                            <th style="width: 70%;">Example Context</th>
+                        </tr>
+                        <tr>
+                            <td><strong>Consensus</strong><br><span style="color: var(--text-muted); font-size: 8.5pt;">general agreement</span></td>
+                            <td>There was a consensus that public transportation needed improvement.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Attain</strong><br><span style="color: var(--text-muted); font-size: 8.5pt;">achieve/reach</span></td>
+                            <td>Students need to work hard to attain their goals.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Contemplate</strong><br><span style="color: var(--text-muted); font-size: 8.5pt;">think about carefully</span></td>
+                            <td>I am contemplating moving closer to my workplace.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Futile</strong><br><span style="color: var(--text-muted); font-size: 8.5pt;">pointless; unlikely to produce results</span></td>
+                            <td>Complaining without taking action would be futile.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Accustomed to</strong><br><span style="color: var(--text-muted); font-size: 8.5pt;">used to</span></td>
+                            <td>I am accustomed to working long hours.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Grateful</strong><br><span style="color: var(--text-muted); font-size: 8.5pt;">thankful</span></td>
+                            <td>I am grateful for the opportunity.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Astute</strong><br><span style="color: var(--text-muted); font-size: 8.5pt;">clever & good at judging</span></td>
+                            <td>She made an astute decision.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Dilapidated</strong><br><span style="color: var(--text-muted); font-size: 8.5pt;">old and in poor condition</span></td>
+                            <td>The city should renovate the dilapidated building.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Personnel</strong><br><span style="color: var(--text-muted); font-size: 8.5pt;">employees/staff</span></td>
+                            <td>The company needs additional personnel.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Unfortunate</strong><br><span style="color: var(--text-muted); font-size: 8.5pt;">unlucky/regrettable</span></td>
+                            <td>It was unfortunate that the event was cancelled.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Fascinate</strong><br><span style="color: var(--text-muted); font-size: 8.5pt;">make very interested</span></td>
+                            <td>Technology has always fascinated me.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Perplexed</strong><br><span style="color: var(--text-muted); font-size: 8.5pt;">confused/puzzled</span></td>
+                            <td>I was perplexed by the unexpected result.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Penchant</strong><br><span style="color: var(--text-muted); font-size: 8.5pt;">strong preference/tendency</span></td>
+                            <td>He has a penchant for learning new technologies.</td>
+                        </tr>
+                    </table>
+                </div>
+
+                <!-- CARD 4 -->
+                <div class="card card-vocab-passive" id="card-4">
+                    <div class="card-header">
+                        <span>🟧 CARD 4 — Vocabulary: Understand, Don't Force</span>
+                        <label class="card-master-toggle"><input type="checkbox" onchange="toggleCardMaster(4)"> Mastered</label>
+                    </div>
+                    <div class="card-subtitle">Useful for Reading/Listening, but don't try to force them into every Speaking answer.</div>
+
+                    <div style="display: table; width: 100%; margin-bottom: 10px;">
+                        <div style="display: table-row;">
+                            <div style="display: table-cell; width: 50%; padding-right: 8px;">
+                                <ul style="margin: 0; padding-left: 18px;">
+                                    <li><strong>Deceased</strong> → dead; formal</li>
+                                    <li><strong>Adherent</strong> → person who strongly supports an idea/belief</li>
+                                    <li><strong>Aghast</strong> → extremely shocked</li>
+                                    <li><strong>Attire</strong> → clothing</li>
+                                </ul>
+                            </div>
+                            <div style="display: table-cell; width: 50%; padding-left: 8px;">
+                                <ul style="margin: 0; padding-left: 18px;">
+                                    <li><strong>Genre</strong> → category/type of music, film, literature</li>
+                                    <li><strong>Quirk</strong> → unusual characteristic/habit</li>
+                                    <li><strong>Astonished</strong> → extremely surprised</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tip-box">
+                        <strong style="color: #ea580c;">⭐ Remember:</strong> Understand → recognize → use naturally.<br>
+                        <em>You don't get extra CELPIP points simply for throwing difficult words into your answer.</em>
+                    </div>
+                </div>
+
+                <!-- CARD 5 -->
+                <div class="card card-low" id="card-5">
+                    <div class="card-header">
+                        <span>🟥 CARD 5 — Low Priority</span>
+                        <label class="card-master-toggle"><input type="checkbox" onchange="toggleCardMaster(5)"> Mastered</label>
+                    </div>
+                    <div class="card-subtitle">Don't waste your limited study time actively memorizing these.</div>
+                    <ul style="margin: 0 0 10px 0; padding-left: 20px;">
+                        <li><strong>Crony</strong> → close friend/associate, often with a negative implication</li>
+                        <li><strong>Cadaver</strong> → dead human body, usually medical/scientific context</li>
+                        <li><strong>Convener</strong> → person who organizes/calls a meeting</li>
+                        <li><strong>Drool</strong> → saliva unintentionally coming from the mouth</li>
+                        <li><strong>Starving</strong> → extremely hungry</li>
+                    </ul>
+                    <p style="margin: 0; font-size: 9pt; color: #dc2626; font-weight: 500;">Know them if you encounter them, but move on.</p>
+                </div>
+
+                <!-- CARD 6 -->
+                <div class="card card-speaking" id="card-6">
+                    <div class="card-header">
+                        <span>🟪 CARD 6 — Speaking Formula</span>
+                        <label class="card-master-toggle"><input type="checkbox" onchange="toggleCardMaster(6)"> Mastered</label>
+                    </div>
+                    <div class="card-subtitle">When CELPIP gives you a Speaking question:</div>
+
+                    <div class="formula-steps">
+                        O &rarr; R &rarr; E &rarr; R &rarr; E &rarr; C
+                    </div>
+                    <p style="margin: 0 0 10px 0; font-size: 9.5pt; text-align: center;">
+                        <strong>O</strong>pinion &bull; <strong>R</strong>eason 1 &bull; <strong>E</strong>xample 1 &bull; <strong>R</strong>eason 2 &bull; <strong>E</strong>xample 2 &bull; <strong>C</strong>onclusion
+                    </p>
+
+                    <div style="background-color: var(--bg-color); border: 1px solid var(--border-color); border-radius: 6px; padding: 10px 14px; font-size: 9.5pt;">
+                        <p style="margin: 0 0 4px 0;"><strong>Example Question:</strong> Should the city improve public transportation?</p>
+                        <ul style="margin: 0; padding-left: 18px;">
+                            <li><strong>Opinion:</strong> From my perspective, the city should improve public transportation.</li>
+                            <li><strong>Reason 1:</strong> One of the main reasons is affordability.</li>
+                            <li><strong>Example:</strong> For example, students and low-income workers may not be able to afford a car.</li>
+                            <li><strong>Reason 2:</strong> Another important factor is traffic congestion.</li>
+                            <li><strong>Example:</strong> Better public transportation could reduce the number of cars on the road.</li>
+                            <li><strong>Conclusion:</strong> Therefore, I believe improving public transportation would be a better long-term solution.</li>
+                        </ul>
+                    </div>
+
+                    <div class="tip-box" style="margin-top: 10px;">
+                        <strong style="color: #7c3aed;">🔥 Your rule:</strong> Don't search for fancy words while speaking. Get the sentence out correctly and continuously.
+                    </div>
+                </div>
+
+                <!-- CARD 7 -->
+                <div class="card card-brain" id="card-7">
+                    <div class="card-header">
+                        <span>🟫 CARD 7 — English Brain</span>
+                        <label class="card-master-toggle"><input type="checkbox" onchange="toggleCardMaster(7)"> Mastered</label>
+                    </div>
+                    <div class="card-subtitle">This is your warehouse card. When you're standing around waiting, look around and create English sentences:</div>
+
+                    <table style="width: 100%; border-collapse: collapse; font-size: 9.5pt;">
+                        <tr>
+                            <td style="padding: 4px 8px; border-bottom: 1px solid var(--border-color); width: 40%; font-weight: bold; color: #9333ea;">See a pallet?</td>
+                            <td style="padding: 4px 8px; border-bottom: 1px solid var(--border-color); width: 60%;">The pallet has been delivered to the production line.</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 4px 8px; border-bottom: 1px solid var(--border-color); font-weight: bold; color: #9333ea;">Someone is waiting?</td>
+                            <td style="padding: 4px 8px; border-bottom: 1px solid var(--border-color);">The operator is waiting for the remaining material.</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 4px 8px; border-bottom: 1px solid var(--border-color); font-weight: bold; color: #9333ea;">Something is delayed?</td>
+                            <td style="padding: 4px 8px; border-bottom: 1px solid var(--border-color);">There appears to be a delay because the required material hasn't arrived.</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 4px 8px; border-bottom: 1px solid var(--border-color); font-weight: bold; color: #9333ea;">Someone moves material?</td>
+                            <td style="padding: 4px 8px; border-bottom: 1px solid var(--border-color);">The material needs to be moved to the designated area.</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 4px 8px; border-bottom: 1px solid var(--border-color); font-weight: bold; color: #9333ea;">Something is finished?</td>
+                            <td style="padding: 4px 8px; border-bottom: 1px solid var(--border-color);">The required material has already been delivered.</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 4px 8px; font-weight: bold; color: #9333ea;">Something might happen?</td>
+                            <td style="padding: 4px 8px;">The production line may experience a delay if the material doesn't arrive on time.</td>
+                        </tr>
+                    </table>
+                </div>
+
+                <!-- CARD 8 -->
+                <div class="card card-drill" id="card-8">
+                    <div class="card-header">
+                        <span>🟫 CARD 8 — 5-Minute Grammar Drill</span>
+                        <label class="card-master-toggle"><input type="checkbox" onchange="toggleCardMaster(8)"> Mastered</label>
+                    </div>
+                    <div class="card-subtitle">Take one sentence and change the tense. Do this with 5 different sentences every day.</div>
+
+                    <div class="drill-grid">
+                        <div class="drill-col">
+                            <div class="drill-item">
+                                <strong style="color: #b45309;">Present:</strong> I work in a warehouse.
+                            </div>
+                            <div class="drill-item">
+                                <strong style="color: #b45309;">Past:</strong> I worked in a warehouse.
+                            </div>
+                            <div class="drill-item">
+                                <strong style="color: #b45309;">Future:</strong> I will work in a warehouse.
+                            </div>
+                        </div>
+                        <div class="drill-col">
+                            <div class="drill-item">
+                                <strong style="color: #b45309;">Present perfect:</strong> I have worked in a warehouse.
+                            </div>
+                            <div class="drill-item">
+                                <strong style="color: #b45309;">With reason:</strong> I work in a warehouse because I want to gain practical experience.
+                            </div>
+                            <div class="drill-item">
+                                <strong style="color: #b45309;">With result:</strong> I work long hours; as a result, I have limited time to study.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CARD 9: WORK & FREE-TIME STUDY SYSTEM -->
+                <div class="card card-routine" id="card-9">
+                    <div class="card-header">
+                        <span>🟢 CARD 9 — Work & Free-Time Study Routine</span>
+                        <label class="card-master-toggle"><input type="checkbox" onchange="toggleCardMaster(9)"> Mastered</label>
+                    </div>
+                    <div class="card-subtitle">How to integrate CELPIP practice into your job and everyday downtime without burnout.</div>
+
+                    <table class="routine-table">
+                        <tr>
+                            <th style="width: 25%;">Time / Phase</th>
+                            <th style="width: 75%;">Actionable Strategy</th>
+                        </tr>
+                        <tr>
+                            <td><strong>During Work Shifts</strong><br><span style="color: var(--text-muted); font-size: 8pt;">(Micro-learning)</span></td>
+                            <td>
+                                &bull; <strong>Apply Card 7 (English Brain):</strong> Whenever you notice a delay, a moving pallet, or someone waiting, silently construct full English sentences.<br>
+                                &bull; <strong>Mental Tense Shifting:</strong> Take a simple work action (e.g., <em>"I check inventory"</em>) and cycle it through past, future, and perfect tenses in your head.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><strong>Breaks & Downtime</strong><br><span style="color: var(--text-muted); font-size: 8pt;">(5-Minute Drills)</span></td>
+                            <td>
+                                &bull; <strong>Grammar Drill (Card 8):</strong> Pick 1 sentence during your coffee break and write or speak it in 6 different structures.<br>
+                                &bull; <strong>Mistake Review (Card 1):</strong> Quickly scan your common grammar fixes to prevent repeating old fossilized errors.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><strong>After Work / Free Time</strong><br><span style="color: var(--text-muted); font-size: 8pt;">(Active Practice)</span></td>
+                            <td>
+                                &bull; <strong>Speaking Formula Drill (Card 6):</strong> Pick a random topic (e.g., public transport, workplace tech) and record yourself answering using the <em>O-R-E-R-E-C</em> formula for 60 seconds.<br>
+                                &bull; <strong>Active Vocabulary (Card 3):</strong> Pick 2 words and write 1 sentence for each.
+                            </td>
+                        </tr>
+                    </table>
+
+                    <!-- Interactive Daily To-Do Checklist -->
+                    <div style="margin-top: 14px;">
+                        <strong style="font-size: 9.5pt; color: #0f766e;">📋 Interactive Daily To-Do Checklist (Check off as you complete):</strong>
+                        <div class="interactive-checklist">
+                            <label class="check-item" onclick="updateChecklistProgress()">
+                                <input type="checkbox" class="task-checkbox"> <span>Applied English Brain (Card 7) during work shift downtime.</span>
+                            </label>
+                            <label class="check-item" onclick="updateChecklistProgress()">
+                                <input type="checkbox" class="task-checkbox"> <span>Completed 5-Minute Tense Shift Drill (Card 8) on break.</span>
+                            </label>
+                            <label class="check-item" onclick="updateChecklistProgress()">
+                                <input type="checkbox" class="task-checkbox"> <span>Reviewed Common Mistakes (Card 1) to avoid fossilized errors.</span>
+                            </label>
+                            <label class="check-item" onclick="updateChecklistProgress()">
+                                <input type="checkbox" class="task-checkbox"> <span>Recorded a 60-second Speaking Practice using O-R-E-R-E-C (Card 6).</span>
+                            </label>
+                            <label class="check-item" onclick="updateChecklistProgress()">
+                                <input type="checkbox" class="task-checkbox"> <span>Wrote example sentences for 2 Active Vocabulary words (Card 3).</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="tip-box" style="background-color: var(--bg-color); border-color: #0d9488; margin-top: 10px;">
+                        <strong style="color: #0f766e;">💡 Core Mindset:</strong> You don't need hours of sitting at a desk. <em>Consistency in small pockets of time beats random marathon study sessions.</em>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!-- Shared Footer -->
+        <footer>
+            <div class="footer-content">
+                <div class="footer-title">SelfPIP</div>
+                <div>Personal CELPIP Study Companion</div>
+            </div>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

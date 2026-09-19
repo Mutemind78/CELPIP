@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Language Support — SelfPIP</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body data-theme="light">
+    <div class="app-container">
+        <!-- Reusable Navigation Bar -->
+        <header>
+            <div class="nav-container">
+                <a href="index.html" class="logo-link">
+                    Self<span class="logo-accent">PIP</span>
+                </a>
+                <nav class="desktop-nav">
+                    <a href="index.html" class="nav-item">Home</a>
+                    <a href="listening.html" class="nav-item">Listening</a>
+                    <a href="reading.html" class="nav-item">Reading</a>
+                    <a href="writing.html" class="nav-item">Writing</a>
+                    <a href="speaking.html" class="nav-item">Speaking</a>
+                    <a href="language.html" class="nav-item active">Language</a>
+                    <a href="practice.html" class="nav-item">Practice</a>
+                </nav>
+                <button class="menu-toggle" aria-label="Toggle Navigation Menu" onclick="toggleMobileMenu()">
+                    ☰
+                </button>
+            </div>
+            <div class="mobile-nav" id="mobileNav">
+                <a href="index.html" class="nav-item">Home</a>
+                <a href="listening.html" class="nav-item">Listening</a>
+                <a href="reading.html" class="nav-item">Reading</a>
+                <a href="writing.html" class="nav-item">Writing</a>
+                <a href="speaking.html" class="nav-item">Speaking</a>
+                <a href="language.html" class="nav-item active">Language</a>
+                <a href="practice.html" class="nav-item">Practice</a>
+            </div>
+        </header>
+
+        <!-- Main Content Area -->
+        <main class="main-content">
+            <div class="page-header">
+                <h1 class="page-title">📚 Language Section</h1>
+                <p class="page-desc">Strengthen your fundamental English. Refine your grammar rules, expand your active vocabulary databases, master transition connectors, and master Canadian pronunciation.</p>
+            </div>
+
+            <!-- Placeholders for Language Skills -->
+            <div class="placeholder-grid">
+                <!-- GRAMMAR -->
+                <div class="task-card" id="language-grammar">
+                    <div>
+                        <div class="task-header">
+                            <span class="task-badge">Grammar</span>
+                        </div>
+                        <h3 class="task-title">Grammar Corrections</h3>
+                        <p class="task-desc">Drill correct sentence templates, subject-verb agreements, active/passive voice, and complex sentence structure parameters without losing clarity.</p>
+                    </div>
+                    <button class="btn btn-disabled">Study Grammar (Coming Soon)</button>
+                </div>
+
+                <!-- VOCABULARY -->
+                <div class="task-card" id="language-vocabulary">
+                    <div>
+                        <div class="task-header">
+                            <span class="task-badge">Vocabulary</span>
+                        </div>
+                        <h3 class="task-title">Vocabulary Banks</h3>
+                        <p class="task-desc">A deep dive into functional active vocabulary, task-oriented descriptive phrases, and academic/general terminology appropriate for CELPIP.</p>
+                    </div>
+                    <button class="btn btn-disabled">Study Vocabulary (Coming Soon)</button>
+                </div>
+
+                <!-- CONNECTORS -->
+                <div class="task-card" id="language-connectors">
+                    <div>
+                        <div class="task-header">
+                            <span class="task-badge">Connectors</span>
+                        </div>
+                        <h3 class="task-title">Cohesion & Connectors</h3>
+                        <p class="task-desc">Master smooth transition words, logical connectors, contrast phrases, and listing structures to make your essays and audio records flow beautifully.</p>
+                    </div>
+                    <button class="btn btn-disabled">Study Connectors (Coming Soon)</button>
+                </div>
+
+                <!-- PRONUNCIATION -->
+                <div class="task-card" id="language-pronunciation">
+                    <div>
+                        <div class="task-header">
+                            <span class="task-badge">Pronunciation</span>
+                        </div>
+                        <h3 class="task-title">Canadian English & Pronunciation</h3>
+                        <p class="task-desc">Familiarize yourself with spelling preferences, stress patterns, silent sounds, accent features, and phonetic guidelines used commonly in Canada.</p>
+                    </div>
+                    <button class="btn btn-disabled">Study Pronunciation (Coming Soon)</button>
+                </div>
+            </div>
+        </main>
+
+        <!-- Shared Footer -->
+        <footer>
+            <div class="footer-content">
+                <div class="footer-title">SelfPIP</div>
+                <div>Personal CELPIP Study Companion</div>
+            </div>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

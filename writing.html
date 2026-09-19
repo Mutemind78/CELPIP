@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Writing Section — SelfPIP</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body data-theme="light">
+    <div class="app-container">
+        <!-- Reusable Navigation Bar -->
+        <header>
+            <div class="nav-container">
+                <a href="index.html" class="logo-link">
+                    Self<span class="logo-accent">PIP</span>
+                </a>
+                <nav class="desktop-nav">
+                    <a href="index.html" class="nav-item">Home</a>
+                    <a href="listening.html" class="nav-item">Listening</a>
+                    <a href="reading.html" class="nav-item">Reading</a>
+                    <a href="writing.html" class="nav-item active">Writing</a>
+                    <a href="speaking.html" class="nav-item">Speaking</a>
+                    <a href="language.html" class="nav-item">Language</a>
+                    <a href="practice.html" class="nav-item">Practice</a>
+                </nav>
+                <button class="menu-toggle" aria-label="Toggle Navigation Menu" onclick="toggleMobileMenu()">
+                    ☰
+                </button>
+            </div>
+            <div class="mobile-nav" id="mobileNav">
+                <a href="index.html" class="nav-item">Home</a>
+                <a href="listening.html" class="nav-item">Listening</a>
+                <a href="reading.html" class="nav-item">Reading</a>
+                <a href="writing.html" class="nav-item active">Writing</a>
+                <a href="speaking.html" class="nav-item">Speaking</a>
+                <a href="language.html" class="nav-item">Language</a>
+                <a href="practice.html" class="nav-item">Practice</a>
+            </div>
+        </header>
+
+        <!-- Main Content Area -->
+        <main class="main-content">
+            <div class="page-header">
+                <h1 class="page-title">✍️ Writing Section</h1>
+                <p class="page-desc">Master professional emails and survey arguments. Align your grammar, style, and vocabulary to attain high CLB marks.</p>
+            </div>
+
+            <!-- Placeholders for Writing Tasks -->
+            <div class="placeholder-grid">
+                <!-- TASK 1 -->
+                <div class="task-card" id="writing-task-1">
+                    <div>
+                        <div class="task-header">
+                            <span class="task-badge">Task 1</span>
+                        </div>
+                        <h3 class="task-title">Writing an Email</h3>
+                        <p class="task-desc">Draft emails for various professional or personal scenarios. Learn structures for requests, complaints, apologies, and information sharing.</p>
+                    </div>
+                    <button class="btn btn-disabled">Study this task (Coming Soon)</button>
+                </div>
+
+                <!-- TASK 2 -->
+                <div class="task-card" id="writing-task-2">
+                    <div>
+                        <div class="task-header">
+                            <span class="task-badge">Task 2</span>
+                        </div>
+                        <h3 class="task-title">Responding to Survey Questions</h3>
+                        <p class="task-desc">Choose between two options in a public survey and defend your decision with clear examples, logical transitions, and robust grammar.</p>
+                    </div>
+                    <button class="btn btn-disabled">Study this task (Coming Soon)</button>
+                </div>
+            </div>
+        </main>
+
+        <!-- Shared Footer -->
+        <footer>
+            <div class="footer-content">
+                <div class="footer-title">SelfPIP</div>
+                <div>Personal CELPIP Study Companion</div>
+            </div>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

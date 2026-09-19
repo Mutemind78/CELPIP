@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Speaking Section — SelfPIP</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body data-theme="light">
+    <div class="app-container">
+        <!-- Reusable Navigation Bar -->
+        <header>
+            <div class="nav-container">
+                <a href="index.html" class="logo-link">
+                    Self<span class="logo-accent">PIP</span>
+                </a>
+                <nav class="desktop-nav">
+                    <a href="index.html" class="nav-item">Home</a>
+                    <a href="listening.html" class="nav-item">Listening</a>
+                    <a href="reading.html" class="nav-item">Reading</a>
+                    <a href="writing.html" class="nav-item">Writing</a>
+                    <a href="speaking.html" class="nav-item active">Speaking</a>
+                    <a href="language.html" class="nav-item">Language</a>
+                    <a href="practice.html" class="nav-item">Practice</a>
+                </nav>
+                <button class="menu-toggle" aria-label="Toggle Navigation Menu" onclick="toggleMobileMenu()">
+                    ☰
+                </button>
+            </div>
+            <div class="mobile-nav" id="mobileNav">
+                <a href="index.html" class="nav-item">Home</a>
+                <a href="listening.html" class="nav-item">Listening</a>
+                <a href="reading.html" class="nav-item">Reading</a>
+                <a href="writing.html" class="nav-item">Writing</a>
+                <a href="speaking.html" class="nav-item active">Speaking</a>
+                <a href="language.html" class="nav-item">Language</a>
+                <a href="practice.html" class="nav-item">Practice</a>
+            </div>
+        </header>
+
+        <!-- Main Content Area -->
+        <main class="main-content">
+            <div class="page-header">
+                <h1 class="page-title">🗣️ Speaking Section</h1>
+                <p class="page-desc">Practice speaking clearly, structure answers with our formulas, and develop confidence for all 8 speaking tasks.</p>
+            </div>
+
+            <!-- Placeholders for Speaking Tasks -->
+            <div class="placeholder-grid">
+                <!-- TASK 1 -->
+                <div class="task-card" id="speaking-task-1">
+                    <div>
+                        <div class="task-header">
+                            <span class="task-badge">Task 1</span>
+                        </div>
+                        <h3 class="task-title">Giving Advice</h3>
+                        <p class="task-desc">Provide helpful recommendations to a friend, family member, or colleague. Focus on polite structures, modal verbs, and practical arguments.</p>
+                    </div>
+                    <button class="btn btn-disabled">Study this task (Coming Soon)</button>
+                </div>
+
+                <!-- TASK 2 -->
+                <div class="task-card" id="speaking-task-2">
+                    <div>
+                        <div class="task-header">
+                            <span class="task-badge">Task 2</span>
+                        </div>
+                        <h3 class="task-title">Talking about a Personal Experience</h3>
+                        <p class="task-desc">Describe a memorable moment or event from your past. Practice using active past tenses, connectors, and descriptive descriptors.</p>
+                    </div>
+                    <button class="btn btn-disabled">Study this task (Coming Soon)</button>
+                </div>
+
+                <!-- TASK 3 -->
+                <div class="task-card" id="speaking-task-3">
+                    <div>
+                        <div class="task-header">
+                            <span class="task-badge">Task 3</span>
+                        </div>
+                        <h3 class="task-title">Describing a Scene</h3>
+                        <p class="task-desc">Look at an illustration and describe what is happening. Learn spatial vocabulary (foreground, background, next to) and active progressive tenses.</p>
+                    </div>
+                    <button class="btn btn-disabled">Study this task (Coming Soon)</button>
+                </div>
+
+                <!-- TASK 4 -->
+                <div class="task-card" id="speaking-task-4">
+                    <div>
+                        <div class="task-header">
+                            <span class="task-badge">Task 4</span>
+                        </div>
+                        <h3 class="task-title">Making Predictions</h3>
+                        <p class="task-desc">Look at the same illustration and predict what might happen next. Focus on future tense constructions and probability phrases.</p>
+                    </div>
+                    <button class="btn btn-disabled">Study this task (Coming Soon)</button>
+                </div>
+
+                <!-- TASK 5 -->
+                <div class="task-card" id="speaking-task-5">
+                    <div>
+                        <div class="task-header">
+                            <span class="task-badge">Task 5</span>
+                        </div>
+                        <h3 class="task-title">Comparing and Persuading</h3>
+                        <p class="task-desc">Compare two distinct choices and persuade a family member, friend, or coworker on why your preference is better. Practice comparative structures.</p>
+                    </div>
+                    <button class="btn btn-disabled">Study this task (Coming Soon)</button>
+                </div>
+
+                <!-- TASK 6 -->
+                <div class="task-card" id="speaking-task-6">
+                    <div>
+                        <div class="task-header">
+                            <span class="task-badge">Task 6</span>
+                        </div>
+                        <h3 class="task-title">Dealing with a Difficult Situation</h3>
+                        <p class="task-desc">Navigate an awkward or difficult situation (e.g. telling someone bad news, asking for a favor). Master empathetic, tactful tone control.</p>
+                    </div>
+                    <button class="btn btn-disabled">Study this task (Coming Soon)</button>
+                </div>
+
+                <!-- TASK 7 -->
+                <div class="task-card" id="speaking-task-7">
+                    <div>
+                        <div class="task-header">
+                            <span class="task-badge">Task 7</span>
+                        </div>
+                        <h3 class="task-title">Expressing Opinions</h3>
+                        <p class="task-desc">State your opinion on a general social interest topic. Leverage our O-R-E-R-E-C speaking formula to structure a fluent, professional response.</p>
+                    </div>
+                    <button class="btn btn-disabled">Study this task (Coming Soon)</button>
+                </div>
+
+                <!-- TASK 8 -->
+                <div class="task-card" id="speaking-task-8">
+                    <div>
+                        <div class="task-header">
+                            <span class="task-badge">Task 8</span>
+                        </div>
+                        <h3 class="task-title">Describing an Unusual Situation</h3>
+                        <p class="task-desc">Describe a unique, strange, or bizarre object or image to someone who cannot see it. Practice descriptive precision and spatial metaphors.</p>
+                    </div>
+                    <button class="btn btn-disabled">Study this task (Coming Soon)</button>
+                </div>
+            </div>
+        </main>
+
+        <!-- Shared Footer -->
+        <footer>
+            <div class="footer-content">
+                <div class="footer-title">SelfPIP</div>
+                <div>Personal CELPIP Study Companion</div>
+            </div>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
