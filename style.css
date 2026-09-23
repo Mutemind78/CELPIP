@@ -730,6 +730,149 @@ footer {
     margin-bottom: 4px;
 }
 
+/* ---------- Header actions: theme toggle + menu (top-right) ---------- */
+.nav-actions {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+/* Keep the nav visually right-aligned now that a third header element exists */
+.desktop-nav {
+    margin-left: auto;
+}
+
+.nav-theme {
+    background: none;
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    color: #ffffff;
+    width: 36px;
+    height: 36px;
+    padding: 0;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1rem;
+    line-height: 1;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: var(--transition);
+}
+
+.nav-theme:hover,
+.nav-theme:focus {
+    background: rgba(255, 255, 255, 0.12);
+    outline: none;
+}
+
+.nav-theme:focus-visible {
+    outline: 2px solid #ffffff;
+    outline-offset: 2px;
+}
+
+/* ---------- Homepage: hero stats + "How SelfPIP Helps" ---------- */
+.hero-stats {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    margin: 22px 0 0 0;
+    padding: 0;
+}
+
+.hero-stats li {
+    background: rgba(255, 255, 255, 0.12);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    border-radius: 10px;
+    padding: 8px 14px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 96px;
+}
+
+.hero-stats strong {
+    font-size: 1.3rem;
+    line-height: 1.2;
+}
+
+.hero-stats span {
+    font-size: 8pt;
+    opacity: 0.9;
+}
+
+.home-help-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 14px;
+    margin-bottom: 8px;
+}
+
+.home-help-card {
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+    padding: 16px;
+}
+
+.home-help-card h3 {
+    margin: 0 0 8px 0;
+    font-size: 10.5pt;
+    color: var(--primary);
+}
+
+.home-help-card p {
+    margin: 0;
+    font-size: 9.5pt;
+    color: var(--text-muted);
+}
+
+/* ---------- Accessibility ---------- */
+.skip-link {
+    position: absolute;
+    left: -9999px;
+    top: 0;
+    z-index: 300;
+}
+
+.skip-link:focus {
+    left: 8px;
+    top: 8px;
+    background: var(--card-bg);
+    color: var(--text-main);
+    padding: 10px 16px;
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    box-shadow: var(--shadow-hover);
+    font-weight: 700;
+    text-decoration: none;
+}
+
+:focus-visible {
+    outline: 2px solid var(--primary-light);
+    outline-offset: 2px;
+}
+
+/* ---------- Footer extras (tagline + disclaimer) ---------- */
+.footer-tagline {
+    font-size: 9.5pt;
+    color: var(--text-muted);
+}
+
+.footer-disclaimer {
+    max-width: 760px;
+    margin: 10px auto 0;
+    font-size: 8.5pt;
+    line-height: 1.55;
+    color: var(--text-muted);
+}
+
+.footer-disclaimer p {
+    margin: 0 0 6px 0;
+}
+
 /* Media Queries & Responsiveness */
 @media (max-width: 768px) {
     .desktop-nav {
