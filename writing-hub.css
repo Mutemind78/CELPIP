@@ -106,3 +106,14 @@
     .wh-skill-grid, .wh-rules, .wh-check-cols { grid-template-columns: 1fr; }
     .wh-time-steps li { padding-left: 46px; }
 }
+
+/* Interactive checklist inputs (generic data-checklist wiring) */
+.wh-check-list li::before { content: none; }
+.wh-check-list input[type="checkbox"] {
+    position: absolute;
+    left: 10px;
+    top: 9px;
+    accent-color: var(--primary-light);
+    cursor: pointer;
+}
+.wh-check-list label { display: block; cursor: pointer; }

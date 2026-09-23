@@ -247,32 +247,36 @@
 
             <section aria-labelledby="wp-checklist">
                 <h2 class="wh-section-title" id="wp-checklist">Final writing checklist</h2>
-                <div class="wh-check-cols">
+                <div class="check-bar">
+                    <span class="check-count" data-check-count="writing">12 unchecked</span>
+                    <button type="button" class="check-clear" data-check-clear="writing">Clear all</button>
+                </div>
+                <div class="wh-check-cols" data-checklist="writing">
                     <div class="wh-check-block">
                         <h3>Before you write</h3>
                         <ul class="wh-check-list">
-                            <li>Understood who I am writing to.</li>
-                            <li>Understood why I am writing.</li>
-                            <li>Understood the situation.</li>
-                            <li>Identified every required point.</li>
+                            <li><label><input type="checkbox"> Understood who I am writing to.</label></li>
+                            <li><label><input type="checkbox"> Understood why I am writing.</label></li>
+                            <li><label><input type="checkbox"> Understood the situation.</label></li>
+                            <li><label><input type="checkbox"> Identified every required point.</label></li>
                         </ul>
                     </div>
                     <div class="wh-check-block">
                         <h3>While writing</h3>
                         <ul class="wh-check-list">
-                            <li>Kept each paragraph focused.</li>
-                            <li>Developed my reasons with examples.</li>
-                            <li>Used vocabulary that fits naturally.</li>
-                            <li>Matched my tone to the reader.</li>
+                            <li><label><input type="checkbox"> Kept each paragraph focused.</label></li>
+                            <li><label><input type="checkbox"> Developed my reasons with examples.</label></li>
+                            <li><label><input type="checkbox"> Used vocabulary that fits naturally.</label></li>
+                            <li><label><input type="checkbox"> Matched my tone to the reader.</label></li>
                         </ul>
                     </div>
                     <div class="wh-check-block">
                         <h3>Before submitting</h3>
                         <ul class="wh-check-list">
-                            <li>Answered every required point.</li>
-                            <li>Checked grammar and punctuation.</li>
-                            <li>Checked spelling.</li>
-                            <li>Was within the required range.</li>
+                            <li><label><input type="checkbox"> Answered every required point.</label></li>
+                            <li><label><input type="checkbox"> Checked grammar and punctuation.</label></li>
+                            <li><label><input type="checkbox"> Checked spelling.</label></li>
+                            <li><label><input type="checkbox"> Was within the required range.</label></li>
                         </ul>
                         <p class="wh-flow-note" style="margin-top: 12px;">If you cannot support a point or an idea, revise it before submitting.</p>
                     </div>

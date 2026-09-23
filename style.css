@@ -910,3 +910,61 @@ footer {
         background: #ffffff !important;
     }
 }
+
+
+/* ---------- Generic interactive checklist bars ---------- */
+.check-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    margin: 0 0 12px 0;
+    padding: 7px 10px;
+    background: var(--bg-color);
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+}
+.check-count {
+    font-size: 9pt;
+    font-weight: 700;
+    color: var(--text-muted);
+}
+.check-clear {
+    padding: 4px 10px;
+    font-size: 8.5pt;
+    font-weight: 700;
+    color: var(--text-main);
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    cursor: pointer;
+}
+.check-clear:hover {
+    background: var(--border-color);
+}
+.check-list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+.check-list li {
+    position: relative;
+    margin: 0 0 6px 0;
+    padding: 8px 10px 8px 30px;
+    background: var(--bg-color);
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    font-size: 9.5pt;
+    font-weight: 500;
+}
+.check-list input[type="checkbox"] {
+    position: absolute;
+    left: 10px;
+    top: 9px;
+    accent-color: var(--primary-light);
+    cursor: pointer;
+}
+.check-list label {
+    display: block;
+    cursor: pointer;
+}

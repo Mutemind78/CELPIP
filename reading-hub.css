@@ -104,3 +104,15 @@
     .rh-skill-grid, .rh-rules, .rh-check-cols { grid-template-columns: 1fr; }
     .rh-time-steps li { padding-left: 46px; }
 }
+
+
+/* Interactive checklist inputs (generic data-checklist wiring) */
+.rh-check-list li::before { content: none; }
+.rh-check-list input[type="checkbox"] {
+    position: absolute;
+    left: 10px;
+    top: 9px;
+    accent-color: var(--primary-light);
+    cursor: pointer;
+}
+.rh-check-list label { display: block; cursor: pointer; }
