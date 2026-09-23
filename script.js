@@ -1,6 +1,10 @@
 // Load saved state from localStorage on startup
 document.addEventListener("DOMContentLoaded", () => {
     loadTheme();
+    // Wire the header theme toggle (🌙 / ☀️) on every page
+    document.querySelectorAll('#themeToggleBtn, .nav-theme').forEach((btn) => {
+        btn.addEventListener('click', toggleTheme);
+    });
 });
 
 function toggleMobileMenu() {

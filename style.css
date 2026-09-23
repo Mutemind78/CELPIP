@@ -735,6 +735,7 @@ footer {
     display: flex;
     align-items: center;
     gap: 8px;
+    margin-left: 18px;
 }
 
 /* Keep the nav visually right-aligned now that a third header element exists */
