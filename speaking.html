@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Speaking Section — SelfPIP</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="speaking-hub.css">
 </head>
 <body data-theme="light">
     <div class="app-container">
@@ -23,9 +24,7 @@
                     <a href="language.html" class="nav-item">Language</a>
                     <a href="practice.html" class="nav-item">Practice</a>
                 </nav>
-                <button class="menu-toggle" aria-label="Toggle Navigation Menu" onclick="toggleMobileMenu()">
-                    ☰
-                </button>
+                <button class="menu-toggle" aria-label="Toggle Navigation Menu" onclick="toggleMobileMenu()">☰</button>
             </div>
             <div class="mobile-nav" id="mobileNav">
                 <a href="index.html" class="nav-item">Home</a>
@@ -42,107 +41,385 @@
         <main class="main-content">
             <div class="page-header">
                 <h1 class="page-title">🗣️ Speaking Section</h1>
-                <p class="page-desc">Practice speaking clearly, structure answers with our formulas, and develop confidence for all 8 speaking tasks.</p>
+                <p class="page-desc">Build clear, organized spoken responses for all 8 CELPIP Speaking tasks. Learn how to generate ideas quickly, develop them with reasons and examples, adapt your tone, and speak clearly under time pressure.</p>
             </div>
 
-            <!-- Placeholders for Speaking Tasks -->
+            <!-- Start here -->
+            <div class="sh-intro" id="sh-start">
+                <h2 class="sh-intro-title">Start here</h2>
+                <p><strong>Speaking time: 15 minutes.</strong> The eight Speaking tasks are completed in a single 15-minute component, so you need to be ready to respond accurately from the very first task.</p>
+                <p>The eight CELPIP Speaking tasks are genuinely different. Giving advice to a friend calls for a different tone and structure than describing an unusual image, and what works for one task does not always work for another. That is why the most effective approach is to understand what each task expects, then adapt your response structure to match it.</p>
+                <p>Each task page below explains <strong>what the task requires</strong>, <strong>how to structure an answer</strong>, <strong>useful language</strong>, <strong>common traps</strong> to avoid, and finishes with an <strong>original practice prompt</strong> and an <strong>annotated model response</strong> that you can study.</p>
+
+                <p class="sh-steps-title">A simple process for every speaking response</p>
+                <ol class="sh-steps">
+                    <li><span class="sh-step">Understand</span></li>
+                    <li><span class="sh-step">Plan</span></li>
+                    <li><span class="sh-step">Structure</span></li>
+                    <li><span class="sh-step">Develop</span></li>
+                    <li><span class="sh-step">Speak</span></li>
+                    <li><span class="sh-step">Review</span></li>
+                </ol>
+
+                <div class="sh-note sh-note--info">
+                    <strong>Official format vs SelfPIP guidance:</strong> the task names and total time shown on this page are official CELPIP format facts. Everything else here — focus areas, strategies, frameworks, and examples — is SelfPIP study guidance, not official test material. No strategy or template guarantees a particular CELPIP score.
+                </div>
+            </div>
+
+            <!-- How this section works -->
+            <section aria-labelledby="sh-how">
+                <h2 class="sh-section-title" id="sh-how">How this section works</h2>
+                <ol class="sh-flow">
+                    <li class="sh-flow-item">Speaking</li>
+                    <li class="sh-flow-item">8 Task Cards</li>
+                    <li class="sh-flow-item">Understand the Evaluation</li>
+                    <li class="sh-flow-item">Choose a Task</li>
+                    <li class="sh-flow-item">Learn the Framework</li>
+                    <li class="sh-flow-item">See an Example</li>
+                    <li class="sh-flow-item">Practice</li>
+                    <li class="sh-flow-item">Self-Review</li>
+                </ol>
+                <p class="sh-flow-note">Every task page follows the same order, so you always know where the strategy, example, and checklist live.</p>
+            </section>
+
+            <!-- Official Format Summary -->
+            <section aria-labelledby="sh-format">
+                <h2 class="sh-section-title" id="sh-format">CELPIP Speaking format summary</h2>
+                <div class="sh-table-wrap">
+                    <table class="sh-table">
+                        <thead>
+                            <tr>
+                                <th scope="col">Task</th>
+                                <th scope="col">Speaking Task</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr><th scope="row">Task 1</th><td>Giving Advice</td></tr>
+                            <tr><th scope="row">Task 2</th><td>Talking about a Personal Experience</td></tr>
+                            <tr><th scope="row">Task 3</th><td>Describing a Scene</td></tr>
+                            <tr><th scope="row">Task 4</th><td>Making Predictions</td></tr>
+                            <tr><th scope="row">Task 5</th><td>Comparing and Persuading</td></tr>
+                            <tr><th scope="row">Task 6</th><td>Dealing with a Difficult Situation</td></tr>
+                            <tr><th scope="row">Task 7</th><td>Expressing Opinions</td></tr>
+                            <tr><th scope="row">Task 8</th><td>Describing an Unusual Situation</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+                <p class="sh-total">Official Speaking time: 15 minutes</p>
+                <p class="sh-flow-note"><strong>Official CELPIP format information.</strong> The Speaking component contains eight tasks and lasts 15 minutes. SelfPIP does not publish or guess scoring rules, and nothing on this page predicts a particular result.</p>
+            </section>
+
+            <!-- The eight task cards -->
+            <h2 class="sh-section-title" id="sh-cards">Choose a task</h2>
             <div class="placeholder-grid">
-                <!-- TASK 1 -->
-                <div class="task-card" id="speaking-task-1">
+                <a class="task-card sh-card" id="speaking-task-1" href="speaking-task-1.html">
                     <div>
-                        <div class="task-header">
-                            <span class="task-badge">Task 1</span>
-                        </div>
+                        <div class="task-header"><span class="task-badge">Task 1</span></div>
                         <h3 class="task-title">Giving Advice</h3>
-                        <p class="task-desc">Provide helpful recommendations to a friend, family member, or colleague. Focus on polite structures, modal verbs, and practical arguments.</p>
+                        <p class="task-desc">Give practical advice for a situation while showing empathy, explaining your recommendations, and supporting them with reasons.</p>
                     </div>
-                    <button class="btn btn-disabled">Study this task (Coming Soon)</button>
-                </div>
-
-                <!-- TASK 2 -->
-                <div class="task-card" id="speaking-task-2">
+                    <span class="btn">Study Task 1 →</span>
+                </a>
+                <a class="task-card sh-card" id="speaking-task-2" href="speaking-task-2.html">
                     <div>
-                        <div class="task-header">
-                            <span class="task-badge">Task 2</span>
-                        </div>
+                        <div class="task-header"><span class="task-badge">Task 2</span></div>
                         <h3 class="task-title">Talking about a Personal Experience</h3>
-                        <p class="task-desc">Describe a memorable moment or event from your past. Practice using active past tenses, connectors, and descriptive descriptors.</p>
+                        <p class="task-desc">Tell a clear story about a past experience using a logical sequence, relevant details, and descriptive language.</p>
                     </div>
-                    <button class="btn btn-disabled">Study this task (Coming Soon)</button>
-                </div>
-
-                <!-- TASK 3 -->
-                <div class="task-card" id="speaking-task-3">
+                    <span class="btn">Study Task 2 →</span>
+                </a>
+                <a class="task-card sh-card" id="speaking-task-3" href="speaking-task-3.html">
                     <div>
-                        <div class="task-header">
-                            <span class="task-badge">Task 3</span>
-                        </div>
+                        <div class="task-header"><span class="task-badge">Task 3</span></div>
                         <h3 class="task-title">Describing a Scene</h3>
-                        <p class="task-desc">Look at an illustration and describe what is happening. Learn spatial vocabulary (foreground, background, next to) and active progressive tenses.</p>
+                        <p class="task-desc">Describe an image clearly and systematically so that a listener can understand what is happening and where things are located.</p>
                     </div>
-                    <button class="btn btn-disabled">Study this task (Coming Soon)</button>
-                </div>
-
-                <!-- TASK 4 -->
-                <div class="task-card" id="speaking-task-4">
+                    <span class="btn">Study Task 3 →</span>
+                </a>
+                <a class="task-card sh-card" id="speaking-task-4" href="speaking-task-4.html">
                     <div>
-                        <div class="task-header">
-                            <span class="task-badge">Task 4</span>
-                        </div>
+                        <div class="task-header"><span class="task-badge">Task 4</span></div>
                         <h3 class="task-title">Making Predictions</h3>
-                        <p class="task-desc">Look at the same illustration and predict what might happen next. Focus on future tense constructions and probability phrases.</p>
+                        <p class="task-desc">Use the scene and available clues to predict what may happen next, explaining the reasons behind your predictions.</p>
                     </div>
-                    <button class="btn btn-disabled">Study this task (Coming Soon)</button>
-                </div>
-
-                <!-- TASK 5 -->
-                <div class="task-card" id="speaking-task-5">
+                    <span class="btn">Study Task 4 →</span>
+                </a>
+                <a class="task-card sh-card" id="speaking-task-5" href="speaking-task-5.html">
                     <div>
-                        <div class="task-header">
-                            <span class="task-badge">Task 5</span>
-                        </div>
+                        <div class="task-header"><span class="task-badge">Task 5</span></div>
                         <h3 class="task-title">Comparing and Persuading</h3>
-                        <p class="task-desc">Compare two distinct choices and persuade a family member, friend, or coworker on why your preference is better. Practice comparative structures.</p>
+                        <p class="task-desc">Compare two choices, select a position, and persuade another person using relevant comparisons, reasons, and benefits.</p>
                     </div>
-                    <button class="btn btn-disabled">Study this task (Coming Soon)</button>
-                </div>
-
-                <!-- TASK 6 -->
-                <div class="task-card" id="speaking-task-6">
+                    <span class="btn">Study Task 5 →</span>
+                </a>
+                <a class="task-card sh-card" id="speaking-task-6" href="speaking-task-6.html">
                     <div>
-                        <div class="task-header">
-                            <span class="task-badge">Task 6</span>
-                        </div>
+                        <div class="task-header"><span class="task-badge">Task 6</span></div>
                         <h3 class="task-title">Dealing with a Difficult Situation</h3>
-                        <p class="task-desc">Navigate an awkward or difficult situation (e.g. telling someone bad news, asking for a favor). Master empathetic, tactful tone control.</p>
+                        <p class="task-desc">Handle a challenging situation tactfully by acknowledging the problem, communicating clearly, and proposing an appropriate solution.</p>
                     </div>
-                    <button class="btn btn-disabled">Study this task (Coming Soon)</button>
-                </div>
-
-                <!-- TASK 7 -->
-                <div class="task-card" id="speaking-task-7">
+                    <span class="btn">Study Task 6 →</span>
+                </a>
+                <a class="task-card sh-card" id="speaking-task-7" href="speaking-task-7.html">
                     <div>
-                        <div class="task-header">
-                            <span class="task-badge">Task 7</span>
-                        </div>
+                        <div class="task-header"><span class="task-badge">Task 7</span></div>
                         <h3 class="task-title">Expressing Opinions</h3>
-                        <p class="task-desc">State your opinion on a general social interest topic. Leverage our O-R-E-R-E-C speaking formula to structure a fluent, professional response.</p>
+                        <p class="task-desc">State a clear opinion and develop it with organized reasons, explanations, and examples.</p>
                     </div>
-                    <button class="btn btn-disabled">Study this task (Coming Soon)</button>
-                </div>
-
-                <!-- TASK 8 -->
-                <div class="task-card" id="speaking-task-8">
+                    <span class="btn">Study Task 7 →</span>
+                </a>
+                <a class="task-card sh-card" id="speaking-task-8" href="speaking-task-8.html">
                     <div>
-                        <div class="task-header">
-                            <span class="task-badge">Task 8</span>
-                        </div>
+                        <div class="task-header"><span class="task-badge">Task 8</span></div>
                         <h3 class="task-title">Describing an Unusual Situation</h3>
-                        <p class="task-desc">Describe a unique, strange, or bizarre object or image to someone who cannot see it. Practice descriptive precision and spatial metaphors.</p>
+                        <p class="task-desc">Describe an unusual image or situation precisely enough for someone who cannot see it to understand the important details.</p>
                     </div>
-                    <button class="btn btn-disabled">Study this task (Coming Soon)</button>
-                </div>
+                    <span class="btn">Study Task 8 →</span>
+                </a>
             </div>
+
+            <!-- The 4 Speaking Performance Areas -->
+            <section aria-labelledby="sh-eval">
+                <h2 class="sh-section-title" id="sh-eval">The 4 Speaking Performance Areas</h2>
+                <p class="sh-flow-note">CELPIP Speaking is evaluated on four performance areas. These names are official CELPIP criteria. The bullet points under each one are SelfPIP study guidance about what to focus on when preparing — not a scoring formula.</p>
+                <div class="sh-skill-grid">
+                    <div class="sh-skill sh-skill--content">
+                        <h3 class="sh-skill-title">Content / Coherence</h3>
+                        <p class="sh-skill-intro">Ask yourself: <strong>Can the listener easily follow and understand my ideas?</strong></p>
+                        <ul>
+                            <li>Number of ideas — give enough to cover the topic</li>
+                            <li>Quality of ideas — choose ideas that are relevant and specific</li>
+                            <li>Organization — arrange ideas so the listener can follow</li>
+                            <li>Supporting details — explain <em>why</em> and <em>how</em></li>
+                            <li>Examples — concrete examples make ideas memorable</li>
+                        </ul>
+                    </div>
+                    <div class="sh-skill sh-skill--vocab">
+                        <h3 class="sh-skill-title">Vocabulary</h3>
+                        <p class="sh-skill-intro">Goal: <strong>precise + natural + appropriate</strong> — not "big" words.</p>
+                        <ul>
+                            <li>Word choice — pick words that mean exactly what you intend</li>
+                            <li>Range — vary your vocabulary across the response</li>
+                            <li>Precision — say exactly what happened, not vaguely</li>
+                            <li>Accuracy — use words in their correct sense</li>
+                            <li>Natural use — let words flow as you would speak them</li>
+                        </ul>
+                        <p class="sh-flow-note" style="margin-top:8px;">Do not force advanced words you are not comfortable with — a clear, accurate word is stronger than an uncertain "fancy" one.</p>
+                    </div>
+                    <div class="sh-skill sh-skill--listen">
+                        <h3 class="sh-skill-title">Listenability</h3>
+                        <p class="sh-skill-intro">The goal is understandable, natural speech.</p>
+                        <ul>
+                            <li>Rhythm — stress important words, not every word equally</li>
+                            <li>Pronunciation — make sounds clear and distinct</li>
+                            <li>Intonation — let your pitch rise and fall naturally</li>
+                            <li>Pauses — short natural pauses between ideas</li>
+                            <li>Self-correction — fix small slips and keep going</li>
+                            <li>Grammar and sentence structure — variety, not one pattern</li>
+                        </ul>
+                        <p class="sh-flow-note" style="margin-top:8px;">Listenability is <em>not</em> the same as having a particular accent. CELPIP does not ask you to imitate a Canadian accent — it asks whether the listener can understand you.</p>
+                    </div>
+                    <div class="sh-skill sh-skill--task">
+                        <h3 class="sh-skill-title">Task Fulfillment</h3>
+                        <p class="sh-skill-intro">Ask yourself: <strong>Did I actually do what the task asked me to do?</strong></p>
+                        <ul>
+                            <li>Relevance — stay on the task, not on a related story</li>
+                            <li>Completeness — cover what the prompt asks for</li>
+                            <li>Tone — match the situation (sympathetic, persuasive, descriptive...)</li>
+                            <li>Length — use the time well and give enough detail</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+            <!-- The Self-PIP Speaking Method -->
+            <section aria-labelledby="sh-method">
+                <h2 class="sh-section-title" id="sh-method">The Self-PIP Speaking Method</h2>
+                <p class="sh-flow-note">The visuals below are SelfPIP idea-development methods, not official CELPIP rules. They help you turn a single point into a fully developed answer. One developed idea is usually more useful than several half-explained ones.</p>
+                <p class="sh-flow-note">Remember: the eight tasks are different, so adapt which parts you emphasize — a scene description does not need an opinion, and advice does not need a timeline.</p>
+
+                <div class="sh-method">
+                    <span class="sh-method-step">ANSWER</span>
+                    <span class="sh-method-arrow">→</span>
+                    <span class="sh-method-step">REASON</span>
+                    <span class="sh-method-arrow">→</span>
+                    <span class="sh-method-step">EXPLAIN</span>
+                    <span class="sh-method-arrow">→</span>
+                    <span class="sh-method-step">EXAMPLE</span>
+                    <span class="sh-method-arrow">→</span>
+                    <span class="sh-method-step">RESULT</span>
+                </div>
+                <p class="sh-method-caption">ANSWER → REASON → EXPLAIN → EXAMPLE → RESULT</p>
+
+                <div class="sh-method">
+                    <span class="sh-method-step">POINT</span>
+                    <span class="sh-method-arrow">→</span>
+                    <span class="sh-method-step">WHY</span>
+                    <span class="sh-method-arrow">→</span>
+                    <span class="sh-method-step">HOW</span>
+                    <span class="sh-method-arrow">→</span>
+                    <span class="sh-method-step">EXAMPLE</span>
+                    <span class="sh-method-arrow">→</span>
+                    <span class="sh-method-step">RESULT</span>
+                </div>
+                <p class="sh-method-caption">POINT → WHY → HOW → EXAMPLE → RESULT</p>
+            </section>
+
+            <!-- IDEA GENERATION TOOL -->
+            <section aria-labelledby="sh-generator">
+                <h2 class="sh-section-title" id="sh-generator">What If My Mind Goes Blank?</h2>
+                <p class="sh-flow-note">When you need ideas fast, ask yourself these simple brainstorming questions. They are prompts, not required content — use whatever is genuinely relevant to the task.</p>
+                <div class="sh-generator-grid">
+                    <div class="sh-generator-card"><div class="sh-generator-icon">👥</div><div class="sh-generator-title">People</div><p class="sh-generator-desc">Who is affected? Who would disagree?</p></div>
+                    <div class="sh-generator-card"><div class="sh-generator-icon">⏳</div><div class="sh-generator-title">Time</div><p class="sh-generator-desc">When does it matter? How has it changed?</p></div>
+                    <div class="sh-generator-card"><div class="sh-generator-icon">💰</div><div class="sh-generator-title">Money</div><p class="sh-generator-desc">What does it cost or save?</p></div>
+                    <div class="sh-generator-card"><div class="sh-generator-icon">🚀</div><div class="sh-generator-title">Convenience</div><p class="sh-generator-desc">How does it make life easier (or harder)?</p></div>
+                    <div class="sh-generator-card"><div class="sh-generator-icon">🩺</div><div class="sh-generator-title">Health</div><p class="sh-generator-desc">Could it affect well-being?</p></div>
+                    <div class="sh-generator-card"><div class="sh-generator-icon">🛡️</div><div class="sh-generator-title">Safety</div><p class="sh-generator-desc">Could it create or reduce risk?</p></div>
+                    <div class="sh-generator-card"><div class="sh-generator-icon">🎯</div><div class="sh-generator-title">Experience</div><p class="sh-generator-desc">What would the person experience?</p></div>
+                    <div class="sh-generator-card"><div class="sh-generator-icon">🔮</div><div class="sh-generator-title">Future</div><p class="sh-generator-desc">What could happen later?</p></div>
+
+                </div>
+            </section>
+
+
+            <!-- SPEAKING FORMULA SYSTEM -->
+            <section aria-labelledby="sh-formulas">
+                <h2 class="sh-section-title" id="sh-formulas">Speaking Formula System</h2>
+                <p class="sh-flow-note">These short frameworks are SelfPIP memory aids, not official CELPIP requirements. Pick the framework for your task, fill in your own ideas, and develop one point fully before moving on.</p>
+                <div class="sh-formulas">
+                    <div class="sh-formula"><span class="sh-formula-badge">Task 1</span> <strong class="sh-formula-title">CARE</strong><ul><li>Context — what's happening</li><li>Advice — your clear recommendation</li><li>Reason — why it helps</li><li>Example — when it worked (or would work)</li></ul></div>
+                    <div class="sh-formula"><span class="sh-formula-badge">Task 2</span> <strong class="sh-formula-title">TIMELINE</strong><ul><li>Trigger — what started it</li><li>Build-up — what happened next</li><li>Climax — the main moment</li><li>Outcome — result and feeling</li></ul></div>
+                    <div class="sh-formula"><span class="sh-formula-badge">Task 3</span> <strong class="sh-formula-title">WHAT + WHERE</strong><ul><li>Who / What — people and objects</li><li>Where — location and layout</li><li>Action — what's happening now</li><li>Perspective — how to guide a listener around</li></ul></div>
+                    <div class="sh-formula"><span class="sh-formula-badge">Task 4</span> <strong class="sh-formula-title">REASONS</strong><ul><li>Observe — what the scene shows</li><li>Predict — what may happen next</li><li>Reasons — why you think so</li><li>Evidence — clues from the image</li></ul></div>
+                    <div class="sh-formula"><span class="sh-formula-badge">Task 5</span> <strong class="sh-formula-title">CHOOSE</strong><ul><li>Choice — which side you prefer</li><li>Options — compare the two paths</li><li>How — how to achieve your choice</li><li>Bonus — benefits of your choice</li></ul></div>
+                    <div class="sh-formula"><span class="sh-formula-badge">Task 6</span> <strong class="sh-formula-title">TACT</strong><ul><li>Tone — calm and respectful</li><li>Acknowledge — the other person's point</li><li>Clarify — the real issue</li><li>Together — propose a fair solution</li><li>Thank — close politely</li></ul></div>
+                    <div class="sh-formula"><span class="sh-formula-badge">Task 7</span> <strong class="sh-formula-title">OPINION+</strong><ul><li>Opinion — state your position</li><li>Examples — specific instances</li><li>Reasons — why you believe it</li><li>Wider view — how common / important it is</li></ul></div>
+                    <div class="sh-formula"><span class="sh-formula-badge">Task 8</span> <strong class="sh-formula-title">CLEAR</strong><ul><li>Context — setting and time</li><li>Entities — who / what is present</li><li>Action — what they're doing</li><li>Result — the unusual part / outcome</li></ul></div>
+                </div>
+            </section>
+            <!-- PRONUNCIATION & LISTENABILITY -->
+            <section aria-labelledby="sh-pronounce">
+                <h2 class="sh-section-title" id="sh-pronounce">Pronunciation &amp; Listenability</h2>
+                <p class="sh-flow-note">You do not need to hide your accent. You need to be understood. Focus on the sounds and rhythm that matter most for clarity.</p>
+                <div class="sh-skill-grid">
+                    <div class="sh-skill sh-skill--listen">
+                        <h3 class="sh-skill-title">Target sounds</h3>
+                        <p class="sh-skill-intro">Practice the contrasts that most affect clarity.</p>
+                        <ul>
+                            <li>TH sounds: <em>think</em> vs <em>this</em> vs <em>they're</em></li>
+                            <li>R and L: keep them distinct, do not merge them</li>
+                            <li>V and W: <em>very</em> vs <em>winter</em></li>
+                            <li>ED and S endings: make the final consonant clear</li>
+                        </ul>
+                    </div>
+                    <div class="sh-skill sh-skill--listen">
+                        <h3 class="sh-skill-title">Word &amp; Sentence Rhythm</h3>
+                        <p class="sh-skill-intro">Natural rhythm makes speech easier to follow.</p>
+                        <ul>
+                            <li>Stress content words (nouns, verbs, adjectives)</li>
+                            <li>Shorten or skip function words (the, and, very)</li>
+                            <li>Use rising/falling intonation to show meaning</li>
+                            <li>Plan small pauses between ideas — not mid-word</li>
+                        </ul>
+                    </div>
+                </div>
+                <p class="sh-flow-note" style="margin-top:10px;">Tip: record yourself describing a task for 60 seconds. If you can follow it, the listener probably can too.</p>
+            </section>
+
+            <!-- FLUENCY WITHOUT MEMORIZING -->
+            <section aria-labelledby="sh-fluency">
+                <h2 class="sh-section-title" id="sh-fluency">Fluency Without Memorizing</h2>
+                <p class="sh-flow-note">Fluency is smooth, controlled delivery — not a memorized script. Memorized answers sound robotic and earn lower marks for spontaneity.</p>
+                <ul>
+                    <li>Think in English. Do not translate word-for-word from your first language.</li>
+                    <li>Keep a short mental list of connector phrases: "in my experience," "this is because," "for example."</li>
+                    <li>Planned pauses are better than fillers. A two-second pause is fine.</li>
+                    <li>If you forget a word: say "let me think," then continue with a simpler word.</li>
+                    <li>It is okay to self-correct once. Repeated erasing sounds choppy.</li>
+                </ul>
+            </section>
+            <!-- WHAT TO DO WHEN YOU MAKE A MISTAKE -->
+            <section aria-labelledby="sh-mistake-s">
+                <h2 class="sh-section-title" id="sh-mistake-s">What to Do When You Make a Mistake</h2>
+                <p class="sh-flow-note">Everyone slips on a word. The difference between a low score and a strong one is how you recover. The rule below is universal: keep going.</p>
+                <div class="sh-mistake">
+                    <div class="sh-mistake-item">
+                        <div class="sh-mistake-icon">⏸️</div>
+                        <p class="sh-mistake-text"><strong>Do not freeze.</strong> Pause for one beat, then continue. Silence is scored as lost time.</p>
+                    </div>
+                    <div class="sh-mistake-item">
+                        <div class="sh-mistake-icon">🔄</div>
+                        <p class="sh-mistake-text"><strong>Self-correct once.</strong> Say "I mean" or "I mean to say," then move on. Do not erase repeatedly.</p>
+                    </div>
+                    <div class="sh-mistake-item">
+                        <div class="sh-mistake-icon">🔍</div>
+                        <p class="sh-mistake-text"><strong>Re-aim at the task.</strong> If you went off track, circle back: "Getting back to my point…" or "To answer your question…"</p>
+                    </div>
+                    <div class="sh-mistake-item">
+                        <div class="sh-mistake-icon">🗣️</div>
+                        <p class="sh-mistake-text"><strong>Use easier words.</strong> If you lose the advanced word, substitute a simpler one. A clear simple word scores higher than a broken complex one.</p>
+                    </div>
+                </div>
+                <p class="sh-flow-note" style="margin-top:10px;">Remember: the examiner will not help you, and the recording keeps running. Your only tool is forward momentum.</p>
+            </section>
+
+            <!-- SPEAKING GOLDEN RULES -->
+            <section aria-labelledby="sh-rules">
+                <h2 class="sh-section-title" id="sh-rules">Speaking Golden Rules</h2>
+                <p class="sh-flow-note">Eight rules to keep you consistent across every task.</p>
+                <div class="sh-rules">
+                    <div class="sh-rule"><span class="sh-rule-num">1</span> Answer the question directly. Do not restate the prompt.</div>
+                    <div class="sh-rule"><span class="sh-rule-num">2</span> Keep one idea running for 20–30 seconds before moving on.</div>
+                    <div class="sh-rule"><span class="sh-rule-num">3</span> Use the task-appropriate framework from the Formula System above.</div>
+                    <div class="sh-rule"><span class="sh-rule-num">4</span> Stress content words. Let function words go light and quick.</div>
+                    <div class="sh-rule"><span class="sh-rule-num">5</span> If stuck, buy time honestly: "That's an interesting question." Then continue.</div>
+                    <div class="sh-rule"><span class="sh-rule-num">6</span> Match the tone: sympathetic (Advice), descriptive (Scene), persuasive (Compare), opinionated (Opinion).</div>
+                    <div class="sh-rule"><span class="sh-rule-num">7</span> Do not memorize. Adapt your memorized framework to your own ideas.</div>
+                    <div class="sh-rule"><span class="sh-rule-num">8</span> End cleanly. A short closing sentence shows control.</div>
+                </div>
+            </section>
+            <!-- PRACTICE SYSTEM -->
+            <section aria-labelledby="sh-practice">
+                <h2 class="sh-section-title" id="sh-practice">Practice System</h2>
+                <p class="sh-flow-note">Three levels build on each other. Spend real time at each before moving on — skipping ahead is the most common cause of wasted practice.</p>
+                <div class="sh-practice-level sh-practice-level--1">
+                    <h3 class="sh-practice-title">Level 1 — Say the framework aloud</h3>
+                    <p class="sh-practice-desc">Pick one task. Read the cue, run through the formula steps out loud, and time yourself to 60–90 seconds. Don't chase perfection; the goal is structure and timing.</p>
+                    <p class="sh-practice-desc">Do one task per day until you can hit the time without hesitating on the framework itself.</p>
+                </div>
+                <div class="sh-practice-level sh-practice-level--2">
+                    <h3 class="sh-practice-title">Level 2 — Add your real ideas</h3>
+                    <p class="sh-practice-desc">Use the same framework, but replace placeholder thinking with your own opinions, experiences, and word choices. Record yourself.</p>
+                    <p class="sh-practice-desc">Listen back and check it against the self-review list below.</p>
+                </div>
+                <div class="sh-practice-level sh-practice-level--3">
+                    <h3 class="sh-practice-title">Level 3 — Pressure test</h3>
+                    <p class="sh-practice-desc">Simulate exam conditions: a 15-minute timer, no notes, one take per task. Review with the checklist, then mark the mistakes and repeat the weak tasks.</p>
+                    <p class="sh-practice-desc">Keep a simple log: which task, which framework, one thing that improved, one thing to fix next time.</p>
+                </div>
+            </section>
+
+            <!-- SELF-REVIEW CHECKLIST -->
+            <section aria-labelledby="sh-review">
+                <h2 class="sh-section-title" id="sh-review">Self-Review Checklist</h2>
+                <p class="sh-flow-note">After each practice recording, listen back and check what you actually did against what the task needs.</p>
+                <div class="sh-checklist">
+                    <div class="sh-checklist-bar">
+                        <span class="sh-checklist-count" data-spk-check-count>0 unchecked</span>
+                        <button type="button" class="sh-checklist-clear" data-spk-clear-checklist>Clear all</button>
+                    </div>
+                    <ul class="sh-checklist-list" data-spk-checklist>
+                        <li><label><input type="checkbox"> Did I name the task number and match its tone?</label></li>
+                        <li><label><input type="checkbox"> Did I give a complete first answer (the core point)?</label></li>
+                        <li><label><input type="checkbox"> Did I develop at least one idea with a reason and an example?</label></li>
+                        <li><label><input type="checkbox"> Did I keep one idea going for 20+ seconds?</label></li>
+                        <li><label><input type="checkbox"> Did I stress key words and shorten fillers?</label></li>
+                        <li><label><input type="checkbox"> Did I finish within the time and end with a closing sentence?</label></li>
+                    </ul>
+                </div>
+                <p class="sh-flow-note" style="margin-top:10px;">Write down one task that improved and one target for the next recording.</p>
+            </section>
+
         </main>
 
         <!-- Shared Footer -->
@@ -155,5 +432,11 @@
     </div>
 
     <script src="script.js"></script>
+    <script src="speaking-task.js"></script>
 </body>
 </html>
+
+
+
+
+

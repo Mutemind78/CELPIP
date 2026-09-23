@@ -1,0 +1,262 @@
+/* ==========================================================================
+   SelfPIP — CELPIP Listening study pages (shared)
+   Used by listening-part-1.html ... listening-part-6.html
+   --------------------------------------------------------------------------
+   HOW TO UPDATE
+   * All study content lives in the individual part pages — edit those files.
+   * Every rule below is namespaced with the .lp1- prefix, so nothing in this
+     file can affect other pages or the global layout.
+   * Colours, radius, shadows and transitions are inherited from style.css
+     (--primary, --primary-light, --card-bg, --bg-color, --text-main,
+     --text-muted, --border-color, --shadow, --shadow-hover,
+     --border-radius, --transition), so dark mode keeps working.
+   * Signal cards use a single custom property (--lp1-tone) so adding a new
+     signal type only needs one extra line.
+   ========================================================================== */
+
+html { scroll-behavior: smooth; }
+
+/* ---------- Breadcrumb -------------------------------------------------- */
+.lp1-crumb { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; font-size: 9pt; color: var(--text-muted); margin-bottom: 16px; }
+.lp1-crumb a { color: var(--primary-light); font-weight: 600; text-decoration: none; }
+.lp1-crumb a:hover, .lp1-crumb a:focus { text-decoration: underline; outline: none; }
+.lp1-crumb-here { color: var(--text-main); font-weight: 700; }
+
+/* ---------- Hero / overview -------------------------------------------- */
+.lp1-hero { background: linear-gradient(135deg, #1e3a8a, #3b82f6); color: #ffffff; border-radius: var(--border-radius); padding: 32px 28px; box-shadow: var(--shadow); margin-bottom: 20px; }
+.lp1-hero-kicker { margin: 0 0 6px 0; font-size: 9pt; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; opacity: 0.85; }
+.lp1-hero h1 { margin: 0 0 10px 0; font-size: 1.9rem; font-weight: 800; letter-spacing: -0.5px; }
+.lp1-hero-lead { margin: 0 0 14px 0; font-size: 1.05rem; line-height: 1.55; max-width: 62ch; opacity: 0.95; }
+.lp1-hero-meta { display: flex; flex-wrap: wrap; gap: 8px; }
+.lp1-pill { background: rgba(255, 255, 255, 0.16); border: 1px solid rgba(255, 255, 255, 0.28); border-radius: 999px; padding: 3px 12px; font-size: 8.5pt; font-weight: 600; }
+
+/* ---------- "On this page" jump links ---------------------------------- */
+.lp1-toc { background: var(--card-bg); border: 1px solid var(--border-color); border-radius: var(--border-radius); box-shadow: var(--shadow); padding: 16px 18px; margin-bottom: 28px; }
+.lp1-toc-title { margin: 0 0 10px 0; font-size: 9pt; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: var(--text-muted); }
+.lp1-toc-links { display: flex; flex-wrap: wrap; gap: 8px; }
+.lp1-toc-links a { display: inline-block; background: var(--bg-color); border: 1px solid var(--border-color); border-radius: 999px; padding: 6px 12px; font-size: 9pt; font-weight: 600; color: var(--text-main); text-decoration: none; transition: var(--transition); }
+.lp1-toc-links a:hover, .lp1-toc-links a:focus { border-color: var(--primary-light); color: var(--primary-light); outline: none; }
+
+/* ---------- Section shells -------------------------------------------- */
+.lp1-section { margin-bottom: 36px; scroll-margin-top: 84px; }
+.lp1-section-head { display: flex; align-items: center; gap: 12px; border-bottom: 2px solid var(--border-color); padding-bottom: 10px; margin-bottom: 16px; }
+.lp1-section-num { flex: none; width: 30px; height: 30px; border-radius: 50%; background: var(--primary); color: #ffffff; font-size: 9.5pt; font-weight: 800; display: flex; align-items: center; justify-content: center; }
+.lp1-section-title { margin: 0; font-size: 1.3rem; font-weight: 800; color: var(--text-main); letter-spacing: -0.3px; }
+.lp1-section-tag { margin-left: auto; font-size: 8pt; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: var(--text-muted); text-align: right; }
+
+/* ---------- Panels, headings, text ------------------------------------ */
+.lp1-panel { background: var(--card-bg); border: 1px solid var(--border-color); border-radius: var(--border-radius); box-shadow: var(--shadow); padding: 20px; }
+.lp1-panel + .lp1-panel { margin-top: 14px; }
+.lp1-h2 { margin: 0 0 8px 0; font-size: 1.05rem; font-weight: 700; color: var(--primary); }
+.lp1-h3 { margin: 0 0 6px 0; font-size: 9.5pt; font-weight: 700; color: var(--text-main); text-transform: uppercase; letter-spacing: 0.6px; }
+.lp1-p { margin: 0 0 12px 0; }
+.lp1-p:last-child { margin-bottom: 0; }
+.lp1-muted { color: var(--text-muted); font-size: 9.5pt; }
+.lp1-bullets { margin: 0 0 12px 0; padding-left: 20px; }
+.lp1-bullets li { margin-bottom: 4px; }
+
+/* ---------- Layout grids ---------------------------------------------- */
+.lp1-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 14px; }
+.lp1-grid--wide { grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); }
+.lp1-panel + .lp1-grid, .lp1-grid + .lp1-panel { margin-top: 14px; }
+
+/* ---------- Callouts -------------------------------------------------- */
+.lp1-callout { border: 1px solid var(--border-color); border-left: 4px solid var(--primary-light); border-radius: 6px; background: var(--bg-color); padding: 12px 14px; font-size: 9.5pt; }
+.lp1-callout + .lp1-callout { margin-top: 10px; }
+.lp1-callout--guidance { border-left-color: var(--primary-light); }
+.lp1-callout--note { border-left-color: #0d9488; }
+.lp1-callout--warning { border-left-color: #dc2626; }
+.lp1-callout--example { border-left-color: #16a34a; }
+.lp1-callout--practice { border-left-color: #7c3aed; }
+.lp1-callout strong { color: var(--text-main); }
+
+/* Highlighted key rule (strategy call-to-action) */
+.lp1-rule { margin-top: 14px; border: 1px solid #f59e0b; border-left: 5px solid #f59e0b; background: rgba(245, 158, 11, 0.14); border-radius: 8px; padding: 14px 16px; font-size: 11pt; font-weight: 700; color: var(--text-main); }
+
+/* Mindset card */
+.lp1-mindset { margin-top: 16px; background: linear-gradient(135deg, #1e3a8a, #3b82f6); color: #ffffff; border-radius: var(--border-radius); padding: 16px 18px; box-shadow: var(--shadow); }
+.lp1-mindset-label { margin: 0 0 4px 0; font-size: 8.5pt; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; opacity: 0.85; }
+.lp1-mindset-text { margin: 0; font-size: 1.05rem; font-weight: 800; letter-spacing: 0.4px; }
+
+/* ---------- Conversation flow diagram --------------------------------- */
+.lp1-flow { display: flex; flex-direction: column; gap: 6px; margin: 4px 0 16px 0; }
+.lp1-flow-step { background: var(--bg-color); border: 1px solid var(--border-color); border-left: 4px solid var(--primary-light); border-radius: 8px; padding: 10px 14px; font-size: 10pt; font-weight: 700; color: var(--text-main); }
+.lp1-flow-arrow { text-align: center; color: var(--primary-light); font-size: 1rem; line-height: 1; }
+
+/* ---------- "What you need to do" A–E cards --------------------------- */
+.lp1-need { background: var(--bg-color); border: 1px solid var(--border-color); border-radius: 10px; padding: 16px; }
+.lp1-need-letter { width: 26px; height: 26px; border-radius: 6px; background: var(--primary); color: #ffffff; font-size: 9pt; font-weight: 800; display: flex; align-items: center; justify-content: center; margin-bottom: 8px; }
+.lp1-need-q { margin: 0 0 6px 0; font-size: 9.5pt; font-weight: 700; color: var(--primary); }
+.lp1-need p:last-child { margin-bottom: 0; }
+
+/* ---------- "What to listen for" signal cards ------------------------- */
+.lp1-signal { --lp1-tone: var(--primary-light); background: var(--card-bg); border: 1px solid var(--border-color); border-top: 4px solid var(--lp1-tone); border-radius: 10px; padding: 16px; box-shadow: var(--shadow); }
+/* Signal types: one line each — the tone drives the card top border and the example stripes. */
+.lp1-signal--problem { --lp1-tone: #2563eb; }
+.lp1-signal--topic { --lp1-tone: #2563eb; }
+.lp1-signal--event { --lp1-tone: #2563eb; }
+.lp1-signal--viewpoint { --lp1-tone: #2563eb; }
+.lp1-signal--opinion { --lp1-tone: #2563eb; }
+.lp1-signal--reason { --lp1-tone: #0d9488; }
+.lp1-signal--detail { --lp1-tone: #0d9488; }
+.lp1-signal--evidence { --lp1-tone: #0d9488; }
+.lp1-signal--support { --lp1-tone: #0d9488; }
+.lp1-signal--request { --lp1-tone: #0d9488; }
+.lp1-signal--suggestion { --lp1-tone: #16a34a; }
+.lp1-signal--agreement { --lp1-tone: #16a34a; }
+.lp1-signal--effect { --lp1-tone: #16a34a; }
+.lp1-signal--fact { --lp1-tone: #16a34a; }
+.lp1-signal--arrangement { --lp1-tone: #16a34a; }
+.lp1-signal--contrast { --lp1-tone: #ea580c; }
+.lp1-signal--change { --lp1-tone: #ea580c; }
+.lp1-signal--disagreement { --lp1-tone: #ea580c; }
+.lp1-signal--correction { --lp1-tone: #ea580c; }
+.lp1-signal--update { --lp1-tone: #ea580c; }
+.lp1-signal--cause { --lp1-tone: #ea580c; }
+.lp1-signal--number { --lp1-tone: #ea580c; }
+.lp1-signal--decision { --lp1-tone: #7c3aed; }
+.lp1-signal--hedge { --lp1-tone: #7c3aed; }
+.lp1-signal--summary { --lp1-tone: #7c3aed; }
+.lp1-signal--turn { --lp1-tone: #7c3aed; }
+.lp1-signal--source { --lp1-tone: #64748b; }
+.lp1-signal--background { --lp1-tone: #64748b; }
+.lp1-signal-title { margin: 0 0 6px 0; font-size: 1rem; font-weight: 800; color: var(--text-main); }
+.lp1-signal-intro { margin: 0 0 10px 0; font-size: 9pt; color: var(--text-muted); }
+
+/* Example / quote lists (inherit the card tone when nested inside one) */
+.lp1-examples { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 6px; }
+.lp1-ex { background: var(--bg-color); border-left: 3px solid var(--lp1-tone, #16a34a); border-radius: 6px; padding: 7px 10px; font-size: 9.5pt; font-style: italic; }
+/* ---------- Small utility button (accordion controls, retry) ---------- */
+.lp1-mini-btn { background: none; border: 1px solid var(--border-color); color: var(--text-main); border-radius: 6px; padding: 8px 14px; font: inherit; font-size: 9pt; font-weight: 600; cursor: pointer; transition: var(--transition); }
+.lp1-mini-btn:hover, .lp1-mini-btn:focus-visible { border-color: var(--primary-light); color: var(--primary-light); outline: none; }
+.lp1-retry { margin-top: 12px; }
+
+/* ---------- Expand / collapse cards (accordion) ---------------------- */
+.lp1-acc-controls { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 14px; }
+.lp1-acc { background: var(--card-bg); border: 1px solid var(--border-color); border-radius: 10px; box-shadow: var(--shadow); margin-bottom: 12px; overflow: hidden; }
+.lp1-acc:last-child { margin-bottom: 0; }
+.lp1-acc-head { display: flex; align-items: center; gap: 12px; width: 100%; padding: 14px 16px; background: none; border: 0; font: inherit; color: var(--text-main); text-align: left; cursor: pointer; transition: var(--transition); }
+.lp1-acc-head:hover { background: rgba(59, 130, 246, 0.08); }
+.lp1-acc-head:focus-visible { outline: 2px solid var(--primary-light); outline-offset: -2px; }
+.lp1-acc-head[aria-expanded="true"] { background: var(--bg-color); }
+.lp1-acc-title { font-size: 10.5pt; font-weight: 700; }
+.lp1-acc-hint { display: block; margin-top: 2px; font-size: 8.5pt; font-weight: 500; color: var(--text-muted); }
+.lp1-acc-chevron { margin-left: auto; flex: none; font-size: 9pt; color: var(--text-muted); transition: transform 0.2s ease; }
+.lp1-acc-head[aria-expanded="true"] .lp1-acc-chevron { transform: rotate(180deg); }
+.lp1-acc-body { padding: 14px 16px 16px 16px; border-top: 1px solid var(--border-color); }
+.lp1-acc-body[hidden] { display: none; }
+
+/* ---------- Strategy step numbering + section tags ------------------- */
+.lp1-step-num { flex: none; width: 32px; height: 32px; border-radius: 50%; background: var(--primary); color: #ffffff; font-size: 10pt; font-weight: 800; display: flex; align-items: center; justify-content: center; }
+.lp1-step-label { display: block; font-size: 8pt; font-weight: 700; letter-spacing: 1.2px; text-transform: uppercase; color: var(--text-muted); }
+/* Section tags are handled by .lp1-section-tag above. */
+
+/* ---------- Question-type detail rows ------------------------------- */
+.lp1-qt-row { margin-bottom: 12px; }
+.lp1-qt-row:last-child { margin-bottom: 0; }
+.lp1-qt-label { margin: 0 0 3px 0; font-size: 8.5pt; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: var(--text-muted); }
+.lp1-qt-text { margin: 0; font-size: 9.5pt; font-style: italic; }
+.lp1-qt-answer { margin: 0; font-size: 9.5pt; }
+
+/* ---------- Warning cards (common traps) ---------------------------- */
+.lp1-trap { background: var(--card-bg); border: 1px solid var(--border-color); border-left: 5px solid #dc2626; border-radius: 10px; padding: 16px; box-shadow: var(--shadow); }
+.lp1-trap-head { display: flex; align-items: center; gap: 8px; margin: 0 0 10px 0; font-size: 1rem; font-weight: 800; color: #dc2626; }
+.lp1-bad, .lp1-good { border-radius: 6px; padding: 8px 10px; margin: 0 0 8px 0; font-size: 9.5pt; }
+.lp1-bad { background: rgba(220, 38, 38, 0.10); border-left: 3px solid #dc2626; }
+.lp1-good { background: rgba(22, 163, 74, 0.10); border-left: 3px solid #16a34a; margin-bottom: 0; }
+.lp1-sublabel { display: block; margin-bottom: 2px; font-size: 8pt; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: var(--text-muted); }
+.lp1-chips { display: flex; flex-wrap: wrap; gap: 6px; margin: 0; padding: 0; list-style: none; }
+.lp1-chip { background: var(--bg-color); border: 1px solid var(--border-color); border-radius: 999px; padding: 3px 10px; font-size: 9pt; font-weight: 600; }
+/* ---------- Useful language (vocabulary reference) ------------------ */
+.lp1-vocab { background: var(--bg-color); border: 1px solid var(--border-color); border-radius: 10px; padding: 14px; }
+.lp1-vocab-title { margin: 0 0 10px 0; font-size: 9.5pt; font-weight: 800; letter-spacing: 0.5px; text-transform: uppercase; color: var(--primary-light); }
+
+/* ---------- Mini practice: conversation + questions ----------------- */
+.lp1-practice { border: 2px solid rgba(124, 58, 237, 0.35); }
+.lp1-chat { display: flex; flex-direction: column; gap: 10px; margin: 0 0 18px 0; }
+.lp1-bubble { max-width: 88%; border: 1px solid var(--border-color); border-radius: 12px; padding: 10px 14px; font-size: 10pt; background: var(--bg-color); }
+.lp1-bubble--a { align-self: flex-start; border-left: 4px solid var(--primary-light); }
+.lp1-bubble--b { align-self: flex-end; border-right: 4px solid #7c3aed; background: rgba(124, 58, 237, 0.08); }
+.lp1-speaker { display: block; margin-bottom: 4px; font-size: 8pt; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: var(--text-muted); }
+.lp1-q { background: var(--card-bg); border: 1px solid var(--border-color); border-radius: 10px; padding: 16px; margin-bottom: 14px; }
+.lp1-q:last-child { margin-bottom: 0; }
+.lp1-q-prompt { margin: 0 0 12px 0; font-size: 10pt; font-weight: 700; color: var(--text-main); }
+.lp1-options { display: flex; flex-direction: column; gap: 8px; }
+.lp1-option { width: 100%; padding: 11px 14px; font: inherit; font-size: 9.5pt; text-align: left; color: var(--text-main); background: var(--bg-color); border: 1px solid var(--border-color); border-radius: 8px; cursor: pointer; transition: var(--transition); }
+.lp1-option:hover, .lp1-option:focus-visible { border-color: var(--primary-light); outline: none; }
+.lp1-option[aria-disabled="true"] { cursor: default; }
+.lp1-option.is-correct { border-color: #16a34a; background: rgba(22, 163, 74, 0.14); font-weight: 700; }
+.lp1-option.is-wrong { border-color: #dc2626; background: rgba(220, 38, 38, 0.12); }
+.lp1-option.is-dim { opacity: 0.6; }
+.lp1-feedback { margin-top: 12px; padding: 12px 14px; border: 1px solid var(--border-color); border-radius: 8px; font-size: 9.5pt; }
+.lp1-feedback.is-correct { border-left: 4px solid #16a34a; background: rgba(22, 163, 74, 0.10); }
+.lp1-feedback.is-wrong { border-left: 4px solid #dc2626; background: rgba(220, 38, 38, 0.10); }
+.lp1-feedback-title { margin: 0 0 4px 0; font-weight: 800; }
+.lp1-feedback-text { margin: 0; }
+.lp1-feedback[hidden] { display: none; }
+/* ---------- Quick checklist ---------------------------------------- */
+.lp1-checklist { display: flex; flex-direction: column; gap: 8px; }
+.lp1-check { display: flex; align-items: flex-start; gap: 10px; padding: 11px 14px; background: var(--bg-color); border: 1px solid var(--border-color); border-radius: 8px; font-size: 9.5pt; cursor: pointer; transition: var(--transition); }
+.lp1-check:hover { border-color: var(--primary-light); }
+.lp1-check input { flex: none; width: 18px; height: 18px; margin: 1px 0 0 0; accent-color: #0d9488; cursor: pointer; }
+.lp1-check.is-done span { text-decoration: line-through; opacity: 0.6; }
+.lp1-checklist-foot { display: flex; flex-wrap: wrap; align-items: center; gap: 12px; margin-top: 14px; }
+.lp1-counter { font-size: 9pt; font-weight: 600; color: var(--text-muted); }
+.lp1-top-link { margin: 28px 0 0 0; text-align: right; font-size: 9pt; }
+.lp1-top-link a { color: var(--primary-light); font-weight: 600; text-decoration: none; }
+.lp1-top-link a:hover, .lp1-top-link a:focus { text-decoration: underline; outline: none; }
+
+/* ---------- Overflow protection (no horizontal scroll on mobile) ---- */
+.lp1-section, .lp1-panel, .lp1-acc, .lp1-q, .lp1-need, .lp1-signal, .lp1-trap, .lp1-vocab, .lp1-hero, .lp1-bubble, .lp1-check { min-width: 0; overflow-wrap: break-word; }
+
+/* ---------- Mobile --------------------------------------------------- */
+@media (max-width: 640px) {
+    .lp1-hero { padding: 24px 18px; }
+    .lp1-hero h1 { font-size: 1.5rem; }
+    .lp1-hero-lead { font-size: 1rem; }
+    .lp1-section-head { gap: 10px; }
+    .lp1-section-num { width: 26px; height: 26px; font-size: 9pt; }
+    .lp1-section-title { font-size: 1.15rem; }
+    .lp1-section-tag { display: none; }
+    .lp1-panel, .lp1-trap, .lp1-q { padding: 14px; }
+    .lp1-acc-head { padding: 12px 14px; gap: 10px; }
+    .lp1-acc-body { padding: 12px 14px 14px 14px; }
+    .lp1-option { padding: 13px 14px; }
+    .lp1-mini-btn { width: 100%; padding: 12px 14px; }
+    .lp1-bubble { max-width: 100%; }
+    .lp1-check input { width: 20px; height: 20px; }
+    .lp1-toc { padding: 14px; }
+}
+
+/* ---------- Print (whole guide visible, quiet chrome) ---------------- */
+@media print {
+    .lp1-acc-body[hidden] { display: block !important; }
+    .lp1-acc-controls, .lp1-toc, .lp1-crumb, .lp1-top-link, .lp1-checklist-foot, .lp1-feedback, .lp1-retry { display: none !important; }
+    .lp1-hero, .lp1-mindset { background: #1e3a8a !important; color: #ffffff !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    .lp1-section, .lp1-acc, .lp1-trap, .lp1-q { break-inside: avoid; }
+}
+
+/* ---------- Note-taking system (symbols + sample note) --------------- */
+.lp1-symbols { list-style: none; margin: 0 0 14px 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(148px, 1fr)); gap: 8px; }
+.lp1-symbol { display: flex; align-items: center; gap: 10px; background: var(--bg-color); border: 1px solid var(--border-color); border-radius: 8px; padding: 8px 12px; font-size: 9.5pt; }
+.lp1-symbol-key { flex: none; min-width: 28px; text-align: center; font-family: Consolas, "Courier New", monospace; font-size: 11pt; font-weight: 700; color: var(--primary-light); }
+.lp1-note-sample { margin: 0; padding: 12px 14px; background: var(--bg-color); border: 1px dashed var(--border-color); border-radius: 8px; font-family: Consolas, "Courier New", monospace; font-size: 9.5pt; line-height: 1.75; white-space: pre-line; color: var(--text-main); }
+
+/* ---------- Checklist groups + part navigation ----------------------- */
+.lp1-check-group { margin: 18px 0 8px 0; font-size: 9.5pt; font-weight: 800; letter-spacing: 0.8px; text-transform: uppercase; color: var(--primary); }
+.lp1-checklist + .lp1-check-group { margin-top: 20px; }
+.lp1-partnav { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; justify-content: space-between; margin-top: 28px; padding-top: 16px; border-top: 1px solid var(--border-color); font-size: 9.5pt; }
+.lp1-partnav a { color: var(--primary-light); font-weight: 600; text-decoration: none; }
+.lp1-partnav a:hover, .lp1-partnav a:focus { text-decoration: underline; outline: none; }
+.lp1-partnav-side { flex: 1 1 200px; }
+.lp1-partnav-side--right { text-align: right; }
+
+/* ---------- Mini-example explanations (why correct / why tempting) --- */
+.lp1-feedback-tempting { margin: 8px 0 0 0; padding-top: 8px; border-top: 1px dashed var(--border-color); font-size: 9.5pt; color: var(--text-muted); }
+.lp1-feedback-tempting[hidden] { display: none; }
+.lp1-situation { margin: 0 0 14px 0; padding: 14px; background: var(--bg-color); border: 1px solid var(--border-color); border-left: 4px solid #7c3aed; border-radius: 8px; font-size: 9.5pt; }
+.lp1-situation-label { display: block; margin-bottom: 6px; font-size: 8pt; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: #7c3aed; }
+
+
+
+

@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grammar — Language — SelfPIP</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="language-pages.css">
+</head>
+<body data-theme="light">
+    <div class="app-container">
+        <!-- Reusable Navigation Bar -->
+        <header>
+            <div class="nav-container">
+                <a href="index.html" class="logo-link">
+                    Self<span class="logo-accent">PIP</span>
+                </a>
+                <nav class="desktop-nav">
+                    <a href="index.html" class="nav-item">Home</a>
+                    <a href="listening.html" class="nav-item">Listening</a>
+                    <a href="reading.html" class="nav-item">Reading</a>
+                    <a href="writing.html" class="nav-item">Writing</a>
+                    <a href="speaking.html" class="nav-item">Speaking</a>
+                    <a href="language.html" class="nav-item active">Language</a>
+                    <a href="practice.html" class="nav-item">Practice</a>
+                </nav>
+                <button class="menu-toggle" aria-label="Toggle Navigation Menu" onclick="toggleMobileMenu()">
+                    ☰
+                </button>
+            </div>
+            <div class="mobile-nav" id="mobileNav">
+                <a href="index.html" class="nav-item">Home</a>
+                <a href="listening.html" class="nav-item">Listening</a>
+                <a href="reading.html" class="nav-item">Reading</a>
+                <a href="writing.html" class="nav-item">Writing</a>
+                <a href="speaking.html" class="nav-item">Speaking</a>
+                <a href="language.html" class="nav-item active">Language</a>
+                <a href="practice.html" class="nav-item">Practice</a>
+            </div>
+        </header>
+
+        <!-- Main Content Area -->
+        <main class="main-content">
+            <!-- Breadcrumb: Language → Grammar -->
+            <nav class="lpn-crumb" aria-label="Breadcrumb">
+                <a href="language.html">← Language</a>
+                <span aria-hidden="true">→</span>
+                <span class="lpn-crumb-here">Grammar</span>
+            </nav>
+
+            <!-- Hero -->
+            <section class="lpn-hero">
+                <p class="lpn-hero-kicker">Language · Grammar</p>
+                <h1>Grammar for Clear Communication</h1>
+                <p class="lpn-hero-lead">Fix the mistakes that cost you points, build sentences that hold together, and give your Writing and Speaking answers a solid, professional shape.</p>
+                <div class="lpn-hero-meta">
+                    <span class="lpn-pill">9 core topics</span>
+                    <span class="lpn-pill">Fix-the-Sentence drill</span>
+                    <span class="lpn-pill">SelfPIP study guide</span>
+                </div>
+            </section>
+
+            <!-- On this page -->
+            <nav class="lpn-toc" aria-label="On this page">
+                <p class="lpn-toc-title">On this page</p>
+                <div class="lpn-toc-links">
+                    <a href="#why">1. Why Grammar Matters</a>
+                    <a href="#topics">2. Nine Core Topics</a>
+                    <a href="#sentences">3. Sentence Types</a>
+                    <a href="#practice">4. Fix the Sentence</a>
+                    <a href="#cross">5. Use It in Your Practice</a>
+                </div>
+            </nav>
+
+            <!-- ======================================================
+                 SECTION 1 — WHY GRAMMAR MATTERS
+                 ====================================================== -->
+            <section class="lpn-section" id="why" aria-labelledby="lpn-h-why">
+                <div class="lpn-section-head">
+                    <span class="lpn-section-num" aria-hidden="true">1</span>
+                    <h2 class="lpn-section-title" id="lpn-h-why">Why Grammar Matters in CELPIP</h2>
+                    <span class="lpn-section-tag">The big picture</span>
+                </div>
+
+                <div class="lpn-panel">
+                    <p class="lpn-p">CELPIP raters read and listen to your <strong>ideas first</strong>. Grammar is how those ideas arrive. One repeated error — a missing article, a verb that does not agree with its subject — forces the rater to re-read or re-listen, and your clarity drops even when the idea itself was good.</p>
+                    <p class="lpn-p lpn-muted">You do not need perfect grammar. You need grammar that never gets in the way of your meaning.</p>
+                    <div class="lpn-callout lpn-callout--guidance">
+                        <strong>Official format vs SelfPIP advice:</strong> CELPIP publishes general rating criteria for Writing and Speaking. The nine topics, examples and drills on this page are SelfPIP study guidance built from standard English grammar — they are not official CELPIP rules.
+                    </div>
+                </div>
+
+                <div class="lpn-rule"><strong>Golden rule:</strong> one idea, one clear sentence — if in doubt, make the sentence shorter.</div>
+            </section>
+
+            <!-- ======================================================
+                 SECTION 2 — NINE CORE TOPICS (expandable cards)
+                 ====================================================== -->
+            <section class="lpn-section" id="topics" aria-labelledby="lpn-h-topics">
+                <div class="lpn-section-head">
+                    <span class="lpn-section-num" aria-hidden="true">2</span>
+                    <h2 class="lpn-section-title" id="lpn-h-topics">Nine Core Grammar Topics</h2>
+                    <span class="lpn-section-tag">Open a card to study</span>
+                </div>
+
+                <div class="lpn-panel">
+                    <div class="lpn-acc-controls lpn-controls" data-lpn-acc-group="topics">
+                        <button type="button" class="lpn-mini-btn" data-lpn-acc-control="open" data-lpn-acc-for="topics">Expand all</button>
+                        <button type="button" class="lpn-mini-btn" data-lpn-acc-control="close" data-lpn-acc-for="topics">Collapse all</button>
+                    </div>
+
+                    <!-- Topic 1 -->
+                    <div class="lpn-acc" data-lpn-acc-group="topics">
+                        <button type="button" class="lpn-acc-head" data-lpn-acc-head aria-expanded="true" aria-controls="acc-g1">
+                            <span>
+                                <span class="lpn-acc-title">1. Subject–Verb Agreement</span>
+                                <span class="lpn-acc-hint">The verb must match the subject — even when words sit between them.</span>
+                            </span>
+                            <span class="lpn-acc-chevron" aria-hidden="true">▼</span>
+                        </button>
+                        <div class="lpn-acc-body" id="acc-g1">
+                            <p class="lpn-p">A singular subject takes a singular verb; a plural subject takes a plural verb. The trap is distance: phrases like "along with the manager" or "of the reports" hide the real subject from the verb.</p>
+                            <div class="lpn-ex-row"><span class="lpn-ex-label lpn-ex-label--wrong">Incorrect</span><span class="lpn-ex-text lpn-wrong">The list of requirements are long.</span></div>
+                            <div class="lpn-ex-row"><span class="lpn-ex-label lpn-ex-label--right">Correct</span><span class="lpn-ex-text lpn-right">The list of requirements is long.</span></div>
+                            <div class="lpn-ex-row"><span class="lpn-ex-label lpn-ex-label--wrong">Incorrect</span><span class="lpn-ex-text lpn-wrong">Everyone have their own opinion.</span></div>
+                            <div class="lpn-ex-row"><span class="lpn-ex-label lpn-ex-label--right">Correct</span><span class="lpn-ex-text lpn-right">Everyone has their own opinion.</span></div>
+                            <div class="lpn-callout lpn-callout--note"><strong>Quick tip:</strong> cross out everything between the subject and the verb, then read just those two words aloud.</div>
+                        </div>
+                    </div>
+
+                    <!-- Topic 2 -->
+                    <div class="lpn-acc" data-lpn-acc-group="topics">
+                        <button type="button" class="lpn-acc-head" data-lpn-acc-head aria-expanded="false" aria-controls="acc-g2">
+                            <span>
+                                <span class="lpn-acc-title">2. Verb Tenses</span>
+                                <span class="lpn-acc-hint">Pick one timeline for your answer — and stay on it.</span>
+                            </span>
+                            <span class="lpn-acc-chevron" aria-hidden="true">▼</span>
+                        </button>
+                        <div class="lpn-acc-body" id="acc-g2" hidden>
+                            <p class="lpn-p">Time words choose the tense for you. "Yesterday / last week" demands the simple past; "since 2019 / so far" links the past to now, so it needs the present perfect (have/has + past participle).</p>
+                            <div class="lpn-ex-row"><span class="lpn-ex-label lpn-ex-label--wrong">Incorrect</span><span class="lpn-ex-text lpn-wrong">I am living here since 2019.</span></div>
+                            <div class="lpn-ex-row"><span class="lpn-ex-label lpn-ex-label--right">Correct</span><span class="lpn-ex-text lpn-right">I have lived here since 2019.</span></div>
+                            <div class="lpn-ex-row"><span class="lpn-ex-label lpn-ex-label--wrong">Incorrect</span><span class="lpn-ex-text lpn-wrong">Yesterday I go to the bank after work.</span></div>
+                            <div class="lpn-ex-row"><span class="lpn-ex-label lpn-ex-label--right">Correct</span><span class="lpn-ex-text lpn-right">Yesterday I went to the bank after work.</span></div>
+                            <div class="lpn-callout lpn-callout--note"><strong>Quick tip:</strong> in one paragraph, do not jump timelines without a reason. Past events stay past until something brings you back to now.</div>
+                        </div>
+                    </div>
+
+                    <!-- Topic 3 -->
+                    <div class="lpn-acc" data-lpn-acc-group="topics">
+                        <button type="button" class="lpn-acc-head" data-lpn-acc-head aria-expanded="false" aria-controls="acc-g3">
+                            <span>
+                                <span class="lpn-acc-title">3. Articles: a, an, the</span>
+                                <span class="lpn-acc-hint">First mention gets a/an, known mention gets the, general plural gets nothing.</span>
+                            </span>
+                            <span class="lpn-acc-chevron" aria-hidden="true">▼</span>
+                        </button>
+                        <div class="lpn-acc-body" id="acc-g3" hidden>
+                            <p class="lpn-p">Use <strong>a/an</strong> the first time you mention a singular countable thing. Use <strong>the</strong> when both speakers know exactly which one. Use <strong>no article</strong> for general plural or uncountable statements.</p>
+                            <div class="lpn-ex-row"><span class="lpn-ex-label lpn-ex-label--wrong">Incorrect</span><span class="lpn-ex-text lpn-wrong">I went to library after work.</span></div>
+                            <div class="lpn-ex-row"><span class="lpn-ex-label lpn-ex-label--right">Correct</span><span class="lpn-ex-text lpn-right">I went to a library after work.</span></div>
+                            <div class="lpn-ex-row"><span class="lpn-ex-label lpn-ex-label--wrong">Incorrect</span><span class="lpn-ex-text lpn-wrong">She is a honest supervisor.</span></div>
+                            <div class="lpn-ex-row"><span class="lpn-ex-label lpn-ex-label--right">Correct</span><span class="lpn-ex-text lpn-right">She is an honest supervisor.</span></div>
+                            <div class="lpn-callout lpn-callout--note"><strong>Quick tip:</strong> a singular countable noun almost never stands alone — “I need <em>an</em> answer”, never “I need answer”.</div>
+                        </div>
+                    </div>
+
+                    <!-- Topic 4 -->
+                    <div class="lpn-acc" data-lpn-acc-group="topics">
+                        <button type="button" class="lpn-acc-head" data-lpn-acc-head aria-expanded="false" aria-controls="acc-g4">
+                            <span>
+                                <span class="lpn-acc-title">4. Prepositions</span>
+                                <span class="lpn-acc-hint">Learn the whole chunk — verb + preposition arrives as one unit.</span>
+                            </span>
+                            <span class="lpn-acc-chevron" aria-hidden="true">▼</span>
+                        </button>
+                        <div class="lpn-acc-body" id="acc-g4" hidden>
+                            <p class="lpn-p">Prepositions follow habit, not logic: you depend <strong>on</strong>, you are interested <strong>in</strong>, you arrive <strong>at</strong> a place <strong>in</strong> a city. Memorise the phrase, not the preposition alone.</p>
+                            <div class="lpn-ex-row"><span class="lpn-ex-label lpn-ex-label--wrong">Incorrect</span><span class="lpn-ex-text lpn-wrong">I arrived to work at eight.</span></div>
+                            <div class="lpn-ex-row"><span class="lpn-ex-label lpn-ex-label--right">Correct</span><span class="lpn-ex-text lpn-right">I arrived at work at eight.</span></div>
+                            <div class="lpn-ex-row"><span class="lpn-ex-label lpn-ex-label--wrong">Incorrect</span><span class="lpn-ex-text lpn-wrong">We discussed about the budget.</span></div>
+                            <div class="lpn-ex-row"><span class="lpn-ex-label lpn-ex-label--right">Correct</span><span class="lpn-ex-text lpn-right">We discussed the budget.</span></div>
+                            <div class="lpn-callout lpn-callout--note"><strong>Quick tip:</strong> discuss, enter, reach and last take <em>no</em> preposition — “discuss the plan”, never “discuss about the plan”.</div>
+                        </div>
+                    </div>
+
+                    <!-- Topic 5 -->
+                    <div class="lpn-acc" data-lpn-acc-group="topics">
+                        <button type="button" class="lpn-acc-head" data-lpn-acc-head aria-expanded="false" aria-controls="acc-g5">
+                            <span>
+                                <span class="lpn-acc-title">5. Pronouns</span>
+                                <span class="lpn-acc-hint">Every pronoun needs one obvious noun to point back to.</span>
+                            </span>
+                            <span class="lpn-acc-chevron" aria-hidden="true">▼</span>
+                        </button>
+                        <div class="lpn-acc-body" id="acc-g5" hidden>
+                            <p class="lpn-p">A pronoun must point to one clear noun — especially when you refer to a company, a group or a previous idea. After a verb or preposition (to, for, between, with) use <strong>me / us / them</strong>, not I / we / they.</p>
+                            <div class="lpn-ex-row"><span class="lpn-ex-label lpn-ex-label--wrong">Incorrect</span><span class="lpn-ex-text lpn-wrong">My sister and me went to the pier.</span></div>
+                            <div class="lpn-ex-row"><span class="lpn-ex-label lpn-ex-label--right">Correct</span><span class="lpn-ex-text lpn-right">My sister and I went to the pier.</span></div>
+                            <div class="lpn-ex-row"><span class="lpn-ex-label lpn-ex-label--wrong">Incorrect</span><span class="lpn-ex-text lpn-wrong">Send the report to Lisa and I.</span></div>
+                            <div class="lpn-ex-row"><span class="lpn-ex-label lpn-ex-label--right">Correct</span><span class="lpn-ex-text lpn-right">Send the report to Lisa and me.</span></div>
+                            <div class="lpn-callout lpn-callout--note"><strong>Quick tip:</strong> remove the other person from the sentence — “me went to the pier” is obviously wrong, so it must be “I went”.</div>
+                        </div>
+                    </div>
+
+                    <!-- Topic 6 -->
+                    <div class="lpn-acc" data-lpn-acc-group="topics">
+                        <button type="button" class="lpn-acc-head" data-lpn-acc-head aria-expanded="false" aria-controls="acc-g6">
+                            <span>
+                                <span class="lpn-acc-title">6. Sentence Structure</span>
+                                <span class="lpn-acc-hint">One complete thought = one sentence. Fix fragments and run-ons.</span>
+                            </span>
+                            <span class="lpn-acc-chevron" aria-hidden="true">▼</span>
+                        </button>
+                        <div class="lpn-acc-body" id="acc-g6" hidden>
+                            <p class="lpn-p">A complete sentence needs a subject and a verb. Two independent thoughts need a period, a semicolon, or a joining word such as <em>so, but, because</em> — never just a comma.</p>
+                            <div class="lpn-ex-row"><span class="lpn-ex-label lpn-ex-label--wrong">Incorrect</span><span class="lpn-ex-text lpn-wrong">Because the bus was late. I missed the exam.</span></div>
+                            <div class="lpn-ex-row"><span class="lpn-ex-label lpn-ex-label--right">Correct</span><span class="lpn-ex-text lpn-right">Because the bus was late, I missed the exam.</span></div>
+                            <div class="lpn-ex-row"><span class="lpn-ex-label lpn-ex-label--wrong">Incorrect</span><span class="lpn-ex-text lpn-wrong">The schedule changed, I stayed late.</span></div>
+                            <div class="lpn-ex-row"><span class="lpn-ex-label lpn-ex-label--right">Correct</span><span class="lpn-ex-text lpn-right">The schedule changed, so I stayed late.</span></div>
+                            <div class="lpn-callout lpn-callout--note"><strong>Quick tip:</strong> read your sentence aloud — if you run out of breath before a stop, you have a run-on sentence.</div>
+                        </div>
+                    </div>
+
+                    <!-- Topic 7 -->
+                    <div class="lpn-acc" data-lpn-acc-group="topics">
+                        <button type="button" class="lpn-acc-head" data-lpn-acc-head aria-expanded="false" aria-controls="acc-g7">
+                            <span>
+                                <span class="lpn-acc-title">7. Active &amp; Passive Voice</span>
+                                <span class="lpn-acc-hint">Pick the voice by what you want in focus — and never switch mid-answer.</span>
+                            </span>
+                            <span class="lpn-acc-chevron" aria-hidden="true">▼</span>
+                        </button>
+                        <div class="lpn-acc-body" id="acc-g7" hidden>
+                            <p class="lpn-p">Active puts the doer first: “The city closed the lane.” Passive puts the thing acted on first: “The lane was closed.” Use passive when the doer is unknown, obvious or less important — then keep the tense correct on <strong>be</strong>.</p>
+                            <div class="lpn-ex-row"><span class="lpn-ex-label lpn-ex-label--wrong">Incorrect</span><span class="lpn-ex-text lpn-wrong">The report was finish yesterday.</span></div>
+                            <div class="lpn-ex-row"><span class="lpn-ex-label lpn-ex-label--right">Correct</span><span class="lpn-ex-text lpn-right">The report was finished yesterday.</span></div>
+                            <div class="lpn-ex-row"><span class="lpn-ex-label lpn-ex-label--wrong">Incorrect</span><span class="lpn-ex-text lpn-wrong">The parcels are deliver every morning.</span></div>
+                            <div class="lpn-ex-row"><span class="lpn-ex-label lpn-ex-label--right">Correct</span><span class="lpn-ex-text lpn-right">The parcels are delivered every morning.</span></div>
+                            <div class="lpn-callout lpn-callout--note"><strong>Quick tip:</strong> passive = <em>be</em> + past participle. Check the be-verb matches your tense (was / is / will be + delivered).</div>
+                        </div>
+                    </div>
+
+                    <!-- Topic 8 -->
+                    <div class="lpn-acc" data-lpn-acc-group="topics">
+                        <button type="button" class="lpn-acc-head" data-lpn-acc-head aria-expanded="false" aria-controls="acc-g8">
+                            <span>
+                                <span class="lpn-acc-title">8. Conditionals</span>
+                                <span class="lpn-acc-hint">Zero, first, second, third — each has its own shape.</span>
+                            </span>
+                            <span class="lpn-acc-chevron" aria-hidden="true">▼</span>
+                        </button>
+                        <div class="lpn-acc-body" id="acc-g8" hidden>
+                            <p class="lpn-p"><strong>Zero:</strong> If you heat water, it boils. <strong>First (real future):</strong> If it rains, we will cancel the picnic. <strong>Second (unlikely now):</strong> If I had more time, I would volunteer. <strong>Third (past regret):</strong> If I had left earlier, I would have caught the bus.</p>
+                            <div class="lpn-ex-row"><span class="lpn-ex-label lpn-ex-label--wrong">Incorrect</span><span class="lpn-ex-text lpn-wrong">If it will rain, we will cancel the picnic.</span></div>
+                            <div class="lpn-ex-row"><span class="lpn-ex-label lpn-ex-label--right">Correct</span><span class="lpn-ex-text lpn-right">If it rains, we will cancel the picnic.</span></div>
+                            <div class="lpn-ex-row"><span class="lpn-ex-label lpn-ex-label--wrong">Incorrect</span><span class="lpn-ex-text lpn-wrong">If I would have more time, I would volunteer.</span></div>
+                            <div class="lpn-ex-row"><span class="lpn-ex-label lpn-ex-label--right">Correct</span><span class="lpn-ex-text lpn-right">If I had more time, I would volunteer.</span></div>
+                            <div class="lpn-callout lpn-callout--note"><strong>Quick tip:</strong> never put will/would inside the if-clause — the if-clause takes plain present, plain past, or past perfect.</div>
+                        </div>
+                    </div>
+
+                    <!-- Topic 9 -->
+                    <div class="lpn-acc" data-lpn-acc-group="topics">
+                        <button type="button" class="lpn-acc-head" data-lpn-acc-head aria-expanded="false" aria-controls="acc-g9">
+                            <span>
+                                <span class="lpn-acc-title">9. Modals</span>
+                                <span class="lpn-acc-hint">One modal + base verb — can, could, should, must, might.</span>
+                            </span>
+                            <span class="lpn-acc-chevron" aria-hidden="true">▼</span>
+                        </button>
+                        <div class="lpn-acc-body" id="acc-g9" hidden>
+                            <p class="lpn-p">A modal is always followed by the bare infinitive: “You should check”, never “you should to check” and never “you should checks”. For requests, climb the ladder <strong>can → could → may</strong> as politeness rises.</p>
+                            <div class="lpn-ex-row"><span class="lpn-ex-label lpn-ex-label--wrong">Incorrect</span><span class="lpn-ex-text lpn-wrong">You should to check the schedule first.</span></div>
+                            <div class="lpn-ex-row"><span class="lpn-ex-label lpn-ex-label--right">Correct</span><span class="lpn-ex-text lpn-right">You should check the schedule first.</span></div>
+                            <div class="lpn-ex-row"><span class="lpn-ex-label lpn-ex-label--wrong">Incorrect</span><span class="lpn-ex-text lpn-wrong">I must to arrive early tomorrow.</span></div>
+                            <div class="lpn-ex-row"><span class="lpn-ex-label lpn-ex-label--right">Correct</span><span class="lpn-ex-text lpn-right">I must arrive early tomorrow.</span></div>
+                            <div class="lpn-callout lpn-callout--note"><strong>Quick tip:</strong> <em>must not</em> = it is forbidden; <em>do not have to</em> = it is not necessary. Do not mix them up.</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ======================================================
+                 SECTION 3 — SENTENCE TYPES
+                 ====================================================== -->
+            <section class="lpn-section" id="sentences" aria-labelledby="lpn-h-sentences">
+                <div class="lpn-section-head">
+                    <span class="lpn-section-num" aria-hidden="true">3</span>
+                    <h2 class="lpn-section-title" id="lpn-h-sentences">Three Sentence Types</h2>
+                    <span class="lpn-section-tag">Mix them to control your rhythm</span>
+                </div>
+
+                <div class="lpn-grid">
+                    <div class="lpn-panel">
+                        <p class="lpn-h2">Simple</p>
+                        <p class="lpn-p"><strong>One</strong> independent clause. <em>The bus arrived late.</em></p>
+                        <p class="lpn-p lpn-muted">Use simple sentences for punchy points and clear recommendations — they are easy to follow under time pressure.</p>
+                    </div>
+                    <div class="lpn-panel">
+                        <p class="lpn-h2">Compound</p>
+                        <p class="lpn-p"><strong>Two</strong> independent clauses joined by <em>and, but, so</em>, a semicolon, or a colon. <em>The bus arrived late, so the meeting started without me.</em></p>
+                        <p class="lpn-p lpn-muted">Use compound sentences to show cause, contrast or sequence between two equal ideas.</p>
+                    </div>
+                    <div class="lpn-panel">
+                        <p class="lpn-h2">Complex</p>
+                        <p class="lpn-p"><strong>One</strong> independent clause + <strong>one or more</strong> dependent clauses (<em>because, although, when, if, since</em>). <em>Although the bus arrived late, the office waited for me.</em></p>
+                        <p class="lpn-p lpn-muted">Complex sentences show relationships between ideas — this is what “cohesion and coherence” rewards.</p>
+                    </div>
+                </div>
+
+                <div class="lpn-callout lpn-callout--example"><strong>The reliable rhythm:</strong> open with a complex sentence to state the relationship, then prove it with short simple ones. Vary the pattern — a paragraph of only simple sentences looks like a list.</div>
+            </section>
+
+            <!-- ======================================================
+                 SECTION 4 — FIX THE SENTENCE (drill)
+                 ====================================================== -->
+            <section class="lpn-section" id="practice" aria-labelledby="lpn-h-practice">
+                <div class="lpn-section-head">
+                    <span class="lpn-section-num" aria-hidden="true">4</span>
+                    <h2 class="lpn-section-title" id="lpn-h-practice">Fix the Sentence</h2>
+                    <span class="lpn-section-tag">10 quick traps</span>
+                </div>
+
+                <div class="lpn-panel">
+                    <p class="lpn-p lpn-muted">Choose the version you would actually use. The feedback explains the rule behind each answer.</p>
+
+                    <div class="lpn-q" data-lpn-quiz data-lpn-explain="The subject is “list” (singular) — everything between the subject and the verb is decoration.">
+                        <p class="lpn-q-prompt"><strong>1.</strong> The list of requirements ___ on the desk.</p>
+                        <div class="lpn-options">
+                            <button type="button" class="lpn-option" data-lpn-option="is" data-lpn-correct="true">is</button>
+                            <button type="button" class="lpn-option" data-lpn-option="are" data-lpn-why="That agrees with “requirements”, not the real subject.">are</button>
+                            <button type="button" class="lpn-option" data-lpn-option="be" data-lpn-why="Even a plural subject needs a real verb form, not “be”.">be</button>
+                        </div>
+                        <div class="lpn-feedback" data-lpn-feedback hidden><p class="lpn-feedback-title" data-lpn-feedback-title></p><p class="lpn-feedback-text" data-lpn-feedback-text></p></div>
+                        <button type="button" class="lpn-btn lpn-retry" data-lpn-retry hidden>Try again</button>
+                    </div>
+
+                    <div class="lpn-q" data-lpn-quiz data-lpn-explain="Two finished past actions in order: the earlier one takes the past perfect.">
+                        <p class="lpn-q-prompt"><strong>2.</strong> By the time we arrived, the meeting ___ .</p>
+                        <div class="lpn-options">
+                            <button type="button" class="lpn-option" data-lpn-option="left" data-lpn-why="Sequence matters — the leaving finished before the arriving.">left</button>
+                            <button type="button" class="lpn-option" data-lpn-option="had left" data-lpn-correct="true">had left</button>
+                            <button type="button" class="lpn-option" data-lpn-option="has left" data-lpn-why="“By the time we arrived” anchors the story in the past, not the present.">has left</button>
+                        </div>
+                        <div class="lpn-feedback" data-lpn-feedback hidden><p class="lpn-feedback-title" data-lpn-feedback-title></p><p class="lpn-feedback-text" data-lpn-feedback-text></p></div>
+                        <button type="button" class="lpn-btn lpn-retry" data-lpn-retry hidden>Try again</button>
+                    </div>
+
+                    <div class="lpn-q" data-lpn-quiz data-lpn-explain="Use “an” before a vowel sound — the h in “honest” is silent, so the word starts with a vowel.">
+                        <p class="lpn-q-prompt"><strong>3.</strong> My neighbour is ___ honest person who always tells the truth.</p>
+                        <div class="lpn-options">
+                            <button type="button" class="lpn-option" data-lpn-option="a" data-lpn-why="Look at the sound, not the letter: “honest” begins with a vowel sound.">a</button>
+                            <button type="button" class="lpn-option" data-lpn-option="an" data-lpn-correct="true">an</button>
+                            <button type="button" class="lpn-option" data-lpn-option="the" data-lpn-why="Nothing has been identified yet — this is the first mention.">the</button>
+                        </div>
+                        <div class="lpn-feedback" data-lpn-feedback hidden><p class="lpn-feedback-title" data-lpn-feedback-title></p><p class="lpn-feedback-text" data-lpn-feedback-text></p></div>
+                        <button type="button" class="lpn-btn lpn-retry" data-lpn-retry hidden>Try again</button>
+                    </div>
+
+                    <div class="lpn-q" data-lpn-quiz data-lpn-explain="First conditional: if + present simple, will + base verb. There is no “will” inside the if-clause.">
+                        <p class="lpn-q-prompt"><strong>4.</strong> If it ___ tomorrow, we will cancel the picnic.</p>
+                        <div class="lpn-options">
+                            <button type="button" class="lpn-option" data-lpn-option="rains" data-lpn-correct="true">rains</button>
+                            <button type="button" class="lpn-option" data-lpn-option="will rain" data-lpn-why="Never put “will” in the if-clause of a real conditional.">will rain</button>
+                            <button type="button" class="lpn-option" data-lpn-option="would rain" data-lpn-why="“Would” belongs to hypothetical situations, not likely future ones.">would rain</button>
+                        </div>
+                        <div class="lpn-feedback" data-lpn-feedback hidden><p class="lpn-feedback-title" data-lpn-feedback-title></p><p class="lpn-feedback-text" data-lpn-feedback-text></p></div>
+                        <button type="button" class="lpn-btn lpn-retry" data-lpn-retry hidden>Try again</button>
+                    </div>
+
+                    <div class="lpn-q" data-lpn-quiz data-lpn-explain="With neither…nor, the verb agrees with the noun closest to it — “employees” (plural).">
+                        <p class="lpn-q-prompt"><strong>5.</strong> Neither the manager nor the employees ___ available.</p>
+                        <div class="lpn-options">
+                            <button type="button" class="lpn-option" data-lpn-option="was" data-lpn-why="“Was” would agree with “manager”, but the nearer subject is plural.">was</button>
+                            <button type="button" class="lpn-option" data-lpn-option="were" data-lpn-correct="true">were</button>
+                            <button type="button" class="lpn-option" data-lpn-option="is" data-lpn-why="The whole sentence is past, not present.">is</button>
+                        </div>
+                        <div class="lpn-feedback" data-lpn-feedback hidden><p class="lpn-feedback-title" data-lpn-feedback-title></p><p class="lpn-feedback-text" data-lpn-feedback-text></p></div>
+                        <button type="button" class="lpn-btn lpn-retry" data-lpn-retry hidden>Try again</button>
+                    </div>
+
+                    <div class="lpn-q" data-lpn-quiz data-lpn-explain="A sentence needs a subject and verb that stand alone — “because” and “to” turn it into a fragment.">
+                        <p class="lpn-q-prompt"><strong>6.</strong> Which sentence is complete?</p>
+                        <div class="lpn-options">
+                            <button type="button" class="lpn-option" data-lpn-option="Because the office was closed." data-lpn-why="A because-clause cannot stand alone.">Because the office was closed.</button>
+                            <button type="button" class="lpn-option" data-lpn-option="We left a note." data-lpn-correct="true">We left a note.</button>
+                            <button type="button" class="lpn-option" data-lpn-option="To finish the report." data-lpn-why="An infinitive phrase is not a sentence.">To finish the report.</button>
+                        </div>
+                        <div class="lpn-feedback" data-lpn-feedback hidden><p class="lpn-feedback-title" data-lpn-feedback-title></p><p class="lpn-feedback-text" data-lpn-feedback-text></p></div>
+                        <button type="button" class="lpn-btn lpn-retry" data-lpn-retry hidden>Try again</button>
+                    </div>
+
+                    <div class="lpn-q" data-lpn-quiz data-lpn-explain="Past passive = was/were + past participle. The bridge received the action, it did not perform it.">
+                        <p class="lpn-q-prompt"><strong>7.</strong> The new bridge ___ by the city last year.</p>
+                        <div class="lpn-options">
+                            <button type="button" class="lpn-option" data-lpn-option="built" data-lpn-why="Missing helper — this reads as two verbs stacked together.">built</button>
+                            <button type="button" class="lpn-option" data-lpn-option="was built" data-lpn-correct="true">was built</button>
+                            <button type="button" class="lpn-option" data-lpn-option="was building" data-lpn-why="That is active — a bridge cannot build itself.">was building</button>
+                        </div>
+                        <div class="lpn-feedback" data-lpn-feedback hidden><p class="lpn-feedback-title" data-lpn-feedback-title></p><p class="lpn-feedback-text" data-lpn-feedback-text></p></div>
+                        <button type="button" class="lpn-btn lpn-retry" data-lpn-retry hidden>Try again</button>
+                    </div>
+
+                    <div class="lpn-q" data-lpn-quiz data-lpn-explain="at + clock time · on + days and dates · in + months, years, long periods.">
+                        <p class="lpn-q-prompt"><strong>8.</strong> The meeting is scheduled ___ 9 a.m. sharp.</p>
+                        <div class="lpn-options">
+                            <button type="button" class="lpn-option" data-lpn-option="in" data-lpn-why="“In” is for months, years, and long stretches of time.">in</button>
+                            <button type="button" class="lpn-option" data-lpn-option="on" data-lpn-why="“On” is for days and dates.">on</button>
+                            <button type="button" class="lpn-option" data-lpn-option="at" data-lpn-correct="true">at</button>
+                        </div>
+                        <div class="lpn-feedback" data-lpn-feedback hidden><p class="lpn-feedback-title" data-lpn-feedback-title></p><p class="lpn-feedback-text" data-lpn-feedback-text></p></div>
+                        <button type="button" class="lpn-btn lpn-retry" data-lpn-retry hidden>Try again</button>
+                    </div>
+
+                    <div class="lpn-q" data-lpn-quiz data-lpn-explain="“Mustn't” means it is forbidden; “don't have to” means there is no need. Provided computers remove the need.">
+                        <p class="lpn-q-prompt"><strong>9.</strong> You ___ bring your own laptop; we provide computers for everyone.</p>
+                        <div class="lpn-options">
+                            <button type="button" class="lpn-option" data-lpn-option="must" data-lpn-why="Nothing forces it — the computers are already provided.">must</button>
+                            <button type="button" class="lpn-option" data-lpn-option="don't have to" data-lpn-correct="true">don't have to</button>
+                            <button type="button" class="lpn-option" data-lpn-option="mustn't" data-lpn-why="That would ban the laptop, not free you from needing it.">mustn't</button>
+                        </div>
+                        <div class="lpn-feedback" data-lpn-feedback hidden><p class="lpn-feedback-title" data-lpn-feedback-title></p><p class="lpn-feedback-text" data-lpn-feedback-text></p></div>
+                        <button type="button" class="lpn-btn lpn-retry" data-lpn-retry hidden>Try again</button>
+                    </div>
+
+                    <div class="lpn-q" data-lpn-quiz data-lpn-explain="In “look forward to”, “to” is a preposition — every preposition (-ing word or not) is followed by a gerund.">
+                        <p class="lpn-q-prompt"><strong>10.</strong> The team is looking forward to ___ the new office.</p>
+                        <div class="lpn-options">
+                            <button type="button" class="lpn-option" data-lpn-option="visit" data-lpn-why="A bare infinitive cannot follow a preposition.">visit</button>
+                            <button type="button" class="lpn-option" data-lpn-option="visiting" data-lpn-correct="true">visiting</button>
+                            <button type="button" class="lpn-option" data-lpn-option="will visit" data-lpn-why="The tense already comes from “is looking” — no second tense inside.">will visit</button>
+                        </div>
+                        <div class="lpn-feedback" data-lpn-feedback hidden><p class="lpn-feedback-title" data-lpn-feedback-title></p><p class="lpn-feedback-text" data-lpn-feedback-text></p></div>
+                        <button type="button" class="lpn-btn lpn-retry" data-lpn-retry hidden>Try again</button>
+                    </div>
+
+                    <p class="lpn-h3">Click the part that is wrong</p>
+                    <p class="lpn-p lpn-muted">Three sentences, one mistake each. Tap the word or phrase that breaks the rule.</p>
+
+                    <div class="lpn-parts" data-lpn-parts data-lpn-explain="Third-person singular in the present simple takes -s: she goes, he works, it runs.">
+                        <p class="lpn-q-prompt"><strong>Sentence 1.</strong></p>
+                        <div class="lpn-segments">
+                            <button type="button" class="lpn-seg" data-lpn-seg>She</button>
+                            <button type="button" class="lpn-seg" data-lpn-seg data-lpn-correct="true">go</button>
+                            <button type="button" class="lpn-seg" data-lpn-seg>to the office</button>
+                            <button type="button" class="lpn-seg" data-lpn-seg>every Monday.</button>
+                        </div>
+                        <div class="lpn-feedback" data-lpn-feedback hidden><p class="lpn-feedback-title" data-lpn-feedback-title></p><p class="lpn-feedback-text" data-lpn-feedback-text></p></div>
+                        <button type="button" class="lpn-btn lpn-retry" data-lpn-retry hidden>Try again</button>
+                    </div>
+
+                    <div class="lpn-parts" data-lpn-parts data-lpn-explain="“Arrive” takes “at” for a place (and “in” for cities or countries), never “to”.">
+                        <p class="lpn-q-prompt"><strong>Sentence 2.</strong></p>
+                        <div class="lpn-segments">
+                            <button type="button" class="lpn-seg" data-lpn-seg>They arrived</button>
+                            <button type="button" class="lpn-seg" data-lpn-seg data-lpn-correct="true">to</button>
+                            <button type="button" class="lpn-seg" data-lpn-seg>the airport</button>
+                            <button type="button" class="lpn-seg" data-lpn-seg>early.</button>
+                        </div>
+                        <div class="lpn-feedback" data-lpn-feedback hidden><p class="lpn-feedback-title" data-lpn-feedback-title></p><p class="lpn-feedback-text" data-lpn-feedback-text></p></div>
+                        <button type="button" class="lpn-btn lpn-retry" data-lpn-retry hidden>Try again</button>
+                    </div>
+
+                    <div class="lpn-parts" data-lpn-parts data-lpn-explain="“Information” is uncountable: no -s, and the verb stays singular — the information is useful.">
+                        <p class="lpn-q-prompt"><strong>Sentence 3.</strong></p>
+                        <div class="lpn-segments">
+                            <button type="button" class="lpn-seg" data-lpn-seg>The</button>
+                            <button type="button" class="lpn-seg" data-lpn-seg data-lpn-correct="true">informations</button>
+                            <button type="button" class="lpn-seg" data-lpn-seg>are useful.</button>
+                        </div>
+                        <div class="lpn-feedback" data-lpn-feedback hidden><p class="lpn-feedback-title" data-lpn-feedback-title></p><p class="lpn-feedback-text" data-lpn-feedback-text></p></div>
+                        <button type="button" class="lpn-btn lpn-retry" data-lpn-retry hidden>Try again</button>
+                    </div>
+
+                </div>
+            </section>
+
+            <!-- ======================================================
+                 SECTION 5 — USE IT IN YOUR PRACTICE
+                 ====================================================== -->
+            <section class="lpn-section" id="cross" aria-labelledby="lpn-h-cross">
+                <div class="lpn-section-head">
+                    <span class="lpn-section-num" aria-hidden="true">5</span>
+                    <h2 class="lpn-section-title" id="lpn-h-cross">Use It in Your Practice</h2>
+                    <span class="lpn-section-tag">Cross-study</span>
+                </div>
+
+                <div class="lpn-panel">
+                    <p class="lpn-p">These nine topics only pay off inside real tasks. Take <strong>one rule</strong> from this page into each practice session and watch it show up in your scores.</p>
+                    <ul class="lpn-bullets">
+                        <li><strong>Writing Task 2 (opinion):</strong> open with a complex sentence, prove it with short simple ones — and check subject–verb agreement before you submit.</li>
+                        <li><strong>Writing Task 3 &amp; 4 (emails, reports):</strong> past simple for finished events, present perfect for news that is still relevant. Vary your connectors so paragraphs do not list.</li>
+                        <li><strong>Speaking Part 5 &amp; 6:</strong> accuracy under pressure comes from the drills — say your sentences out loud, not just in your head.</li>
+                        <li><strong>Every answer:</strong> read the feedback on a wrong choice twice; the rule it explains is exactly what the rater is listening for.</li>
+                    </ul>
+                    <div class="lpn-cta-row">
+                        <a class="lpn-btn" href="writing.html">✍️ Writing</a>
+                        <a class="lpn-btn" href="speaking.html">🎤 Speaking</a>
+                        <a class="lpn-btn" href="practice.html">🎯 Full Practice</a>
+                        <a class="lpn-btn" href="language.html">← Language Hub</a>
+                    </div>
+                </div>
+            </section>
+
+<!--PAGE-EOF-->
+        </main>
+
+        <!-- Shared Footer -->
+        <footer>
+            <div class="footer-content">
+                <div class="footer-title">SelfPIP</div>
+                <div>Personal CELPIP Study Companion</div>
+            </div>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+    <script src="language-pages.js"></script>
+</body>
+</html>

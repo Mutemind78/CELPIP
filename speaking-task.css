@@ -1,0 +1,142 @@
+/* ==========================================================================
+   SelfPIP — CELPIP Speaking task pages (speaking-task-1.html ... 8.html)
+   --------------------------------------------------------------------------
+   Every rule below is namespaced with the .spk- prefix, so nothing here can
+   affect other pages or the global layout.
+   Colours, radius, shadows and transitions are inherited from style.css
+   (--primary, --primary-light, --card-bg, --bg-color, --text-main,
+   --text-muted, --border-color, --shadow, --shadow-hover,
+   --border-radius, --transition), so dark mode keeps working.
+   ========================================================================== */
+
+html { scroll-behavior: smooth; }
+
+/* ---------- Breadcrumb -------------------------------------------------- */
+.spk-crumb { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; font-size: 9pt; color: var(--text-muted); margin-bottom: 16px; }
+.spk-crumb a { color: var(--primary-light); font-weight: 600; text-decoration: none; }
+.spk-crumb a:hover, .spk-crumb a:focus { text-decoration: underline; outline: none; }
+.spk-crumb-here { color: var(--text-main); font-weight: 700; }
+
+/* ---------- Hero / overview -------------------------------------------- */
+.spk-hero { background: linear-gradient(135deg, #1e3a8a, #3b82f6); color: #ffffff; border-radius: var(--border-radius); padding: 32px 28px; box-shadow: var(--shadow); margin-bottom: 20px; }
+.spk-hero-kicker { margin: 0 0 6px 0; font-size: 9pt; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; opacity: 0.85; }
+.spk-hero h1 { margin: 0 0 10px 0; font-size: 1.9rem; font-weight: 800; letter-spacing: -0.5px; }
+.spk-hero-lead { margin: 0 0 14px 0; font-size: 1.05rem; line-height: 1.55; max-width: 62ch; opacity: 0.95; }
+.spk-hero-meta { display: flex; flex-wrap: wrap; gap: 8px; }
+.spk-pill { background: rgba(255, 255, 255, 0.16); border: 1px solid rgba(255, 255, 255, 0.28); border-radius: 999px; padding: 3px 12px; font-size: 8.5pt; font-weight: 600; }
+
+/* ---------- Golden rule banner ---------------------------------------- */
+.spk-rule { margin: 20px 0; padding: 12px 16px; background: var(--bg-color); border: 1px solid var(--border-color); border-left: 4px solid var(--primary-light); border-radius: 8px; font-size: 9.5pt; color: var(--text-main); box-shadow: var(--shadow); }
+.spk-rule strong { color: var(--primary); }
+
+/* ---------- Numbered sections ----------------------------------------- */
+.spk-section { margin-bottom: 36px; scroll-margin-top: 84px; }
+.spk-section-head { display: flex; align-items: center; gap: 12px; border-bottom: 2px solid var(--border-color); padding-bottom: 10px; margin-bottom: 16px; }
+.spk-section-num { flex: none; width: 30px; height: 30px; border-radius: 50%; background: var(--primary); color: #ffffff; font-size: 9.5pt; font-weight: 800; display: flex; align-items: center; justify-content: center; }
+.spk-section-tag { display: inline-block; margin: 0 0 4px 0; padding: 2px 8px; font-size: 7.5pt; font-weight: 700; letter-spacing: 0.6px; text-transform: uppercase; color: var(--primary-light); border: 1px solid var(--border-color); border-radius: 999px; }
+.spk-section-title { margin: 0; font-size: 1.2rem; font-weight: 800; color: var(--text-main); }
+.spk-panel { background: var(--card-bg); border: 1px solid var(--border-color); border-radius: var(--border-radius); box-shadow: var(--shadow); padding: 20px; }
+.spk-h2 { margin: 0 0 12px 0; font-size: 1.05rem; font-weight: 700; color: var(--text-main); }
+.spk-h3 { margin: 0 0 8px 0; font-size: 9.5pt; font-weight: 700; color: var(--text-main); }
+.spk-p { margin: 0 0 12px 0; font-size: 10pt; line-height: 1.6; color: var(--text-main); }
+
+/* ---------- Strategy numbered steps ----------------------------------- */
+.spk-steps { margin: 0 0 14px 0; padding: 0; list-style: none; counter-reset: spkstep; }
+.spk-steps li { position: relative; margin-bottom: 8px; padding: 10px 14px 10px 52px; background: var(--bg-color); border: 1px solid var(--border-color); border-radius: 8px; font-size: 9.5pt; }
+.spk-steps li::before { counter-increment: spkstep; content: counter(spkstep); position: absolute; left: 12px; top: 50%; transform: translateY(-50%); width: 26px; height: 26px; border-radius: 50%; background: var(--primary); color: #ffffff; font-size: 9.5pt; font-weight: 800; display: flex; align-items: center; justify-content: center; }
+
+/* ---------- Framework / formula visual (centered) ------------------- */
+.spk-framework { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 8px; margin: 14px 0; padding: 14px; background: var(--card-bg); border: 1px solid var(--border-color); border-radius: 10px; box-shadow: var(--shadow); }
+.spk-framework-step { background: var(--bg-color); border: 1px solid var(--border-color); border-left: 4px solid var(--primary-light); padding: 9px 14px; border-radius: 8px; font-size: 9.5pt; font-weight: 700; color: var(--text-main); text-align: center; min-width: 100px; }
+.spk-framework-arrow { color: var(--text-muted); font-weight: 800; font-size: 16pt; line-height: 1; }
+
+/* ---------- Useful language (expandable details) ---------------------- */
+.spk-lang { margin: 0 0 14px 0; }
+.spk-lang summary { cursor: pointer; font-size: 9.5pt; font-weight: 700; color: var(--primary-light); padding: 8px 12px; background: var(--bg-color); border: 1px solid var(--border-color); border-radius: 6px; }
+.spk-lang summary::-webkit-details-marker { color: var(--primary-light); }
+.spk-lang ul { margin: 0; padding: 8px 12px 8px 32px; font-size: 9.5pt; }
+.spk-lang li { margin-bottom: 4px; }
+
+/* ---------- Signal word cards ----------------------------------------- */
+.spk-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; margin: 14px 0; }
+.spk-signal { background: var(--card-bg); border: 1px solid var(--border-color); border-radius: 10px; padding: 14px; box-shadow: var(--shadow); min-width: 0; }
+.spk-signal-title { margin: 0 0 6px 0; font-size: 9pt; font-weight: 700; letter-spacing: 0.5px; text-transform: uppercase; color: var(--primary-light); }
+.spk-signal-words { margin: 0; font-size: 9.5pt; color: var(--text-main); line-height: 1.5; word-break: break-word; }
+
+/* ---------- Illustrations / scenes ----------------------------------- */
+.spk-scene { margin: 0 0 14px 0; }
+.spk-scene img, .spk-scene svg { max-width: 100%; height: auto; border: 1px solid var(--border-color); border-radius: 8px; display: block; }
+.spk-scene figcaption { margin: 6px 0 0 0; font-size: 8.5pt; color: var(--text-muted); font-style: italic; }
+.spk-scene-wrap { max-width: 540px; margin: 0 auto; }
+
+/* ---------- Traps (bad/good contrast) -------------------------------- */
+.spk-trap { background: var(--card-bg); border: 1px solid var(--border-color); border-left: 5px solid #dc2626; border-radius: 10px; padding: 16px; box-shadow: var(--shadow); }
+.spk-trap-head { display: flex; align-items: center; gap: 8px; margin: 0 0 10px 0; font-size: 1rem; font-weight: 800; color: #dc2626; }
+.spk-bad, .spk-good { border-radius: 6px; padding: 8px 10px; margin: 0 0 8px 0; font-size: 9.5pt; }
+.spk-bad { background: rgba(220, 38, 38, 0.10); border-left: 3px solid #dc2626; }
+.spk-good { background: rgba(22, 163, 74, 0.10); border-left: 3px solid #16a34a; margin-bottom: 0; }
+
+/* ---------- Practice prompt box -------------------------------------- */
+.spk-practice { background: var(--card-bg); border: 1px solid var(--border-color); border-left: 5px solid var(--primary-light); border-radius: 10px; padding: 16px; box-shadow: var(--shadow); margin-bottom: 16px; }
+
+/* ---------- Model response + annotations ------------------------------ */
+.spk-response { margin: 0 0 14px 0; padding: 16px; background: var(--bg-color); border: 1px solid var(--border-color); border-radius: 8px; font-size: 10pt; line-height: 1.65; }
+.spk-response p { margin: 0 0 10px 0; }
+.spk-response p:last-child { margin-bottom: 0; }
+.spk-annot { display: flex; gap: 10px; margin-bottom: 8px; align-items: flex-start; }
+.spk-annot-tag { flex: none; padding: 2px 6px; background: var(--primary-light); color: #ffffff; font-size: 7.5pt; font-weight: 700; border-radius: 4px; text-align: center; text-transform: uppercase; letter-spacing: 0.4px; white-space: nowrap; }
+.spk-annot-text { font-size: 9.5pt; color: var(--text-main); line-height: 1.5; }
+
+/* ---------- Callouts ------------------------------------------------- */
+.spk-callout { margin: 14px 0; padding: 12px 14px; background: var(--bg-color); border: 1px solid var(--border-color); border-radius: 8px; font-size: 9.5pt; }
+.spk-callout--note { border-left: 4px solid var(--primary-light); }
+.spk-callout--warning { border-left-color: #ea580c; }
+.spk-callout strong { color: var(--text-main); }
+
+/* ---------- Self-check interactive checklist -------------------------- */
+.spk-checklist-container { background: var(--card-bg); border: 1px solid var(--border-color); border-radius: 10px; padding: 20px; box-shadow: var(--shadow); }
+.spk-check-group { margin: 0 0 10px 0; font-size: 9pt; font-weight: 700; letter-spacing: 0.6px; text-transform: uppercase; color: var(--primary); padding-bottom: 6px; border-bottom: 1px solid var(--border-color); }
+.spk-checklist { list-style: none; margin: 0; padding: 0; }
+.spk-checklist > li { display: flex; align-items: flex-start; gap: 8px; margin-bottom: 8px; }
+.spk-checklist > li input { margin-top: 4px; accent-color: var(--primary-light); }
+.spk-checklist-foot { display: flex; align-items: center; justify-content: space-between; gap: 10px; margin-top: 14px; padding-top: 12px; border-top: 1px solid var(--border-color); font-size: 9pt; }
+.spk-counter { color: var(--text-muted); }
+.spk-mini-btn { background: var(--primary); color: #fff; border: none; padding: 8px 16px; font-size: 9pt; font-weight: 600; border-radius: 6px; cursor: pointer; transition: var(--transition); }
+.spk-mini-btn:hover { background: #172554; }
+.spk-mini-btn:focus-visible { outline: 2px solid var(--primary-light); outline-offset: 2px; }
+.spk-mini-btn[hidden] { display: none; }
+
+/* ---------- Top link / section nav ----------------------------------- */
+.spk-top-link { margin-top: 14px; }
+.spk-top-link a { color: var(--primary-light); font-weight: 600; font-size: 9pt; text-decoration: none; }
+.spk-top-link a:hover, .spk-top-link a:focus { text-decoration: underline; outline: none; }
+.spk-partnav { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px; margin-top: 18px; font-size: 9pt; }
+.spk-partnav-side a { color: var(--primary-light); font-weight: 600; text-decoration: none; }
+.spk-partnav-side a:hover, .spk-partnav-side a:focus { text-decoration: underline; outline: none; }
+.spk-partnav-side--right { justify-content: flex-end; }
+
+/* ---------- Accordion (optional expandable panels) ------------------- */
+[data-spk-acc-head] { cursor: pointer; font-size: 9.5pt; font-weight: 700; color: var(--primary-light); }
+[data-spk-acc-head][aria-expanded="true"] { color: var(--text-main); }
+
+/* ---------- Mindset note --------------------------------------------- */
+.spk-mindset { margin-top: 18px; padding: 12px 14px; background: var(--bg-color); border: 1px solid var(--border-color); border-radius: 8px; }
+.spk-mindset-label { margin: 0 0 4px 0; font-size: 8.5pt; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: var(--primary-light); }
+.spk-mindset-text { margin: 0; font-size: 9.5pt; color: var(--text-main); line-height: 1.55; }
+
+/* ---------- Mobile --------------------------------------------------- */
+@media (max-width: 640px) {
+    .spk-hero { padding: 24px 20px; }
+    .spk-hero h1 { font-size: 1.6rem; }
+    .spk-grid { grid-template-columns: 1fr; }
+    .spk-steps li { padding-left: 46px; }
+}
+
+/* ---------- Print ---------------------------------------------------- */
+@media print {
+    body { background: #fff; }
+    .spk-section { page-break-inside: avoid; }
+    .spk-hero { background: #1e3a8a !important; color: #fff !important; -webkit-print-color-adjust: exact; }
+}
+
+

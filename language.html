@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Language Support — SelfPIP</title>
+    <title>Language — Grammar, Vocabulary, Connectors, Pronunciation — SelfPIP</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="language-hub.css">
 </head>
 <body data-theme="light">
     <div class="app-container">
@@ -42,10 +43,24 @@
         <main class="main-content">
             <div class="page-header">
                 <h1 class="page-title">📚 Language Section</h1>
-                <p class="page-desc">Strengthen your fundamental English. Refine your grammar rules, expand your active vocabulary databases, master transition connectors, and master Canadian pronunciation.</p>
+                <p class="page-desc">Build the English underneath every CELPIP score: clear grammar, active vocabulary, smooth connectors, and pronunciation that is easy to understand.</p>
             </div>
 
-            <!-- Placeholders for Language Skills -->
+            <!-- Visual flow: four skills → better sentences → clearer output -->
+            <div class="lgu-visual" role="img" aria-label="Grammar, vocabulary, connectors and pronunciation lead to better sentences, which lead to clearer speaking and writing.">
+                <div class="lgu-visual-row">Grammar + Vocabulary + Connectors + Pronunciation</div>
+                <div class="lgu-visual-arrow" aria-hidden="true">↓</div>
+                <div class="lgu-visual-row">Better Sentences</div>
+                <div class="lgu-visual-arrow" aria-hidden="true">↓</div>
+                <div class="lgu-visual-row lgu-visual-row--final">Clearer Speaking &amp; Writing</div>
+            </div>
+
+            <!-- Goal note -->
+            <div class="lgu-goal">
+                <p><strong>Goal of this section:</strong> you are not studying language for its own sake. Every rule, word and connector here exists to make one thing happen — the rater understands your idea clearly the first time.</p>
+            </div>
+
+            <!-- The four Language study pages -->
             <div class="placeholder-grid">
                 <!-- GRAMMAR -->
                 <div class="task-card" id="language-grammar">
@@ -53,10 +68,15 @@
                         <div class="task-header">
                             <span class="task-badge">Grammar</span>
                         </div>
-                        <h3 class="task-title">Grammar Corrections</h3>
-                        <p class="task-desc">Drill correct sentence templates, subject-verb agreements, active/passive voice, and complex sentence structure parameters without losing clarity.</p>
+                        <h3 class="task-title">Grammar That Keeps Up With You</h3>
+                        <p class="task-desc">Nine core topics — from subject–verb agreement to conditionals — with plain explanations, correct/incorrect examples, and a Fix-the-Sentence drill.</p>
+                        <div class="lgu-card-use">
+                            <span class="lgu-use-label">Use it in:</span>
+                            <a href="writing.html">Writing</a>
+                            <a href="speaking.html">Speaking</a>
+                        </div>
                     </div>
-                    <button class="btn btn-disabled">Study Grammar (Coming Soon)</button>
+                    <a href="language-grammar.html" class="btn">Study Grammar →</a>
                 </div>
 
                 <!-- VOCABULARY -->
@@ -65,10 +85,15 @@
                         <div class="task-header">
                             <span class="task-badge">Vocabulary</span>
                         </div>
-                        <h3 class="task-title">Vocabulary Banks</h3>
-                        <p class="task-desc">A deep dive into functional active vocabulary, task-oriented descriptive phrases, and academic/general terminology appropriate for CELPIP.</p>
+                        <h3 class="task-title">Words You Can Reach For</h3>
+                        <p class="task-desc">Seven themed word banks — meaning, collocation, speaking use and writing use for every word, with a practice box that saves in your browser.</p>
+                        <div class="lgu-card-use">
+                            <span class="lgu-use-label">Use it in:</span>
+                            <a href="writing.html">Writing</a>
+                            <a href="speaking.html">Speaking</a>
+                        </div>
                     </div>
-                    <button class="btn btn-disabled">Study Vocabulary (Coming Soon)</button>
+                    <a href="language-vocabulary.html" class="btn">Study Vocabulary →</a>
                 </div>
 
                 <!-- CONNECTORS -->
@@ -77,10 +102,15 @@
                         <div class="task-header">
                             <span class="task-badge">Connectors</span>
                         </div>
-                        <h3 class="task-title">Cohesion & Connectors</h3>
-                        <p class="task-desc">Master smooth transition words, logical connectors, contrast phrases, and listing structures to make your essays and audio records flow beautifully.</p>
+                        <h3 class="task-title">Connectors That Link Your Ideas</h3>
+                        <p class="task-desc">Adding, contrast, cause, result, examples, sequence and conclusion — plus the sentence patterns that keep every connector grammatical.</p>
+                        <div class="lgu-card-use">
+                            <span class="lgu-use-label">Use it in:</span>
+                            <a href="writing.html">Writing</a>
+                            <a href="speaking.html">Speaking</a>
+                        </div>
                     </div>
-                    <button class="btn btn-disabled">Study Connectors (Coming Soon)</button>
+                    <a href="language-connectors.html" class="btn">Study Connectors →</a>
                 </div>
 
                 <!-- PRONUNCIATION -->
@@ -89,12 +119,92 @@
                         <div class="task-header">
                             <span class="task-badge">Pronunciation</span>
                         </div>
-                        <h3 class="task-title">Canadian English & Pronunciation</h3>
-                        <p class="task-desc">Familiarize yourself with spelling preferences, stress patterns, silent sounds, accent features, and phonetic guidelines used commonly in Canada.</p>
+                        <h3 class="task-title">Pronunciation &amp; Canadian English</h3>
+                        <p class="task-desc">Word stress, sentence stress, connected speech, a 15-word sound bank, and Canadian words and spellings — with record-and-compare tools.</p>
+                        <div class="lgu-card-use">
+                            <span class="lgu-use-label">Use it in:</span>
+                            <a href="speaking.html">Speaking</a>
+                            <a href="listening.html">Listening</a>
+                        </div>
                     </div>
-                    <button class="btn btn-disabled">Study Pronunciation (Coming Soon)</button>
+                    <a href="language-pronunciation.html" class="btn">Study Pronunciation →</a>
                 </div>
             </div>
+
+            <!-- Learning path through the Language section -->
+            <h2 class="lgu-section-title">Your Learning Path</h2>
+            <ol class="lgu-path">
+                <li><span class="lgu-path-step">1 · Grammar</span></li>
+                <li><span class="lgu-path-step">2 · Vocabulary</span></li>
+                <li><span class="lgu-path-step">3 · Connectors</span></li>
+                <li><span class="lgu-path-step">4 · Pronunciation</span></li>
+                <li><span class="lgu-path-step lgu-path-step--strong">Clearer answers</span></li>
+            </ol>
+
+            <!-- Language Connection Map: how the four skills depend on each other -->
+            <h2 class="lgu-section-title">Language Connection Map</h2>
+            <div class="lgu-map">
+                <div class="lgu-map-card">
+                    <span class="lgu-map-icon" aria-hidden="true">🧩</span>
+                    <p class="lgu-map-title">Grammar × Vocabulary</p>
+                    <p class="lgu-map-desc">Precise words need correct machinery around them: <em>an</em> honest opinion, two deadlines, a verb that matches its subject.</p>
+                </div>
+                <div class="lgu-map-card">
+                    <span class="lgu-map-icon" aria-hidden="true">🔗</span>
+                    <p class="lgu-map-title">Connectors × Grammar</p>
+                    <p class="lgu-map-desc">Every connector owns a grammar pattern: although + clause, despite + noun, therefore + full sentence. Wrong pattern = lost clarity.</p>
+                </div>
+                <div class="lgu-map-card">
+                    <span class="lgu-map-icon" aria-hidden="true">🗣️</span>
+                    <p class="lgu-map-title">Pronunciation × Vocabulary</p>
+                    <p class="lgu-map-desc">A word only counts as active once you can say it clearly. English stress carries meaning — a misplaced beat can change the word.</p>
+                </div>
+                <div class="lgu-map-card">
+                    <span class="lgu-map-icon" aria-hidden="true">🎯</span>
+                    <p class="lgu-map-title">All Four × Test Tasks</p>
+                    <p class="lgu-map-desc">Writing Task 2 and Speaking Tasks 2–3 are where all four skills appear at once, under time pressure. Train them together there.</p>
+                </div>
+            </div>
+            <div class="lgu-map-note">Study them separately — use them together. Every practice answer you give is a Grammar + Vocabulary + Connectors + Pronunciation rep.</div>
+
+            <!-- Eight SelfPIP Language Rules -->
+            <h2 class="lgu-section-title">8 SelfPIP Language Rules</h2>
+            <div class="lgu-rules">
+                <div class="lgu-rule"><span class="lgu-rule-num">1</span><p><strong>One idea, one sentence.</strong> If you need three commas and a second “and”, split it in two.</p></div>
+                <div class="lgu-rule"><span class="lgu-rule-num">2</span><p><strong>The subject decides the verb.</strong> Find the true subject and ignore the words between it and the verb.</p></div>
+                <div class="lgu-rule"><span class="lgu-rule-num">3</span><p><strong>Finished time takes past simple</strong> (yesterday, last year); unfinished time takes present perfect (so far, this week).</p></div>
+                <div class="lgu-rule"><span class="lgu-rule-num">4</span><p><strong>Singular countable nouns never stand alone</strong> — they need a, an, the, or a plural.</p></div>
+                <div class="lgu-rule"><span class="lgu-rule-num">5</span><p><strong>No word without a partner.</strong> Learn the collocation with the word: depend <em>on</em>, not depend of.</p></div>
+                <div class="lgu-rule"><span class="lgu-rule-num">6</span><p><strong>Every connector owns a pattern:</strong> although + clause, despite + noun, therefore + full sentence.</p></div>
+                <div class="lgu-rule"><span class="lgu-rule-num">7</span><p><strong>Stress carries meaning.</strong> Hit the key content word in each sentence and let the small words fall away.</p></div>
+                <div class="lgu-rule"><span class="lgu-rule-num">8</span><p><strong>Clarity beats complexity.</strong> The rater must catch your idea on the first read or first listen.</p></div>
+            </div>
+
+            <!-- 10-minute daily routine -->
+            <h2 class="lgu-section-title">The 10-Minute Language Routine</h2>
+            <div class="lgu-routine">
+                <div class="lgu-routine-item">
+                    <span class="lgu-routine-time">Minutes 1–3</span>
+                    <p class="lgu-routine-title">Grammar rep</p>
+                    <p class="lgu-routine-desc">Open one accordion topic, then write two corrected sentences using that rule.</p>
+                </div>
+                <div class="lgu-routine-item">
+                    <span class="lgu-routine-time">Minutes 4–6</span>
+                    <p class="lgu-routine-title">Word bank</p>
+                    <p class="lgu-routine-desc">Pick three words from a bank, write one sentence each, and press 🔊 to hear them.</p>
+                </div>
+                <div class="lgu-routine-item">
+                    <span class="lgu-routine-time">Minutes 7–8</span>
+                    <p class="lgu-routine-title">Connectors</p>
+                    <p class="lgu-routine-desc">Rebuild two flat sentences with however, although, or despite — check the pattern.</p>
+                </div>
+                <div class="lgu-routine-item">
+                    <span class="lgu-routine-time">Minutes 9–10</span>
+                    <p class="lgu-routine-title">Hear → repeat → record</p>
+                    <p class="lgu-routine-desc">Say one paragraph aloud, record it once, and compare with the model voice.</p>
+                </div>
+            </div>
+            <div class="lgu-routine-note">Ten honest minutes a day beats a two-hour cram the night before — the routine keeps all four skills alive between full practice tests.</div>
         </main>
 
         <!-- Shared Footer -->

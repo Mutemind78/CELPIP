@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Listening Section — SelfPIP</title>
+    <title>Listening — SelfPIP Study Hub</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="listening-hub.css">
 </head>
 <body data-theme="light">
     <div class="app-container">
@@ -41,83 +42,200 @@
         <!-- Main Content Area -->
         <main class="main-content">
             <div class="page-header">
-                <h1 class="page-title">🎧 Listening Section</h1>
-                <p class="page-desc">Develop effective listening strategies, understand spoken English in diverse contexts, and master the 6 Listening parts.</p>
+                <h1 class="page-title">🎧 CELPIP Listening</h1>
+                <p class="page-desc">Six task types, six different listening demands. Learn what each part asks you to do, the strategy to use, the traps to avoid, and try one short original example.</p>
             </div>
 
-            <!-- Placeholders for Listening Parts -->
+            <!-- ======================================================
+                 START HERE — what the component contains + approach
+                 ====================================================== -->
+            <section class="lh-intro" aria-labelledby="lh-start">
+                <h2 class="lh-intro-title" id="lh-start">Start here</h2>
+                <p>The Listening component contains six different task types (Parts 1–6). They are not the same listening job: a conversation about a problem, an everyday conversation, a factual talk, a news report, a group discussion and a set of viewpoints each ask you to listen in a different way. That is why one single strategy for every part is not the most effective approach.</p>
+                <p>Each part page explains <strong>what the task is</strong>, <strong>what to expect</strong>, <strong>what to listen for</strong>, <strong>how to answer</strong>, the <strong>traps</strong> to avoid, and finishes with a <strong>short original example</strong> you can try.</p>
+
+                <p class="lh-steps-title">A simple approach that works for every part</p>
+                <ol class="lh-steps">
+                    <li><span class="lh-step">Understand the task</span></li>
+                    <li><span class="lh-step">Predict what matters</span></li>
+                    <li><span class="lh-step">Listen actively</span></li>
+                    <li><span class="lh-step">Track key information</span></li>
+                    <li><span class="lh-step">Eliminate traps</span></li>
+                    <li><span class="lh-step">Choose the supported answer</span></li>
+                </ol>
+
+                <div class="lh-note">
+                    <strong>Important:</strong> Listening and Reading can contain unscored items used for test development. Test takers cannot identify which items are unscored, so they should approach every item seriously.
+                </div>
+                <div class="lh-note lh-note--info">
+                    <strong>Official format vs SelfPIP advice:</strong> the task names, question counts and listening time shown on this page follow the published CELPIP Listening structure. Everything else on SelfPIP — focus areas, strategies, note-taking, traps and examples — is SelfPIP study guidance, not official test material, and no strategy can guarantee a particular result.
+                </div>
+            </section>
+
+            <!-- ======================================================
+                 HOW THIS SECTION WORKS
+                 ====================================================== -->
+            <section aria-labelledby="lh-how">
+                <h2 class="lh-section-title" id="lh-how">How this section works</h2>
+                <ol class="lh-flow">
+                    <li class="lh-flow-item">Listening</li>
+                    <li class="lh-flow-item">6 Task Cards</li>
+                    <li class="lh-flow-item">Choose a Part</li>
+                    <li class="lh-flow-item">Learn Strategy</li>
+                    <li class="lh-flow-item">Study Example</li>
+                    <li class="lh-flow-item">Practice</li>
+                </ol>
+                <p class="lh-flow-note">Every part page uses the same ten sections in the same order, so you always know where to look.</p>
+            </section>
+
+            <!-- ======================================================
+                 OFFICIAL FORMAT SUMMARY
+                 ====================================================== -->
+            <section aria-labelledby="lh-format">
+                <h2 class="lh-section-title" id="lh-format">Listening format summary</h2>
+                <div class="lh-table-wrap">
+                    <table class="lh-table">
+                        <thead>
+                            <tr>
+                                <th scope="col">Part</th>
+                                <th scope="col">Task</th>
+                                <th scope="col">Questions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr><th scope="row">Part 1</th><td>Listening to Problem Solving</td><td>8</td></tr>
+                            <tr><th scope="row">Part 2</th><td>Listening to a Daily Life Conversation</td><td>5</td></tr>
+                            <tr><th scope="row">Part 3</th><td>Listening for Information</td><td>6</td></tr>
+                            <tr><th scope="row">Part 4</th><td>Listening to a News Item</td><td>5</td></tr>
+                            <tr><th scope="row">Part 5</th><td>Listening to a Discussion</td><td>8</td></tr>
+                            <tr><th scope="row">Part 6</th><td>Listening to Viewpoints</td><td>6</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+                <p class="lh-total">Listening time: approximately 46–55 minutes</p>
+                <p class="lh-flow-note">The counts and timing above are official format information. SelfPIP does not publish or guess scoring rules, and nothing here predicts a particular result.</p>
+            </section>
+
+            <!-- ======================================================
+                 THE SIX TASK CARDS (each card is one link)
+                 ====================================================== -->
+            <h2 class="lh-section-title" id="lh-parts">Choose a part</h2>
             <div class="placeholder-grid">
-                <!-- PART 1 -->
-                <div class="task-card" id="listening-part-1">
+                <a class="task-card lh-card" id="listening-part-1" href="listening-part-1.html">
                     <div>
                         <div class="task-header">
                             <span class="task-badge">Part 1</span>
+                            <span class="task-badge">8 questions</span>
                         </div>
                         <h3 class="task-title">Listening to Problem Solving</h3>
-                        <p class="task-desc">Listen to a conversation where individuals are discussing a problem and trying to find a resolution. Learn how to identify core issues and key arguments.</p>
+                        <p class="task-desc">Follow a conversation about a problem, understand the important details, track possible solutions, and identify the outcome.</p>
+                        <ul class="lh-card-facts">
+                            <li><span class="lh-label">Expect</span> One conversation working through a problem and possible solutions.</li>
+                            <li><span class="lh-label">Focus</span> The problem, important details, suggested solutions, the final outcome.</li>
+                            <li><span class="lh-label">Strategy</span> Problem → Options → Discussion → Outcome.</li>
+                            <li><span class="lh-label">Watch out</span> Choosing the first solution mentioned.</li>
+                            <li><span class="lh-label">Practice</span> An original conversation with one interactive question.</li>
+                        </ul>
                     </div>
-                    <button class="btn btn-disabled">Study this part (Coming Soon)</button>
-                </div>
+                    <span class="btn">Study Part 1 →</span>
+                </a>
 
-                <!-- PART 2 -->
-                <div class="task-card" id="listening-part-2">
+                <a class="task-card lh-card" id="listening-part-2" href="listening-part-2.html">
                     <div>
                         <div class="task-header">
                             <span class="task-badge">Part 2</span>
+                            <span class="task-badge">5 questions</span>
                         </div>
                         <h3 class="task-title">Listening to a Daily Life Conversation</h3>
-                        <p class="task-desc">Understand interactions involving everyday activities, requests, and plans. Focus on details, tones, and informal expressions.</p>
+                        <p class="task-desc">Understand everyday conversations involving plans, requests, arrangements, changes, and personal situations.</p>
+                        <ul class="lh-card-facts">
+                            <li><span class="lh-label">Expect</span> Everyday talk about plans, requests and arrangements.</li>
+                            <li><span class="lh-label">Focus</span> Who is speaking and why, times, places, and what changes.</li>
+                            <li><span class="lh-label">Strategy</span> Understand the situation first, then track what changes.</li>
+                            <li><span class="lh-label">Watch out</span> Missing a change to the original plan.</li>
+                            <li><span class="lh-label">Practice</span> An original phone-call situation with one interactive question.</li>
+                        </ul>
                     </div>
-                    <button class="btn btn-disabled">Study this part (Coming Soon)</button>
-                </div>
+                    <span class="btn">Study Part 2 →</span>
+                </a>
 
-                <!-- PART 3 -->
-                <div class="task-card" id="listening-part-3">
+                <a class="task-card lh-card" id="listening-part-3" href="listening-part-3.html">
                     <div>
                         <div class="task-header">
                             <span class="task-badge">Part 3</span>
+                            <span class="task-badge">6 questions</span>
                         </div>
                         <h3 class="task-title">Listening for Information</h3>
-                        <p class="task-desc">Listen to a factual presentation or interview. Learn to capture specific details, figures, and explanations.</p>
+                        <p class="task-desc">Listen for facts, details, explanations, names, numbers, locations, times, and other important information.</p>
+                        <ul class="lh-card-facts">
+                            <li><span class="lh-label">Expect</span> Facts and details presented in an organised way.</li>
+                            <li><span class="lh-label">Focus</span> Main topic, names, numbers, dates, places and reasons.</li>
+                            <li><span class="lh-label">Strategy</span> Listen for information, not just keywords.</li>
+                            <li><span class="lh-label">Watch out</span> Numbers or names attached to the wrong item.</li>
+                            <li><span class="lh-label">Practice</span> An original short talk with one interactive question.</li>
+                        </ul>
                     </div>
-                    <button class="btn btn-disabled">Study this part (Coming Soon)</button>
-                </div>
+                    <span class="btn">Study Part 3 →</span>
+                </a>
 
-                <!-- PART 4 -->
-                <div class="task-card" id="listening-part-4">
+                <a class="task-card lh-card" id="listening-part-4" href="listening-part-4.html">
                     <div>
                         <div class="task-header">
                             <span class="task-badge">Part 4</span>
+                            <span class="task-badge">5 questions</span>
                         </div>
                         <h3 class="task-title">Listening to a News Item</h3>
-                        <p class="task-desc">Analyze a short broadcast reporting on a local or global event. Develop strategies to extract the who, what, when, and why.</p>
+                        <p class="task-desc">Follow a news report and identify the main event, important facts, background information, causes, effects, and updates.</p>
+                        <ul class="lh-card-facts">
+                            <li><span class="lh-label">Expect</span> A short news report about a single event.</li>
+                            <li><span class="lh-label">Focus</span> Main event, who/what/where/when, cause and effect, updates.</li>
+                            <li><span class="lh-label">Strategy</span> Find the main event first, then connect the supporting facts.</li>
+                            <li><span class="lh-label">Watch out</span> Choosing a supporting detail as the main event.</li>
+                            <li><span class="lh-label">Practice</span> An original news extract with one interactive question.</li>
+                        </ul>
                     </div>
-                    <button class="btn btn-disabled">Study this part (Coming Soon)</button>
-                </div>
+                    <span class="btn">Study Part 4 →</span>
+                </a>
 
-                <!-- PART 5 -->
-                <div class="task-card" id="listening-part-5">
+                <a class="task-card lh-card" id="listening-part-5" href="listening-part-5.html">
                     <div>
                         <div class="task-header">
                             <span class="task-badge">Part 5</span>
+                            <span class="task-badge">8 questions</span>
                         </div>
                         <h3 class="task-title">Listening to a Discussion</h3>
-                        <p class="task-desc">Listen to a group conversation or academic forum with multiple speakers. Master tracking viewpoints, agreements, and disagreements.</p>
+                        <p class="task-desc">Track multiple speakers, understand their ideas, recognize agreement and disagreement, and remember who said what.</p>
+                        <ul class="lh-card-facts">
+                            <li><span class="lh-label">Expect</span> Several speakers sharing and comparing ideas.</li>
+                            <li><span class="lh-label">Focus</span> Who said what, positions, agreement, disagreement and reasons.</li>
+                            <li><span class="lh-label">Strategy</span> Track the speaker AND their position.</li>
+                            <li><span class="lh-label">Watch out</span> Mixing up which speaker said what.</li>
+                            <li><span class="lh-label">Practice</span> An original discussion with one interactive question.</li>
+                        </ul>
                     </div>
-                    <button class="btn btn-disabled">Study this part (Coming Soon)</button>
-                </div>
+                    <span class="btn">Study Part 5 →</span>
+                </a>
 
-                <!-- PART 6 -->
-                <div class="task-card" id="listening-part-6">
+                <a class="task-card lh-card" id="listening-part-6" href="listening-part-6.html">
                     <div>
                         <div class="task-header">
                             <span class="task-badge">Part 6</span>
+                            <span class="task-badge">6 questions</span>
                         </div>
                         <h3 class="task-title">Listening to Viewpoints</h3>
-                        <p class="task-desc">Analyze a complex commentary regarding a controversial issue. Focus on understanding advanced arguments, inferences, and perspectives.</p>
+                        <p class="task-desc">Understand different perspectives, supporting reasons, examples, comparisons, and the difference between facts and opinions.</p>
+                        <ul class="lh-card-facts">
+                            <li><span class="lh-label">Expect</span> One or more speakers expressing a viewpoint with support.</li>
+                            <li><span class="lh-label">Focus</span> Viewpoints, reasons, examples, facts vs opinions, comparisons.</li>
+                            <li><span class="lh-label">Strategy</span> Identify the viewpoint → find its support → compare the ideas.</li>
+                            <li><span class="lh-label">Watch out</span> Treating an opinion as a fact, or a fact as an opinion.</li>
+                            <li><span class="lh-label">Practice</span> An original commentary with one interactive question.</li>
+                        </ul>
                     </div>
-                    <button class="btn btn-disabled">Study this part (Coming Soon)</button>
-                </div>
+                    <span class="btn">Study Part 6 →</span>
+                </a>
+
+
             </div>
         </main>
 

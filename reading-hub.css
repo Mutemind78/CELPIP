@@ -1,0 +1,106 @@
+/* ==========================================================================
+   SelfPIP — CELPIP Reading hub (reading.html only)
+   --------------------------------------------------------------------------
+   Every rule here is namespaced .rh- so this file cannot affect other pages.
+   The four part cards reuse the site-wide .task-card / .task-badge / .task-title
+   / .task-desc / .btn classes from style.css — only the extras added by the
+   reading hub (intro, flows, format table, card facts, clickable cards) are
+   styled here. Colours come from the shared tokens in style.css.
+   ========================================================================== */
+
+/* ---------- Introduction panel ---------------------------------------- */
+.rh-intro { background: var(--card-bg); border: 1px solid var(--border-color); border-radius: var(--border-radius); box-shadow: var(--shadow); padding: 20px; margin-bottom: 28px; }
+.rh-intro-title { margin: 0 0 10px 0; font-size: 1.15rem; font-weight: 800; color: var(--primary); }
+.rh-intro p { margin: 0 0 12px 0; font-size: 10pt; }
+.rh-intro p:last-child { margin-bottom: 0; }
+.rh-steps-title { margin: 18px 0 10px 0; font-size: 8.5pt; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: var(--text-muted); }
+.rh-steps { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; margin: 0; padding: 0; list-style: none; }
+.rh-steps li { display: flex; align-items: center; gap: 8px; }
+.rh-steps li + li::before { content: "→"; color: var(--primary-light); font-weight: 700; }
+.rh-step { display: inline-block; background: var(--bg-color); border: 1px solid var(--border-color); border-radius: 999px; padding: 6px 14px; font-size: 9pt; font-weight: 700; color: var(--text-main); }
+
+/* ---------- Notes (official format vs SelfPIP advice, unscored items) --- */
+.rh-note { margin-top: 16px; padding: 12px 14px; background: var(--bg-color); border: 1px solid var(--border-color); border-left: 4px solid #dc2626; border-radius: 6px; font-size: 9.5pt; }
+.rh-note--info { border-left-color: var(--primary-light); margin-top: 10px; }
+.rh-note strong { color: var(--text-main); }
+
+/* ---------- Section headings ----------------------------------------- */
+.rh-section-title { margin: 32px 0 12px 0; padding-bottom: 8px; border-bottom: 2px solid var(--border-color); font-size: 1.2rem; font-weight: 800; color: var(--text-main); }
+.rh-section-title:first-of-type { margin-top: 0; }
+
+/* ---------- Hub flow: Reading → 4 Task Cards → ... ------------------ */
+.rh-flow { display: flex; flex-direction: column; align-items: stretch; margin: 0 0 12px 0; padding: 0; list-style: none; }
+.rh-flow-item { position: relative; background: var(--bg-color); border: 1px solid var(--border-color); border-left: 4px solid var(--primary-light); border-radius: 8px; padding: 9px 14px; font-size: 9.5pt; font-weight: 700; color: var(--text-main); }
+.rh-flow-item + .rh-flow-item { margin-top: 26px; }
+.rh-flow-item + .rh-flow-item::before { content: "↓"; position: absolute; top: -22px; left: 50%; transform: translateX(-50%); color: var(--primary-light); font-weight: 700; }
+.rh-flow-note { margin: 0; font-size: 9.5pt; color: var(--text-muted); }
+
+/* ---------- Official format table ------------------------------------ */
+.rh-table-wrap { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+.rh-table { width: 100%; min-width: 420px; border-collapse: collapse; font-size: 9.5pt; }
+.rh-table th, .rh-table td { padding: 10px 12px; border-bottom: 1px solid var(--border-color); text-align: left; vertical-align: top; }
+.rh-table th { background: var(--bg-color); color: var(--primary); font-weight: 700; }
+.rh-table th:last-child, .rh-table td:last-child { text-align: right; width: 110px; }
+.rh-table tbody tr:hover { background: var(--bg-color); }
+.rh-total { margin: 14px 0 6px 0; font-size: 10pt; font-weight: 700; color: var(--text-main); }
+
+/* ---------- Four task cards ------------------------------------------ */
+.rh-card { text-decoration: none; color: var(--text-main); }
+.rh-card:hover, .rh-card:focus { text-decoration: none; outline: none; }
+.rh-card:focus-visible { outline: 2px solid var(--primary-light); outline-offset: 2px; }
+.rh-card .btn { align-self: flex-start; }
+.rh-card-facts { list-style: none; margin: 4px 0 18px 0; padding: 0; display: flex; flex-direction: column; gap: 8px; }
+.rh-card-facts li { font-size: 9pt; line-height: 1.45; }
+.rh-card-facts .rh-label { display: inline-block; min-width: 76px; font-size: 7.5pt; font-weight: 700; letter-spacing: 0.6px; text-transform: uppercase; color: var(--primary-light); }
+
+/* ---------- Mobile ---------------------------------------------------- */
+@media (max-width: 640px) {
+    .rh-intro { padding: 16px; }
+    .rh-intro p { font-size: 9.5pt; }
+    .rh-steps li { width: 100%; }
+    .rh-steps li + li::before { content: "↓"; }
+    .rh-steps li + li { margin-top: -2px; }
+    .rh-card-facts .rh-label { display: block; min-width: 0; }
+}
+
+/* ---------- Print ----------------------------------------------------- */
+@media print {
+    .rh-intro, .rh-card { break-inside: avoid; }
+    .rh-steps, .rh-flow { display: none !important; }
+}
+
+/* ---------- Core reading strategy: skill cards ------------------------ */
+.rh-skill-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 14px; margin-bottom: 16px; }
+.rh-skill { --rh-tone: var(--primary-light); background: var(--card-bg); border: 1px solid var(--border-color); border-top: 4px solid var(--rh-tone); border-radius: 10px; padding: 16px; box-shadow: var(--shadow); min-width: 0; }
+.rh-skill--topic { --rh-tone: #2563eb; }
+.rh-skill--detail { --rh-tone: #0d9488; }
+.rh-skill--evidence { --rh-tone: #16a34a; }
+.rh-skill--correction { --rh-tone: #ea580c; }
+.rh-skill-title { margin: 0 0 6px 0; font-size: 1rem; font-weight: 800; color: var(--text-main); }
+.rh-skill-intro { margin: 0 0 10px 0; font-size: 9pt; color: var(--text-muted); }
+.rh-skill ul { margin: 0; padding-left: 18px; font-size: 9.5pt; }
+.rh-skill li { margin-bottom: 4px; }
+
+/* ---------- Numbered step lists (time management, vocabulary) --------- */
+.rh-time-steps { margin: 0 0 14px 0; padding: 0; list-style: none; counter-reset: rhstep; }
+.rh-time-steps li { position: relative; margin-bottom: 8px; padding: 10px 14px 10px 52px; background: var(--bg-color); border: 1px solid var(--border-color); border-radius: 8px; font-size: 9.5pt; }
+.rh-time-steps li::before { counter-increment: rhstep; content: counter(rhstep); position: absolute; left: 12px; top: 50%; transform: translateY(-50%); width: 26px; height: 26px; border-radius: 50%; background: var(--primary); color: #ffffff; font-size: 9.5pt; font-weight: 800; display: flex; align-items: center; justify-content: center; }
+
+/* ---------- Golden rules ---------------------------------------------- */
+.rh-rules { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 10px; }
+.rh-rule { display: flex; align-items: flex-start; gap: 10px; padding: 12px 14px; background: var(--card-bg); border: 1px solid var(--border-color); border-left: 4px solid #f59e0b; border-radius: 8px; font-size: 9.5pt; font-weight: 700; color: var(--text-main); }
+.rh-rule-num { flex: none; width: 24px; height: 24px; border-radius: 50%; background: #f59e0b; color: #ffffff; font-size: 9pt; font-weight: 800; display: flex; align-items: center; justify-content: center; }
+
+/* ---------- Final checklist (static bullets) -------------------------- */
+.rh-check-cols { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 14px; }
+.rh-check-block { padding: 16px; background: var(--card-bg); border: 1px solid var(--border-color); border-radius: 10px; box-shadow: var(--shadow); min-width: 0; }
+.rh-check-block h3 { margin: 0 0 10px 0; font-size: 9.5pt; font-weight: 800; letter-spacing: 0.8px; text-transform: uppercase; color: var(--primary); }
+.rh-check-list { margin: 0; padding: 0; list-style: none; font-size: 9.5pt; }
+.rh-check-list li { position: relative; margin-bottom: 6px; padding: 8px 10px 8px 30px; background: var(--bg-color); border: 1px solid var(--border-color); border-radius: 6px; }
+.rh-check-list li::before { content: "☐"; position: absolute; left: 10px; top: 7px; color: var(--primary-light); font-weight: 700; }
+
+/* ---------- Mobile additions ------------------------------------------ */
+@media (max-width: 640px) {
+    .rh-skill-grid, .rh-rules, .rh-check-cols { grid-template-columns: 1fr; }
+    .rh-time-steps li { padding-left: 46px; }
+}
