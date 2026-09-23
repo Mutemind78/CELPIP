@@ -174,6 +174,7 @@ html { scroll-behavior: smooth; }
 .lpn-wrow--pron { font-size: 10pt; }
 .lpn-pron { font-family: Consolas, "Courier New", monospace; font-weight: 700; color: var(--primary); }
 .lpn-guide { color: var(--text-muted); font-weight: 700; }
+.lpn-wrow-play { margin-left: 6px; padding: 2px 9px; font-size: 8pt; vertical-align: middle; }
 
 /* ---------- Vocabulary upgrade pairs (basic → precise) --------------------------- */
 .lpn-upgrade { display: flex; flex-direction: column; gap: 6px; padding: 12px 14px; background: var(--bg-color); border: 1px solid var(--border-color); border-radius: 8px; }

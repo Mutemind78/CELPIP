@@ -13,6 +13,8 @@
    2. Multiple-choice "Fix the Sentence" / builder quizzes -> [data-lpn-quiz]
    3. "Click the incorrect part" exercises                 -> [data-lpn-parts]
    4. Speak buttons (Web Speech API, en-CA fallback chain) -> [data-speak]
+        Word cards play Google-style: the word at normal pace, then slowly again.
+        Sentence buttons (examples, patterns, paragraphs) play once, normal pace.
    5. Local-only practice textareas (localStorage)         -> [data-lpn-practice]
    6. Browser-only microphone recording (MediaRecorder)    -> [data-lpn-recorder]
    ========================================================================== */
@@ -24,6 +26,15 @@
        browser's default voice (graceful fallback). */
     var LOCALE_CHAIN = ['en-CA', 'en-US', 'en-GB'];
     var voicesCache = [];
+
+    /* Google-dictionary style word playback (vocabulary + pronunciation word
+       cards): once at regular pace, then once slowly so the learner can copy
+       how the word is said. */
+    var WORD_NORMAL_RATE = 1.0;
+    var WORD_SLOW_RATE = 0.5;
+    var WORD_SLOW_PAUSE_MS = 400;
+    /* Bumped on every new playback so stale chained utterances are dropped. */
+    var speakSession = 0;
 
     /* ---------- Shared helpers ---------------------------------------- */
 
@@ -75,24 +86,63 @@
         return null;
     }
 
+    function makeUtterance(text, rate, lang) {
+        var utter = new SpeechSynthesisUtterance(text);
+        var voice = pickVoice();
+        if (voice) {
+            utter.voice = voice;
+            utter.lang = voice.lang;
+        } else {
+            /* Requested locale unavailable -> browser default voice. */
+            utter.lang = lang || LOCALE_CHAIN[0];
+        }
+        utter.rate = rate;
+        return utter;
+    }
+
     function speak(text, opts) {
         if (!speechSupported() || !text) { return false; }
         opts = opts || {};
         try {
+            speakSession += 1;
             window.speechSynthesis.cancel();
-            var utter = new SpeechSynthesisUtterance(text);
-            var voice = pickVoice();
-            if (voice) {
-                utter.voice = voice;
-                utter.lang = voice.lang;
-            } else {
-                /* Requested locale unavailable -> browser default voice. */
-                utter.lang = opts.lang || LOCALE_CHAIN[0];
-            }
-            utter.rate = opts.rate || 0.95;
+            var utter = makeUtterance(text, opts.rate || 0.95, opts.lang);
             /* Small delay: Chrome can drop an utterance queued right after cancel(). */
             window.setTimeout(function () {
                 try { window.speechSynthesis.speak(utter); } catch (e) { /* no-op */ }
+            }, 60);
+            return true;
+        } catch (e) {
+            return false;
+        }
+    }
+
+    /* Google-dictionary style word playback: the word once at regular pace,
+       a short beat, then once more slowly so the learner can copy how it is
+       said. speakSession invalidates the chained slow pass whenever the user
+       starts another playback before this one finishes. */
+    function speakWord(word) {
+        if (!speechSupported() || !word) { return false; }
+        try {
+            var session = ++speakSession;
+            window.speechSynthesis.cancel();
+            var fast = makeUtterance(word, WORD_NORMAL_RATE);
+            var slow = makeUtterance(word, WORD_SLOW_RATE);
+            var slowQueued = false;
+            function queueSlow() {
+                if (slowQueued || session !== speakSession) { return; }
+                slowQueued = true;
+                window.setTimeout(function () {
+                    if (session !== speakSession) { return; }
+                    try { window.speechSynthesis.speak(slow); } catch (e) { /* no-op */ }
+                }, WORD_SLOW_PAUSE_MS);
+            }
+            fast.onend = queueSlow;
+            /* Safety net: a few browsers never fire onend. */
+            window.setTimeout(queueSlow, 3000);
+            /* Small delay: Chrome can drop an utterance queued right after cancel(). */
+            window.setTimeout(function () {
+                try { window.speechSynthesis.speak(fast); } catch (e) { /* no-op */ }
             }, 60);
             return true;
         } catch (e) {
@@ -274,13 +324,65 @@
         });
     }
 
+    function wordOfCard(card) {
+        if (!card) { return ''; }
+        var nameBtn = card.querySelector('.lpn-word-name');
+        if (!nameBtn) { return ''; }
+        return (nameBtn.getAttribute('data-speak') || nameBtn.textContent || '').trim();
+    }
+
     function wireSpeak() {
         setSpeakSupport(speechSupported());
         document.addEventListener('click', function (event) {
             var button = event.target.closest('[data-speak]');
             if (!button || button.hasAttribute('disabled')) { return; }
             var text = button.getAttribute('data-speak');
-            if (text) { speak(text); }
+            if (!text) { return; }
+
+            /* Word cards teach the word itself, Google-style: normal, then slow.
+               data-speak-mode="sentence" opts a button out of that behaviour. */
+            var mode = button.getAttribute('data-speak-mode');
+            var isWordName = button.classList.contains('lpn-word-name');
+            var card = button.closest('.lpn-word');
+            if (!mode && (isWordName || (card && button.classList.contains('lpn-speak')))) {
+                mode = 'word';
+            }
+            if (mode === 'word') {
+                var word = isWordName ? text : wordOfCard(card);
+                if (word) { speakWord(word); return; }
+            }
+            speak(text);
+        });
+    }
+
+    /* Word cards: the head 🔊 teaches the word (normal + slow), so the example
+       sentence gets its own small play button on the Example row. */
+    function initWordCards() {
+        document.querySelectorAll('.lpn-word').forEach(function (card) {
+            var word = wordOfCard(card);
+            if (word) {
+                card.querySelectorAll('.lpn-word-head .lpn-speak').forEach(function (btn) {
+                    btn.setAttribute('aria-label', 'Hear the word ' + word + ' at normal speed, then slowly');
+                });
+            }
+            card.querySelectorAll('.lpn-wrow').forEach(function (row) {
+                var label = row.querySelector('.lpn-wlabel');
+                if (!label || (label.textContent || '').trim() !== 'Example') { return; }
+                if (row.querySelector('[data-speak]')) { return; }
+                var sentence = '';
+                var sib = label.nextSibling;
+                while (sib) { sentence += sib.textContent || ''; sib = sib.nextSibling; }
+                sentence = sentence.trim();
+                if (!sentence) { return; }
+                var btn = document.createElement('button');
+                btn.type = 'button';
+                btn.className = 'lpn-speak lpn-speak-sm lpn-speak--ghost lpn-wrow-play';
+                btn.setAttribute('data-speak', sentence);
+                btn.setAttribute('data-speak-mode', 'sentence');
+                btn.setAttribute('aria-label', word ? 'Hear an example sentence with ' + word : 'Hear the example sentence');
+                btn.textContent = '🔊';
+                row.appendChild(btn);
+            });
         });
     }
 
@@ -401,6 +503,7 @@
         initAccordionControls();
         initQuizzes();
         initParts();
+        initWordCards();
         wireSpeak();
         wireVoices();
         initPractice();
