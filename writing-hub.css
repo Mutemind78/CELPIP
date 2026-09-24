@@ -11,19 +11,16 @@
 
 /* ---------- Introduction panel ---------------------------------------- */
 .wh-intro { background: var(--card-bg); border: 1px solid var(--border-color); border-radius: var(--border-radius); box-shadow: var(--shadow); padding: 20px; margin-bottom: 28px; }
-.wh-intro-title { margin: 0 0 10px 0; font-size: 1.15rem; font-weight: 800; color: var(--primary); }
-.wh-intro p { margin: 0 0 12px 0; font-size: 10pt; }
+.wh-intro-title { margin: 0 0 10px 0; font-size: 1.15rem; font-weight: 800; color: var(--color-primary-ink); }
+.wh-intro p { margin: 0 0 12px 0; font-size: 15.5px; }
 .wh-intro p:last-child { margin-bottom: 0; }
-.wh-steps-title { margin: 18px 0 10px 0; font-size: 8.5pt; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: var(--text-muted); }
+.wh-steps-title { margin: 18px 0 10px 0; font-size: 13px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: var(--text-muted); }
 .wh-steps { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; margin: 0; padding: 0; list-style: none; }
 .wh-steps li { display: flex; align-items: center; gap: 8px; }
-.wh-steps li + li::before { content: "→"; color: var(--primary-light); font-weight: 700; }
-.wh-step { display: inline-block; background: var(--bg-color); border: 1px solid var(--border-color); border-radius: 999px; padding: 6px 14px; font-size: 9pt; font-weight: 700; color: var(--text-main); }
+.wh-steps li + li::before { content: "→"; color: var(--color-primary-light); font-weight: 700; }
+.wh-step { display: inline-block; background: var(--bg-color); border: 1px solid var(--border-color); border-radius: var(--radius-pill); padding: 6px 14px; font-size: 14px; font-weight: 700; color: var(--text-main); }
 
-/* ---------- Notes (official format vs SelfPIP advice) ------------------ */
-.wh-note { margin-top: 16px; padding: 12px 14px; background: var(--bg-color); border: 1px solid var(--border-color); border-left: 4px solid #dc2626; border-radius: 6px; font-size: 9.5pt; }
-.wh-note--info { border-left-color: var(--primary-light); margin-top: 10px; }
-.wh-note strong { color: var(--text-main); }
+
 
 /* ---------- Section headings ------------------------------------------ */
 .wh-section-title { margin: 32px 0 12px 0; padding-bottom: 8px; border-bottom: 2px solid var(--border-color); font-size: 1.2rem; font-weight: 800; color: var(--text-main); }
@@ -31,19 +28,19 @@
 
 /* ---------- Hub flow: Writing → 2 Task Cards → ... -------------------- */
 .wh-flow { display: flex; flex-direction: column; align-items: stretch; margin: 0 0 12px 0; padding: 0; list-style: none; }
-.wh-flow-item { position: relative; background: var(--bg-color); border: 1px solid var(--border-color); border-left: 4px solid var(--primary-light); border-radius: 8px; padding: 9px 14px; font-size: 9.5pt; font-weight: 700; color: var(--text-main); }
+.wh-flow-item { position: relative; background: var(--bg-color); border: 1px solid var(--border-color); border-left: 4px solid var(--primary-light); border-radius: var(--radius-sm); padding: 9px 14px; font-size: 15px; font-weight: 700; color: var(--text-main); }
 .wh-flow-item + .wh-flow-item { margin-top: 26px; }
-.wh-flow-item + .wh-flow-item::before { content: "↓"; position: absolute; top: -22px; left: 50%; transform: translateX(-50%); color: var(--primary-light); font-weight: 700; }
-.wh-flow-note { margin: 0; font-size: 9.5pt; color: var(--text-muted); }
+.wh-flow-item + .wh-flow-item::before { content: "↓"; position: absolute; top: -22px; left: 50%; transform: translateX(-50%); color: var(--color-primary-light); font-weight: 700; }
+.wh-flow-note { margin: 0; font-size: 15px; color: var(--text-muted); }
 
 /* ---------- Official format table ------------------------------------- */
 .wh-table-wrap { overflow-x: auto; -webkit-overflow-scrolling: touch; }
-.wh-table { width: 100%; min-width: 420px; border-collapse: collapse; font-size: 9.5pt; }
+.wh-table { width: 100%; min-width: 420px; border-collapse: collapse; font-size: 15px; }
 .wh-table th, .wh-table td { padding: 10px 12px; border-bottom: 1px solid var(--border-color); text-align: left; vertical-align: top; }
-.wh-table th { background: var(--bg-color); color: var(--primary); font-weight: 700; }
+.wh-table th { background: var(--bg-color); color: var(--color-primary-ink); font-weight: 700; }
 .wh-table th:last-child, .wh-table td:last-child { text-align: right; width: 110px; }
 .wh-table tbody tr:hover { background: var(--bg-color); }
-.wh-total { margin: 14px 0 6px 0; font-size: 10pt; font-weight: 700; color: var(--text-main); }
+.wh-total { margin: 14px 0 6px 0; font-size: 15.5px; font-weight: 700; color: var(--text-main); }
 
 /* ---------- Two task cards -------------------------------------------- */
 .wh-card { text-decoration: none; color: var(--text-main); }
@@ -51,13 +48,13 @@
 .wh-card:focus-visible { outline: 2px solid var(--primary-light); outline-offset: 2px; }
 .wh-card .btn { align-self: flex-start; }
 .wh-card-facts { list-style: none; margin: 4px 0 18px 0; padding: 0; display: flex; flex-direction: column; gap: 8px; }
-.wh-card-facts li { font-size: 9pt; line-height: 1.45; }
-.wh-card-facts .wh-label { display: inline-block; min-width: 76px; font-size: 7.5pt; font-weight: 700; letter-spacing: 0.6px; text-transform: uppercase; color: var(--primary-light); }
+.wh-card-facts li { font-size: 14px; line-height: 1.45; }
+.wh-card-facts .wh-label { display: inline-block; min-width: 76px; font-size: 12px; font-weight: 700; letter-spacing: 0.6px; text-transform: uppercase; color: var(--color-primary-light); }
 
 /* ---------- Mobile ----------------------------------------------------- */
 @media (max-width: 640px) {
     .wh-intro { padding: 16px; }
-    .wh-intro p { font-size: 9.5pt; }
+    .wh-intro p { font-size: 15px; }
     .wh-steps li { width: 100%; }
     .wh-steps li + li::before { content: "↓"; }
     .wh-steps li + li { margin-top: -2px; }
@@ -73,33 +70,33 @@
 
 /* ---------- Core writing strategy: skill cards ------------------------- */
 .wh-skill-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 14px; margin-bottom: 16px; }
-.wh-skill { --wh-tone: var(--primary-light); background: var(--card-bg); border: 1px solid var(--border-color); border-top: 4px solid var(--wh-tone); border-radius: 10px; padding: 16px; box-shadow: var(--shadow); min-width: 0; }
-.wh-skill--topic { --wh-tone: #2563eb; }
-.wh-skill--detail { --wh-tone: #0d9488; }
-.wh-skill--evidence { --wh-tone: #16a34a; }
-.wh-skill--correction { --wh-tone: #ea580c; }
+.wh-skill { --wh-tone: var(--primary-light); background: var(--card-bg); border: 1px solid var(--border-color); border-top: 4px solid var(--wh-tone); border-radius: var(--radius-sm); padding: 16px; box-shadow: var(--shadow); min-width: 0; }
+.wh-skill--topic { --wh-tone: var(--color-primary-light); }
+.wh-skill--detail { --wh-tone: var(--accent-teal); }
+.wh-skill--evidence { --wh-tone: var(--accent-green); }
+.wh-skill--correction { --wh-tone: var(--accent-orange); }
 .wh-skill-title { margin: 0 0 6px 0; font-size: 1rem; font-weight: 800; color: var(--text-main); }
-.wh-skill-intro { margin: 0 0 10px 0; font-size: 9pt; color: var(--text-muted); }
-.wh-skill ul { margin: 0; padding-left: 18px; font-size: 9.5pt; }
+.wh-skill-intro { margin: 0 0 10px 0; font-size: 14px; color: var(--text-muted); }
+.wh-skill ul { margin: 0; padding-left: 18px; font-size: 15px; }
 .wh-skill li { margin-bottom: 4px; }
 
 /* ---------- Numbered step lists (time management, vocabulary) ---------- */
 .wh-time-steps { margin: 0 0 14px 0; padding: 0; list-style: none; counter-reset: whstep; }
-.wh-time-steps li { position: relative; margin-bottom: 8px; padding: 10px 14px 10px 52px; background: var(--bg-color); border: 1px solid var(--border-color); border-radius: 8px; font-size: 9.5pt; }
-.wh-time-steps li::before { counter-increment: whstep; content: counter(whstep); position: absolute; left: 12px; top: 50%; transform: translateY(-50%); width: 26px; height: 26px; border-radius: 50%; background: var(--primary); color: #ffffff; font-size: 9.5pt; font-weight: 800; display: flex; align-items: center; justify-content: center; }
+.wh-time-steps li { position: relative; margin-bottom: 8px; padding: 10px 14px 10px 52px; background: var(--bg-color); border: 1px solid var(--border-color); border-radius: var(--radius-sm); font-size: 15px; }
+.wh-time-steps li::before { counter-increment: whstep; content: counter(whstep); position: absolute; left: 12px; top: 50%; transform: translateY(-50%); width: 26px; height: 26px; border-radius: 50%; background: var(--primary); color: #ffffff; font-size: 15px; font-weight: 800; display: flex; align-items: center; justify-content: center; }
 
 /* ---------- Golden rules ---------------------------------------------- */
 .wh-rules { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 10px; }
-.wh-rule { display: flex; align-items: flex-start; gap: 10px; padding: 12px 14px; background: var(--card-bg); border: 1px solid var(--border-color); border-left: 4px solid #f59e0b; border-radius: 8px; font-size: 9.5pt; font-weight: 700; color: var(--text-main); }
-.wh-rule-num { flex: none; width: 24px; height: 24px; border-radius: 50%; background: #f59e0b; color: #ffffff; font-size: 9pt; font-weight: 800; display: flex; align-items: center; justify-content: center; }
+.wh-rule { display: flex; align-items: flex-start; gap: 10px; padding: 12px 14px; background: var(--card-bg); border: 1px solid var(--border-color); border-left: 4px solid var(--accent-amber); border-radius: var(--radius-sm); font-size: 15px; font-weight: 700; color: var(--text-main); }
+.wh-rule-num { flex: none; width: 24px; height: 24px; border-radius: 50%; background: var(--accent-amber); color: var(--color-on-amber); font-size: 14px; font-weight: 800; display: flex; align-items: center; justify-content: center; }
 
 /* ---------- Final checklist (static bullets) --------------------------- */
 .wh-check-cols { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 14px; }
-.wh-check-block { padding: 16px; background: var(--card-bg); border: 1px solid var(--border-color); border-radius: 10px; box-shadow: var(--shadow); min-width: 0; }
-.wh-check-block h3 { margin: 0 0 10px 0; font-size: 9.5pt; font-weight: 800; letter-spacing: 0.8px; text-transform: uppercase; color: var(--primary); }
-.wh-check-list { margin: 0; padding: 0; list-style: none; font-size: 9.5pt; }
-.wh-check-list li { position: relative; margin-bottom: 6px; padding: 8px 10px 8px 30px; background: var(--bg-color); border: 1px solid var(--border-color); border-radius: 6px; }
-.wh-check-list li::before { content: "☐"; position: absolute; left: 10px; top: 7px; color: var(--primary-light); font-weight: 700; }
+.wh-check-block { padding: 16px; background: var(--card-bg); border: 1px solid var(--border-color); border-radius: var(--radius-sm); box-shadow: var(--shadow); min-width: 0; }
+.wh-check-block h3 { margin: 0 0 10px 0; font-size: 15px; font-weight: 800; letter-spacing: 0.8px; text-transform: uppercase; color: var(--color-primary-ink); }
+.wh-check-list { margin: 0; padding: 0; list-style: none; font-size: 15px; }
+.wh-check-list li { position: relative; margin-bottom: 6px; padding: 8px 10px 8px 30px; background: var(--bg-color); border: 1px solid var(--border-color); border-radius: var(--radius-xs); }
+.wh-check-list li::before { content: "☐"; position: absolute; left: 10px; top: 7px; color: var(--color-primary-light); font-weight: 700; }
 
 /* ---------- Mobile additions ------------------------------------------- */
 @media (max-width: 640px) {
@@ -113,7 +110,7 @@
     position: absolute;
     left: 10px;
     top: 9px;
-    accent-color: var(--primary-light);
+    accent-color: var(--color-primary-light);
     cursor: pointer;
 }
 .wh-check-list label { display: block; cursor: pointer; }

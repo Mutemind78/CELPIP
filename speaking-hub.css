@@ -14,21 +14,18 @@ html { scroll-behavior: smooth; }
 
 /* ---------- Introduction panel ----------------------------------------- */
 .sh-intro { background: var(--card-bg); border: 1px solid var(--border-color); border-radius: var(--border-radius); box-shadow: var(--shadow); padding: 20px; margin-bottom: 28px; }
-.sh-intro-title { margin: 0 0 10px 0; font-size: 1.15rem; font-weight: 800; color: var(--primary); }
-.sh-intro p { margin: 0 0 12px 0; font-size: 10pt; }
+.sh-intro-title { margin: 0 0 10px 0; font-size: 1.15rem; font-weight: 800; color: var(--color-primary-ink); }
+.sh-intro p { margin: 0 0 12px 0; font-size: 15.5px; }
 .sh-intro p:last-child { margin-bottom: 0; }
-.sh-steps-title { margin: 18px 0 10px 0; font-size: 8.5pt; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: var(--text-muted); }
+.sh-steps-title { margin: 18px 0 10px 0; font-size: 13px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: var(--text-muted); }
 
 /* Horizontal approach steps: Understand -> Plan -> ... -> Review */
 .sh-steps { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 8px; margin: 0; padding: 0; list-style: none; }
 .sh-steps li { display: flex; align-items: center; gap: 8px; }
-.sh-steps li + li::before { content: "→"; color: var(--primary-light); font-weight: 700; }
-.sh-step { display: inline-block; background: var(--bg-color); border: 1px solid var(--border-color); border-radius: 999px; padding: 6px 14px; font-size: 9pt; font-weight: 700; color: var(--text-main); }
+.sh-steps li + li::before { content: "→"; color: var(--color-primary-light); font-weight: 700; }
+.sh-step { display: inline-block; background: var(--bg-color); border: 1px solid var(--border-color); border-radius: var(--radius-pill); padding: 6px 14px; font-size: 14px; font-weight: 700; color: var(--text-main); }
 
-/* ---------- Notes (official format vs SelfPIP advice, warnings) -------- */
-.sh-note { margin-top: 16px; padding: 12px 14px; background: var(--bg-color); border: 1px solid var(--border-color); border-left: 4px solid #dc2626; border-radius: 6px; font-size: 9.5pt; }
-.sh-note--info { border-left-color: var(--primary-light); margin-top: 10px; }
-.sh-note strong { color: var(--text-main); }
+
 
 /* ---------- Section headings ------------------------------------------- */
 .sh-section-title { margin: 32px 0 12px 0; padding-bottom: 8px; border-bottom: 2px solid var(--border-color); font-size: 1.2rem; font-weight: 800; color: var(--text-main); }
@@ -36,16 +33,16 @@ html { scroll-behavior: smooth; }
 
 /* ---------- Hub flow (vertical list with down-arrows) -------------- */
 .sh-flow { display: flex; flex-direction: column; align-items: stretch; margin: 0 0 12px 0; padding: 0; list-style: none; }
-.sh-flow-item { position: relative; background: var(--bg-color); border: 1px solid var(--border-color); border-left: 4px solid var(--primary-light); border-radius: 8px; padding: 9px 14px; font-size: 9.5pt; font-weight: 700; color: var(--text-main); }
+.sh-flow-item { position: relative; background: var(--bg-color); border: 1px solid var(--border-color); border-left: 4px solid var(--primary-light); border-radius: var(--radius-sm); padding: 9px 14px; font-size: 15px; font-weight: 700; color: var(--text-main); }
 .sh-flow-item + .sh-flow-item { margin-top: 26px; }
-.sh-flow-item + .sh-flow-item::before { content: "↓"; position: absolute; top: -22px; left: 50%; transform: translateX(-50%); color: var(--primary-light); font-weight: 700; }
+.sh-flow-item + .sh-flow-item::before { content: "↓"; position: absolute; top: -22px; left: 50%; transform: translateX(-50%); color: var(--color-primary-light); font-weight: 700; }
 
 /* ---------- Official format table -------------------------------------- */
 .sh-table-wrap { overflow-x: auto; -webkit-overflow-scrolling: touch; }
-.sh-table { width: 100%; min-width: 420px; border-collapse: collapse; font-size: 9.5pt; }
+.sh-table { width: 100%; min-width: 420px; border-collapse: collapse; font-size: 15px; }
 .sh-table th, .sh-table td { padding: 10px 12px; border-bottom: 1px solid var(--border-color); text-align: left; vertical-align: top; }
-.sh-table th { background: var(--bg-color); color: var(--primary); font-weight: 700; }
-.sh-total { margin: 14px 0 6px 0; font-size: 10pt; font-weight: 700; color: var(--text-main); }
+.sh-table th { background: var(--bg-color); color: var(--color-primary-ink); font-weight: 700; }
+.sh-total { margin: 14px 0 6px 0; font-size: 15.5px; font-weight: 700; color: var(--text-main); }
 
 /* ---------- Task cards (whole card is a link) ----------------------- */
 .sh-card { text-decoration: none; color: var(--text-main); }
@@ -55,54 +52,54 @@ html { scroll-behavior: smooth; }
 
 /* ---------- Core speaking strategy: performance-skill cards ---------- */
 .sh-skill-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 14px; margin-bottom: 16px; }
-.sh-skill { --sh-tone: var(--primary-light); background: var(--card-bg); border: 1px solid var(--border-color); border-top: 4px solid var(--sh-tone); border-radius: 10px; padding: 16px; box-shadow: var(--shadow); min-width: 0; }
-.sh-skill--content { --sh-tone: #2563eb; }
-.sh-skill--vocab { --sh-tone: #0d9488; }
-.sh-skill--listen { --sh-tone: #7c3aed; }
-.sh-skill--task { --sh-tone: #ea580c; }
+.sh-skill { --sh-tone: var(--primary-light); background: var(--card-bg); border: 1px solid var(--border-color); border-top: 4px solid var(--sh-tone); border-radius: var(--radius-sm); padding: 16px; box-shadow: var(--shadow); min-width: 0; }
+.sh-skill--content { --sh-tone: var(--color-primary-light); }
+.sh-skill--vocab { --sh-tone: var(--accent-teal); }
+.sh-skill--listen { --sh-tone: var(--accent-violet); }
+.sh-skill--task { --sh-tone: var(--accent-orange); }
 .sh-skill-title { margin: 0 0 6px 0; font-size: 1rem; font-weight: 800; color: var(--text-main); }
-.sh-skill-intro { margin: 0 0 10px 0; font-size: 9pt; color: var(--text-muted); }
-.sh-skill ul { margin: 0; padding-left: 18px; font-size: 9.5pt; }
+.sh-skill-intro { margin: 0 0 10px 0; font-size: 14px; color: var(--text-muted); }
+.sh-skill ul { margin: 0; padding-left: 18px; font-size: 15px; }
 
 /* ---------- SelfPIP speaking-method visuals -------------------------- */
-.sh-method { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 10px; margin: 16px 0; padding: 16px; background: var(--card-bg); border: 1px solid var(--border-color); border-radius: 10px; box-shadow: var(--shadow); }
-.sh-method-step { background: var(--bg-color); border: 1px solid var(--border-color); border-left: 4px solid var(--primary-light); border-radius: 8px; padding: 10px 16px; font-size: 9.5pt; font-weight: 700; color: var(--text-main); text-align: center; min-width: 110px; }
-.sh-method-arrow { color: var(--text-muted); font-weight: 800; font-size: 18pt; line-height: 1; }
-.sh-method-caption { text-align: center; margin-top: 8px; font-size: 9pt; color: var(--text-muted); }
+.sh-method { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 10px; margin: 16px 0; padding: 16px; background: var(--card-bg); border: 1px solid var(--border-color); border-radius: var(--radius-sm); box-shadow: var(--shadow); }
+.sh-method-step { background: var(--bg-color); border: 1px solid var(--border-color); border-left: 4px solid var(--primary-light); border-radius: var(--radius-sm); padding: 10px 16px; font-size: 15px; font-weight: 700; color: var(--text-main); text-align: center; min-width: 110px; }
+.sh-method-arrow { color: var(--text-muted); font-weight: 800; font-size: 24px; line-height: 1; }
+.sh-method-caption { text-align: center; margin-top: 8px; font-size: 14px; color: var(--text-muted); }
 
 /* ---------- Idea generation tool (brainstorming categories) ---------- */
 .sh-generator-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 12px; margin-bottom: 16px; }
-.sh-generator-card { background: var(--card-bg); border: 1px solid var(--border-color); border-radius: 10px; padding: 14px; box-shadow: var(--shadow); text-align: center; min-width: 0; }
-.sh-generator-icon { font-size: 22pt; margin-bottom: 6px; }
-.sh-generator-title { font-size: 9.5pt; font-weight: 700; color: var(--text-main); margin: 0 0 4px 0; }
-.sh-generator-desc { font-size: 8.5pt; color: var(--text-muted); margin: 0; }
+.sh-generator-card { background: var(--card-bg); border: 1px solid var(--border-color); border-radius: var(--radius-sm); padding: 14px; box-shadow: var(--shadow); text-align: center; min-width: 0; }
+.sh-generator-icon { font-size: 30px; margin-bottom: 6px; }
+.sh-generator-title { font-size: 15px; font-weight: 700; color: var(--text-main); margin: 0 0 4px 0; }
+.sh-generator-desc { font-size: 13px; color: var(--text-muted); margin: 0; }
 
 /* ---------- Speaking formula system (8 task frameworks) ------------- */
 .sh-formulas { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 12px; }
-.sh-formula { background: var(--card-bg); border: 1px solid var(--border-color); border-radius: 10px; padding: 14px; box-shadow: var(--shadow); min-width: 0; }
-.sh-formula-title { font-size: 9.5pt; font-weight: 800; color: var(--primary); margin: 0 0 6px 0; }
-.sh-formula-badge { display: inline-block; background: var(--bg-color); border: 1px solid var(--border-color); border-radius: 4px; padding: 1px 6px; font-size: 7.5pt; font-weight: 700; color: var(--text-muted); margin-right: 4px; }
+.sh-formula { background: var(--card-bg); border: 1px solid var(--border-color); border-radius: var(--radius-sm); padding: 14px; box-shadow: var(--shadow); min-width: 0; }
+.sh-formula-title { font-size: 15px; font-weight: 800; color: var(--color-primary-ink); margin: 0 0 6px 0; }
+.sh-formula-badge { display: inline-block; background: var(--bg-color); border: 1px solid var(--border-color); border-radius: var(--radius-xs); padding: 1px 6px; font-size: 12px; font-weight: 700; color: var(--text-muted); margin-right: 4px; }
 
 /* ---------- Mistake strategy card ------------------------------------ */
-.sh-mistake { background: var(--card-bg); border: 1px solid var(--border-color); border-radius: 10px; padding: 16px; box-shadow: var(--shadow); }
+.sh-mistake { background: var(--card-bg); border: 1px solid var(--border-color); border-radius: var(--radius-sm); padding: 16px; box-shadow: var(--shadow); }
 .sh-mistake-item { display: flex; gap: 10px; margin-bottom: 10px; align-items: flex-start; }
 .sh-mistake-item:last-child { margin-bottom: 0; }
-.sh-mistake-icon { flex: none; font-size: 13pt; }
+.sh-mistake-icon { flex: none; font-size: 19px; }
 .sh-mistake-text strong { color: var(--text-main); display: inline-block; margin-bottom: 2px; }
-.sh-mistake-text { margin: 0; font-size: 9.5pt; color: var(--text-main); line-height: 1.5; }
+.sh-mistake-text { margin: 0; font-size: 15px; color: var(--text-main); line-height: 1.5; }
 
 /* ---------- Golden rules -------------------------------------------- */
 .sh-rules { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 10px; }
-.sh-rule { display: flex; align-items: flex-start; gap: 10px; padding: 12px 14px; background: var(--card-bg); border: 1px solid var(--border-color); border-left: 4px solid #f59e0b; border-radius: 8px; font-size: 9.5pt; font-weight: 700; color: var(--text-main); }
-.sh-rule-num { flex: none; width: 24px; height: 24px; border-radius: 50%; background: #f59e0b; color: #ffffff; font-size: 9pt; font-weight: 800; display: flex; align-items: center; justify-content: center; }
+.sh-rule { display: flex; align-items: flex-start; gap: 10px; padding: 12px 14px; background: var(--card-bg); border: 1px solid var(--border-color); border-left: 4px solid var(--accent-amber); border-radius: var(--radius-sm); font-size: 15px; font-weight: 700; color: var(--text-main); }
+.sh-rule-num { flex: none; width: 24px; height: 24px; border-radius: 50%; background: var(--accent-amber); color: var(--color-on-amber); font-size: 14px; font-weight: 800; display: flex; align-items: center; justify-content: center; }
 
 /* ---------- Practice levels ----------------------------------------- */
-.sh-practice-level { background: var(--card-bg); border: 1px solid var(--border-color); border-radius: 10px; padding: 16px; box-shadow: var(--shadow); min-width: 0; }
+.sh-practice-level { background: var(--card-bg); border: 1px solid var(--border-color); border-radius: var(--radius-sm); padding: 16px; box-shadow: var(--shadow); min-width: 0; }
 .sh-practice-level--1 { border-top: 4px solid var(--primary-light); }
-.sh-practice-level--2 { border-top: 4px solid #0d9488; }
-.sh-practice-level--3 { border-top: 4px solid #16a34a; }
+.sh-practice-level--2 { border-top: 4px solid var(--accent-teal); }
+.sh-practice-level--3 { border-top: 4px solid var(--accent-green); }
 .sh-practice-title { margin: 0 0 8px 0; font-size: 1rem; font-weight: 800; color: var(--text-main); }
-.sh-practice-desc { margin: 0 0 6px 0; font-size: 9.5pt; color: var(--text-main); }
+.sh-practice-desc { margin: 0 0 6px 0; font-size: 15px; color: var(--text-main); }
 .sh-practice-desc:last-child { margin-bottom: 0; }
 
 /* ---------- Mobile --------------------------------------------------- */
@@ -122,13 +119,13 @@ html { scroll-behavior: smooth; }
 /* ---------- Self-review checklist (powered by speaking-task.js) ---- */
 .sh-checklist { background: var(--card-bg); border: 1px solid var(--border-color); border-radius: var(--border-radius); padding: 16px; box-shadow: var(--shadow); margin-bottom: 24px; }
 .sh-checklist-bar { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; }
-.sh-checklist-count { font-size: 9pt; font-weight: 700; color: var(--text-muted); }
-.sh-checklist-clear { background: var(--bg-color); border: 1px solid var(--border-color); border-radius: 6px; padding: 4px 10px; font-size: 8.5pt; font-weight: 700; color: var(--text-main); cursor: pointer; }
+.sh-checklist-count { font-size: 14px; font-weight: 700; color: var(--text-muted); }
+.sh-checklist-clear { background: var(--bg-color); border: 1px solid var(--border-color); border-radius: var(--radius-xs); padding: 4px 10px; font-size: 13px; font-weight: 700; color: var(--text-main); cursor: pointer; }
 .sh-checklist-clear:hover { background: var(--border-color); }
 .sh-checklist-list { list-style: none; padding: 0; margin: 0; }
 .sh-checklist-list li { margin-bottom: 8px; }
-.sh-checklist-list label { display: flex; align-items: flex-start; gap: 8px; font-size: 9.5pt; color: var(--text-main); line-height: 1.5; cursor: pointer; }
+.sh-checklist-list label { display: flex; align-items: flex-start; gap: 8px; font-size: 15px; color: var(--text-main); line-height: 1.5; cursor: pointer; }
 .sh-checklist-list input[type="checkbox"] { flex: none; margin-top: 3px; }
 
-
-
+/* ---------- Flow notes (matches the Listening / Reading / Writing hubs) -- */
+.sh-flow-note { margin: 0; font-size: 15px; color: var(--text-muted); }

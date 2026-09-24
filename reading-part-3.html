@@ -2,41 +2,79 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <link rel="icon" href="favicon.svg" type="image/svg+xml">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Reading Part 3 — Reading for Information — SelfPIP</title>
+    <meta name="description" content="Reading for Information — SelfPIP study guide: what the task tests, a step-by-step strategy, common traps and original practice.">
+    <meta name="color-scheme" content="light dark">
+    <meta name="theme-color" content="#f5f6fb" media="(prefers-color-scheme: light)">
+    <meta name="theme-color" content="#0a0e1f" media="(prefers-color-scheme: dark)">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap">
+    <script>
+        // Runs before first paint: restores the saved theme, otherwise follows
+        // the operating system, and records that JavaScript is available.
+        (function () {
+            var root = document.documentElement;
+            root.className += ' js';
+            var theme = 'light';
+            try {
+                theme = localStorage.getItem('celpip_theme') ||
+                    (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+            } catch (error) { /* storage unavailable */ }
+            root.setAttribute('data-theme', theme === 'dark' ? 'dark' : 'light');
+        }());
+    </script>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="reading-part.css">
 </head>
-<body data-theme="light">
+<body>
+    <a class="skip-link" href="#main">Skip to content</a>
     <div class="app-container">
-        <header>
+        <!-- Global header — identical on every page -->
+        <header class="site-header">
             <div class="nav-container">
-                <a href="index.html" class="logo-link">Self<span class="logo-accent">PIP</span></a>
-                <nav class="desktop-nav">
+                <a href="index.html" class="logo-link" aria-label="SelfPIP home">
+                    <span class="logo-mark" aria-hidden="true">SP</span>
+                    <span class="logo-text">Self<span class="logo-accent">PIP</span></span>
+                </a>
+
+                <nav class="desktop-nav" aria-label="Primary">
                     <a href="index.html" class="nav-item">Home</a>
+                    <a href="test-format.html" class="nav-item">Test Format</a>
                     <a href="listening.html" class="nav-item">Listening</a>
-                    <a href="reading.html" class="nav-item active">Reading</a>
+                    <a href="reading.html" class="nav-item" aria-current="page">Reading</a>
                     <a href="writing.html" class="nav-item">Writing</a>
                     <a href="speaking.html" class="nav-item">Speaking</a>
                     <a href="language.html" class="nav-item">Language</a>
                     <a href="practice.html" class="nav-item">Practice</a>
                 </nav>
-                                <div class="nav-actions">
-                    <button type="button" class="nav-theme" id="themeToggleBtn" aria-pressed="false" aria-label="Switch to dark mode">🌙</button>
-                    <button class="menu-toggle" aria-label="Toggle Navigation Menu" onclick="toggleMobileMenu()">☰</button>
+
+                <div class="nav-actions">
+                    <button type="button" class="icon-button theme-toggle" id="theme-toggle" aria-pressed="false" aria-label="Switch to dark theme">
+                        <svg class="icon icon-moon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8Z"/></svg>
+                        <svg class="icon icon-sun" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.5v2.2M12 19.3v2.2M4.2 4.2l1.6 1.6M18.2 18.2l1.6 1.6M2.5 12h2.2M19.3 12h2.2M4.2 19.8l1.6-1.6M18.2 5.8l1.6-1.6"/></svg>
+                    </button>
+                    <button type="button" class="icon-button menu-toggle" id="menu-toggle" aria-expanded="false" aria-controls="mobile-nav" aria-label="Open navigation menu">
+                        <svg class="icon icon-bars" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+                        <svg class="icon icon-close" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6 6l12 12M18 6 6 18"/></svg>
+                    </button>
                 </div>
             </div>
-            <div class="mobile-nav" id="mobileNav">
+
+            <nav class="mobile-nav" id="mobile-nav" aria-label="Mobile">
                 <a href="index.html" class="nav-item">Home</a>
+                <a href="test-format.html" class="nav-item">Test Format</a>
                 <a href="listening.html" class="nav-item">Listening</a>
-                <a href="reading.html" class="nav-item active">Reading</a>
+                <a href="reading.html" class="nav-item" aria-current="page">Reading</a>
                 <a href="writing.html" class="nav-item">Writing</a>
                 <a href="speaking.html" class="nav-item">Speaking</a>
                 <a href="language.html" class="nav-item">Language</a>
                 <a href="practice.html" class="nav-item">Practice</a>
-            </div>
+            </nav>
         </header>
-        <main class="main-content">
+        <main class="main-content" id="main">
             <nav class="rp1-crumb" aria-label="Breadcrumb">
                 <a href="reading.html">← Reading</a>
                 <span aria-hidden="true">→</span>
@@ -209,10 +247,10 @@
                     <div class="rp1-quiz" data-rp1-quiz data-rp1-name="q1">
                         <p class="rp1-quiz-prompt"><strong>Q1.</strong> What is the main purpose of Paragraph 1?</p>
                         <div class="rp1-options">
-                            <button class="rp1-option" data-rp1-option="A">To explain why the garden cannot expand beyond forty-eight plots.</button>
-                            <button class="rp1-option" data-rp1-option="B" data-rp1-correct="true">To set out the rules and responsibilities for reserving and using a plot.</button>
-                            <button class="rp1-option" data-rp1-option="C">To announce a second garden site at the former school grounds.</button>
-                            <button class="rp1-option" data-rp1-option="D">To report the garden's cost and funding source.</button>
+                            <button type="button" class="rp1-option" data-rp1-option="A">To explain why the garden cannot expand beyond forty-eight plots.</button>
+                            <button type="button" class="rp1-option" data-rp1-option="B" data-rp1-correct="true">To set out the rules and responsibilities for reserving and using a plot.</button>
+                            <button type="button" class="rp1-option" data-rp1-option="C">To announce a second garden site at the former school grounds.</button>
+                            <button type="button" class="rp1-option" data-rp1-option="D">To report the garden's cost and funding source.</button>
                         </div>
                         <div class="rp1-feedback" data-rp1-feedback hidden>
                             <p class="rp1-feedback-title" data-rp1-feedback-title"></p>
@@ -225,10 +263,10 @@
                     <div class="rp1-quiz" data-rp1-quiz data-rp1-name="q2">
                         <p class="rp1-quiz-prompt"><strong>Q2.</strong> Which of the following is permitted for gardeners?</p>
                         <div class="rp1-options">
-                            <button class="rp1-option" data-rp1-option="A">Taking home produce grown in any plot at the end of the season.</button>
-                            <button class="rp1-option" data-rp1-option="B" data-rp1-correct="true">Reserving one 4×4 foot plot per household.</button>
-                            <button class="rp1-option" data-rp1-option="C">Watering at any hour of the day.</button>
-                            <button class="rp1-option" data-rp1-option="D">Joining the volunteer committee without attending orientation.</button>
+                            <button type="button" class="rp1-option" data-rp1-option="A">Taking home produce grown in any plot at the end of the season.</button>
+                            <button type="button" class="rp1-option" data-rp1-option="B" data-rp1-correct="true">Reserving one 4×4 foot plot per household.</button>
+                            <button type="button" class="rp1-option" data-rp1-option="C">Watering at any hour of the day.</button>
+                            <button type="button" class="rp1-option" data-rp1-option="D">Joining the volunteer committee without attending orientation.</button>
                         </div>
                         <div class="rp1-feedback" data-rp1-feedback hidden>
                             <p class="rp1-feedback-title" data-rp1-feedback-title=""></p>
@@ -243,10 +281,10 @@
                     <div class="rp1-quiz" data-rp1-quiz data-rp1-name="q3">
                         <p class="rp1-quiz-prompt"><strong>Q3.</strong> According to Paragraph 3, why can the garden not add more plots?</p>
                         <div class="rp1-options">
-                            <button class="rp1-option" data-rp1-option="A">The grant money was not enough to build more beds.</button>
-                            <button class="rp1-option" data-rp1-option="B" data-rp1-correct="true">Utility lines under the lot prevent further digging.</button>
-                            <button class="rp1-option" data-rp1-option="C">Forty-eight plots are already enough for every resident who applied.</button>
-                            <button class="rp1-option" data-rp1-option="D">The volunteer committee voted against expansion.</button>
+                            <button type="button" class="rp1-option" data-rp1-option="A">The grant money was not enough to build more beds.</button>
+                            <button type="button" class="rp1-option" data-rp1-option="B" data-rp1-correct="true">Utility lines under the lot prevent further digging.</button>
+                            <button type="button" class="rp1-option" data-rp1-option="C">Forty-eight plots are already enough for every resident who applied.</button>
+                            <button type="button" class="rp1-option" data-rp1-option="D">The volunteer committee voted against expansion.</button>
                         </div>
                         <div class="rp1-feedback" data-rp1-feedback hidden>
                             <p class="rp1-feedback-title" data-rp1-feedback-title=""></p>
@@ -259,10 +297,10 @@
                     <div class="rp1-quiz" data-rp1-quiz data-rp1-name="q4">
                         <p class="rp1-quiz-prompt"><strong>Q4.</strong> What is one reason the correct answer to Q1 is better than option A (the expansion reason)?</p>
                         <div class="rp1-options">
-                            <button class="rp1-option" data-rp1-option="A">Expansion limits are discussed in Paragraph 1.</button>
-                            <button class="rp1-option" data-rp1-option="B" data-rp1-correct="true">Expansion limits are discussed in Paragraph 3, not Paragraph 1.</button>
-                            <button class="rp1-option" data-rp1-option="C">Expansion is impossible because of parking concerns.</button>
-                            <button class="rp1-option" data-rp1-option="D">The expansion reason appears nowhere in the passage.</button>
+                            <button type="button" class="rp1-option" data-rp1-option="A">Expansion limits are discussed in Paragraph 1.</button>
+                            <button type="button" class="rp1-option" data-rp1-option="B" data-rp1-correct="true">Expansion limits are discussed in Paragraph 3, not Paragraph 1.</button>
+                            <button type="button" class="rp1-option" data-rp1-option="C">Expansion is impossible because of parking concerns.</button>
+                            <button type="button" class="rp1-option" data-rp1-option="D">The expansion reason appears nowhere in the passage.</button>
                         </div>
                         <div class="rp1-feedback" data-rp1-feedback hidden>
                             <p class="rp1-feedback-title" data-rp1-feedback-title=""></p>
@@ -347,14 +385,30 @@
                 </nav>
             </section>
         </main>
-        <footer>
+        <!-- Global footer — identical on every page -->
+        <footer class="site-footer">
             <div class="footer-content">
-                <div class="footer-title">SelfPIP</div>
-                <div class="footer-tagline">Personal CELPIP Study Companion</div>
+                <div class="footer-brand">
+                    <p class="footer-title">SelfPIP</p>
+                    <p class="footer-tagline">An independent educational resource for CELPIP learners.</p>
+                </div>
+
+                <nav class="footer-nav" aria-label="Footer">
+                    <a href="index.html">Home</a>
+                    <a href="test-format.html">Test Format</a>
+                    <a href="listening.html">Listening</a>
+                    <a href="reading.html">Reading</a>
+                    <a href="writing.html">Writing</a>
+                    <a href="speaking.html">Speaking</a>
+                    <a href="language.html">Language</a>
+                    <a href="practice.html">Practice</a>
+                </nav>
+
                 <div class="footer-disclaimer">
-                    <p>© 2026 SelfPIP. An independent, unofficial study resource — not affiliated with, endorsed by, or sponsored by Paragon Testing Enterprises Inc. or Immigration, Refugees and Citizenship Canada (IRCC).</p>
-                    <p>Registration, official preparation materials and results for the CELPIP test are available only through the official site, celpip.ca. This site does not administer the test.</p>
-                </div>            </div>
+                    <p>&copy; <span data-current-year>2026</span> SelfPIP. SelfPIP is an independent educational resource and is not affiliated with, endorsed by, or sponsored by CELPIP or Paragon Testing Enterprises, or by Immigration, Refugees and Citizenship Canada (IRCC).</p>
+                    <p>Registration, official preparation materials and results for the CELPIP test are available only through the official site, <a href="https://www.celpip.ca/" target="_blank" rel="noopener noreferrer">celpip.ca</a>. SelfPIP does not administer the test.</p>
+                </div>
+            </div>
         </footer>
     </div>
     <script src="script.js"></script>

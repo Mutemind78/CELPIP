@@ -2,74 +2,316 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <link rel="icon" href="favicon.svg" type="image/svg+xml">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Practice Section — SelfPIP</title>
+    <meta name="description" content="Practise CELPIP skills with a quick interactive activity, skill-focused practice, a self-review tool and curated resources.">
+    <meta name="color-scheme" content="light dark">
+    <meta name="theme-color" content="#f5f6fb" media="(prefers-color-scheme: light)">
+    <meta name="theme-color" content="#0a0e1f" media="(prefers-color-scheme: dark)">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap">
+    <script>
+        // Runs before first paint: restores the saved theme, otherwise follows
+        // the operating system, and records that JavaScript is available.
+        (function () {
+            var root = document.documentElement;
+            root.className += ' js';
+            var theme = 'light';
+            try {
+                theme = localStorage.getItem('celpip_theme') ||
+                    (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+            } catch (error) { /* storage unavailable */ }
+            root.setAttribute('data-theme', theme === 'dark' ? 'dark' : 'light');
+        }());
+    </script>
     <link rel="stylesheet" href="style.css">
 </head>
-<body data-theme="light">
+<body>
+    <a class="skip-link" href="#main">Skip to content</a>
     <div class="app-container">
-        <!-- Reusable Navigation Bar -->
-        <header>
+        <!-- Global header — identical on every page -->
+        <header class="site-header">
             <div class="nav-container">
-                <a href="index.html" class="logo-link">
-                    Self<span class="logo-accent">PIP</span>
+                <a href="index.html" class="logo-link" aria-label="SelfPIP home">
+                    <span class="logo-mark" aria-hidden="true">SP</span>
+                    <span class="logo-text">Self<span class="logo-accent">PIP</span></span>
                 </a>
-                <nav class="desktop-nav">
+
+                <nav class="desktop-nav" aria-label="Primary">
                     <a href="index.html" class="nav-item">Home</a>
+                    <a href="test-format.html" class="nav-item">Test Format</a>
                     <a href="listening.html" class="nav-item">Listening</a>
                     <a href="reading.html" class="nav-item">Reading</a>
                     <a href="writing.html" class="nav-item">Writing</a>
                     <a href="speaking.html" class="nav-item">Speaking</a>
                     <a href="language.html" class="nav-item">Language</a>
-                    <a href="practice.html" class="nav-item active">Practice</a>
+                    <a href="practice.html" class="nav-item" aria-current="page">Practice</a>
                 </nav>
-                                <div class="nav-actions">
-                    <button type="button" class="nav-theme" id="themeToggleBtn" aria-pressed="false" aria-label="Switch to dark mode">🌙</button>
-                    <button class="menu-toggle" aria-label="Toggle Navigation Menu" onclick="toggleMobileMenu()">
-                    ☰
-                </button>
+
+                <div class="nav-actions">
+                    <button type="button" class="icon-button theme-toggle" id="theme-toggle" aria-pressed="false" aria-label="Switch to dark theme">
+                        <svg class="icon icon-moon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8Z"/></svg>
+                        <svg class="icon icon-sun" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.5v2.2M12 19.3v2.2M4.2 4.2l1.6 1.6M18.2 18.2l1.6 1.6M2.5 12h2.2M19.3 12h2.2M4.2 19.8l1.6-1.6M18.2 5.8l1.6-1.6"/></svg>
+                    </button>
+                    <button type="button" class="icon-button menu-toggle" id="menu-toggle" aria-expanded="false" aria-controls="mobile-nav" aria-label="Open navigation menu">
+                        <svg class="icon icon-bars" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+                        <svg class="icon icon-close" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6 6l12 12M18 6 6 18"/></svg>
+                    </button>
                 </div>
             </div>
-            <div class="mobile-nav" id="mobileNav">
+
+            <nav class="mobile-nav" id="mobile-nav" aria-label="Mobile">
                 <a href="index.html" class="nav-item">Home</a>
+                <a href="test-format.html" class="nav-item">Test Format</a>
                 <a href="listening.html" class="nav-item">Listening</a>
                 <a href="reading.html" class="nav-item">Reading</a>
                 <a href="writing.html" class="nav-item">Writing</a>
                 <a href="speaking.html" class="nav-item">Speaking</a>
                 <a href="language.html" class="nav-item">Language</a>
-                <a href="practice.html" class="nav-item active">Practice</a>
-            </div>
+                <a href="practice.html" class="nav-item" aria-current="page">Practice</a>
+            </nav>
         </header>
 
         <!-- Main Content Area -->
-        <main class="main-content">
-            <div class="page-header" style="text-align: center; border-bottom: none; padding: 40px 10px;">
-                <h1 class="page-title" style="font-size: 2.2rem; margin-bottom: 16px;">📝 Practice Section</h1>
-                <p class="page-desc" style="font-size: 1.15rem; max-width: 600px; margin: 0 auto 24px auto;">Interactive simulated mock-tests and detailed practice modules are currently under development.</p>
-                <div class="tip-box" style="display: inline-block; text-align: left; max-width: 500px; margin-top: 10px;">
-                    <strong>🚀 What's Coming:</strong>
-                    <ul style="margin: 8px 0 0 0; padding-left: 20px;">
-                        <li>Simulated CELPIP timer configurations</li>
-                        <li>Detailed writing and audio-response evaluation guides</li>
-                        <li>Robust practice templates</li>
-                    </ul>
-                </div>
+        <main class="main-content" id="main">
+            <!-- Practice hub sections A–B -->
+            <div class="page-header">
+                <p class="page-kicker">Practice &amp; resources</p>
+                <h1 class="page-title">Practice</h1>
+                <p class="page-desc">Put what you have learned into practice. Use the quick activity below, try a skill-focused page, or review your own writing with the self-review tool.</p>
             </div>
 
+            <!-- A. Four practice cards -->
+            <section class="section" aria-labelledby="practice-areas">
+                <h2 class="section-heading" id="practice-areas">Choose your practice</h2>
+                <div class="practice-grid">
+                    <article class="practice-card">
+                        <h3 class="practice-card-title"><span class="card-icon" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24"><path d="M4 15v-2a8 8 0 0 1 16 0v2"/><rect x="3" y="14" width="4" height="7" rx="1.5"/><rect x="17" y="14" width="4" height="7" rx="1.5"/></svg></span>Listening Practice</h3>
+                        <p>Practise the six Listening parts: note key information, follow viewpoints, and avoid the classic traps.</p>
+                        <div class="resource-meta"><span class="badge badge--original">SelfPIP original</span><a class="resource-link" href="listening.html">Open Listening</a></div>
+                    </article>
+                    <article class="practice-card">
+                        <h3 class="practice-card-title"><span class="card-icon" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24"><path d="M4 6c2.5 0 4.5-1 8-1s5.5 1 8 1v13c-2.5 0-4.5-1-8-1s-5.5 1-8 1V6Z"/><path d="M12 5v14"/></svg></span>Reading Practice</h3>
+                        <p>Practise the four Reading parts: locate information fast, handle diagrams, and compare viewpoints.</p>
+                        <div class="resource-meta"><span class="badge badge--original">SelfPIP original</span><a class="resource-link" href="reading.html">Open Reading</a></div>
+                    </article>
+                    <article class="practice-card">
+                        <h3 class="practice-card-title"><span class="card-icon" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24"><path d="M12 20h9"/><path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4Z"/></svg></span>Writing Practice</h3>
+                        <p>Practise both Writing tasks: plan an email, organise a survey response, and edit before you stop.</p>
+                        <div class="resource-meta"><span class="badge badge--original">SelfPIP original</span><a class="resource-link" href="writing.html">Open Writing</a></div>
+                    </article>
+                    <article class="practice-card">
+                        <h3 class="practice-card-title"><span class="card-icon" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24"><rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5 11a7 7 0 0 0 14 0M12 18v3"/></svg></span>Speaking Practice</h3>
+                        <p>Practise all eight Speaking tasks: speak out loud, time every response, and use the task checklists.</p>
+                        <div class="resource-meta"><span class="badge badge--original">SelfPIP original</span><a class="resource-link" href="speaking.html">Open Speaking</a></div>
+                    </article>
+                </div>
+            </section>
+
+            <!-- C. Quick practice demo (original, interactive) -->
+            <section class="section" aria-labelledby="quick-practice">
+                <h2 class="section-heading" id="quick-practice">Quick Practice</h2>
+                <p class="lead">Original questions, one at a time, with an explanation after every answer. Nothing here is copied from CELPIP material — these activities were written for SelfPIP.</p>
+
+                <div class="quiz" data-pr-quiz>
+                    <div class="quiz-head">
+                        <span class="quiz-skill" data-pr-skill>Reading</span>
+                        <span class="badge badge--original">SelfPIP original</span>
+                    </div>
+                    <p class="quiz-prompt" data-pr-prompt></p>
+                    <div class="quiz-passage" data-pr-passage hidden></div>
+                    <div class="quiz-options" data-pr-options></div>
+                    <div class="quiz-feedback" data-pr-feedback hidden>
+                        <p class="quiz-feedback-title" data-pr-title></p>
+                        <p data-pr-text></p>
+                        <p class="muted" data-pr-why hidden></p>
+                    </div>
+                    <div class="quiz-actions">
+                        <button type="button" class="btn btn--sm" data-pr-next>Try another question</button>
+                        <span class="quiz-score" data-pr-score role="status">Answered 0 &middot; correct 0</span>
+                    </div>
+                </div>
+
+                <div class="tip-box">
+                    <strong>Want more?</strong> Every part and task page on SelfPIP ends with an original mini-example — see <a href="reading-part-3.html">Reading Part 3</a> or <a href="speaking-task-1.html">Speaking Task 1</a>.
+                </div>
+            </section>
+            <!-- B. Practice modes -->
+            <section class="section" aria-labelledby="practice-modes">
+                <h2 class="section-heading" id="practice-modes">Practice modes</h2>
+                <div class="mode-grid">
+                    <div class="mode-card mode-card--open">
+                        <h3 class="mode-title">Quick Practice <span class="badge badge--original">Available now</span></h3>
+                        <p>A short original activity that takes a few minutes. Try the interactive demo below.</p>
+                        <p><a href="#quick-practice">Go to the demo</a></p>
+                    </div>
+                    <div class="mode-card mode-card--open">
+                        <h3 class="mode-title">Skill Practice <span class="badge badge--original">Available now</span></h3>
+                        <p>Focus on one CELPIP task or skill using the section pages and their original examples.</p>
+                        <p><a href="listening.html">Browse the sections</a></p>
+                    </div>
+                    <div class="mode-card">
+                        <h3 class="mode-title">Timed Practice <span class="badge badge--soon">Coming soon</span></h3>
+                        <p>Practise under realistic time pressure with built-in timers for each component.</p>
+                    </div>
+                    <div class="mode-card mode-card--open">
+                        <h3 class="mode-title">Self-Review <span class="badge badge--original">Available now</span></h3>
+                        <p>Review your own response against a checklist and catch fixable mistakes.</p>
+                        <p><a href="#self-review">Go to the tool</a></p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- D. Self-review tool -->
+            <section class="section" aria-labelledby="self-review">
+                <h2 class="section-heading" id="self-review">Self-Review</h2>
+                <p class="lead">Paste your latest Writing draft — or the notes from your latest Speaking answer — then work the checklist. Everything stays in this browser.</p>
+                <div class="self-review" data-pr-review>
+                    <div class="self-review-head">
+                        <div>
+                            <h3>Review one response</h3>
+                            <p>Use the live counts as prompts for your own review, not as an automated grade.</p>
+                        </div>
+                        <button type="button" class="check-clear" data-pr-clear-response>Clear response</button>
+                    </div>
+                    <div>
+                        <label for="pr-review-text">Your response</label>
+                        <textarea id="pr-review-text" data-pr-area placeholder="Paste your email, survey response, or speaking notes here. Nothing leaves your browser."></textarea>
+                    </div>
+                    <ul class="self-review-stats" aria-label="Response statistics">
+                        <li><strong data-pr-words>0</strong><span>words</span></li>
+                        <li><strong data-pr-sentences>0</strong><span>sentences</span></li>
+                        <li><strong data-pr-criteria>0 of 5</strong><span>criteria met</span></li>
+                    </ul>
+                    <p class="sr-only" data-pr-review-announcement aria-live="polite"></p>
+                    <p class="self-review-note" data-pr-review-status>Start typing or paste a response to see your local counts.</p>
+                    <div>
+                        <div class="check-bar">
+                            <span class="check-count" data-check-count="review">5 unchecked</span>
+                            <button type="button" class="check-clear" data-check-clear="review">Clear checklist</button>
+                        </div>
+                        <ul class="check-list" data-checklist="review">
+                            <li><label><input type="checkbox"> My response answers the task and covers every required point.</label></li>
+                            <li><label><input type="checkbox"> My ideas are organised into clear paragraphs or spoken parts.</label></li>
+                            <li><label><input type="checkbox"> Every opinion or claim has at least one reason or example.</label></li>
+                            <li><label><input type="checkbox"> I checked verb tenses, articles and singular/plural words.</label></li>
+                            <li><label><input type="checkbox"> I re-read (or re-listened) and fixed one awkward sentence.</label></li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- E. AI practice — roadmap -->
+            <section class="section" aria-labelledby="ai-practice">
+                <h2 class="section-heading" id="ai-practice">AI Practice</h2>
+                <div class="roadmap">
+                    <h3 class="mode-title">Personalized feedback <span class="badge badge--soon">Coming soon</span></h3>
+                    <p class="muted">Future SelfPIP practice tools may provide personalized feedback for writing and speaking. That does not exist yet — when it arrives, it will be clearly labelled and entirely optional.</p>
+                    <ul>
+                        <li>Writing drafts reviewed against CELPIP task requirements.</li>
+                        <li>Speaking recordings reviewed for organisation and clarity.</li>
+                        <li>Your work stays in your browser until you choose otherwise.</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- G. Listen and read resources -->
+            <section class="section" aria-labelledby="resources-listen">
+                <h2 class="section-heading" id="resources-listen">Listen and read</h2>
+                <p class="lead">Curated material for CELPIP and English learning. Only the official CELPIP site is authoritative about the test — everything else supports your skills.</p>
+
+                <h3>Official</h3>
+                <div class="resource-grid">
+                    <article class="resource-card">
+                        <div class="resource-head">
+                            <span class="resource-icon" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 8v4l2.5 2.5"/></svg></span>
+                            <h4 class="resource-title">CELPIP official site</h4>
+                        </div>
+                        <p class="resource-desc">Registration, test format, preparation materials and results — the only authoritative CELPIP source.</p>
+                        <div class="resource-meta">
+                            <span class="badge badge--official">Official</span>
+                            <span class="resource-source">Source: Paragon Testing Enterprises</span>
+                            <a class="resource-link" href="https://www.celpip.ca/" target="_blank" rel="noopener noreferrer">Visit celpip.ca<svg class="icon icon-xs" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M7 17 17 7M8 7h9v9"/></svg><span class="sr-only">(opens in a new tab)</span></a>
+                        </div>
+                    </article>
+                    <article class="resource-card">
+                        <div class="resource-head">
+                            <span class="resource-icon" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24"><path d="M4 6c2.5 0 4.5-1 8-1s5.5 1 8 1v13c-2.5 0-4.5-1-8-1s-5.5 1-8 1V6Z"/><path d="M12 5v14"/></svg></span>
+                            <h4 class="resource-title">IRCC language requirements</h4>
+                        </div>
+                        <p class="resource-desc">Which language tests and levels Immigration, Refugees and Citizenship Canada accepts, straight from the source.</p>
+                        <div class="resource-meta">
+                            <span class="badge badge--official">Official</span>
+                            <span class="resource-source">Source: Government of Canada</span>
+                            <a class="resource-link" href="https://www.canada.ca/en/immigration-refugees-citizenship.html" target="_blank" rel="noopener noreferrer">Visit IRCC<svg class="icon icon-xs" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M7 17 17 7M8 7h9v9"/></svg><span class="sr-only">(opens in a new tab)</span></a>
+                        </div>
+                    </article>
+                </div>
+
+                <h3>SelfPIP Original</h3>
+                <div class="resource-grid">
+                    <article class="resource-card">
+                        <div class="resource-head">
+                            <span class="resource-icon" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24"><path d="M4 6h16M4 12h10M4 18h7"/><circle cx="17.5" cy="16.5" r="2.5"/></svg></span>
+                            <h4 class="resource-title">Quick Practice demo</h4>
+                        </div>
+                        <p class="resource-desc">One original question at a time with feedback and an explanation. No timers, no sign-in.</p>
+                        <div class="resource-meta">
+                            <span class="badge badge--original">SelfPIP original</span>
+                            <span class="resource-source">Source: SelfPIP</span>
+                            <a class="resource-link" href="#quick-practice">Try it now<svg class="icon icon-xs" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
+                        </div>
+                    </article>
+                    <article class="resource-card">
+                        <div class="resource-head">
+                            <span class="resource-icon" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24"><path d="M12 3a6 6 0 0 0-3.6 10.8V17h7.2v-3.2A6 6 0 0 0 12 3Z"/><path d="M9 20h6"/></svg></span>
+                            <h4 class="resource-title">Sentence Patterns</h4>
+                        </div>
+                        <p class="resource-desc">Reusable sentence frames for Writing and Speaking, with worked examples and model answers.</p>
+                        <div class="resource-meta">
+                            <span class="badge badge--original">SelfPIP original</span>
+                            <span class="resource-source">Source: SelfPIP</span>
+                            <a class="resource-link" href="language-sentence-patterns.html">Open the guide<svg class="icon icon-xs" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
+                        </div>
+                    </article>
+                </div>
+
+                <div class="info-box">
+                    <strong>How to use external resources.</strong> SelfPIP links to official and third-party pages rather than copying them. Follow the link, read on the original site, and check the publication date — external pages can change without notice.
+                </div>
+            </section>
         </main>
 
-        <!-- Shared Footer -->
-        <footer>
+        <!-- Global footer — identical on every page -->
+        <footer class="site-footer">
             <div class="footer-content">
-                <div class="footer-title">SelfPIP</div>
-                <div class="footer-tagline">Personal CELPIP Study Companion</div>
+                <div class="footer-brand">
+                    <p class="footer-title">SelfPIP</p>
+                    <p class="footer-tagline">An independent educational resource for CELPIP learners.</p>
+                </div>
+
+                <nav class="footer-nav" aria-label="Footer">
+                    <a href="index.html">Home</a>
+                    <a href="test-format.html">Test Format</a>
+                    <a href="listening.html">Listening</a>
+                    <a href="reading.html">Reading</a>
+                    <a href="writing.html">Writing</a>
+                    <a href="speaking.html">Speaking</a>
+                    <a href="language.html">Language</a>
+                    <a href="practice.html">Practice</a>
+                </nav>
+
                 <div class="footer-disclaimer">
-                    <p>© 2026 SelfPIP. An independent, unofficial study resource — not affiliated with, endorsed by, or sponsored by Paragon Testing Enterprises Inc. or Immigration, Refugees and Citizenship Canada (IRCC).</p>
-                    <p>Registration, official preparation materials and results for the CELPIP test are available only through the official site, celpip.ca. This site does not administer the test.</p>
-                </div>            </div>
+                    <p>&copy; <span data-current-year>2026</span> SelfPIP. SelfPIP is an independent educational resource and is not affiliated with, endorsed by, or sponsored by CELPIP or Paragon Testing Enterprises, or by Immigration, Refugees and Citizenship Canada (IRCC).</p>
+                    <p>Registration, official preparation materials and results for the CELPIP test are available only through the official site, <a href="https://www.celpip.ca/" target="_blank" rel="noopener noreferrer">celpip.ca</a>. SelfPIP does not administer the test.</p>
+                </div>
+            </div>
         </footer>
     </div>
 
     <script src="script.js"></script>
+    <script src="practice.js"></script>
 </body>
 </html>

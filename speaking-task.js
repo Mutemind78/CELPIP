@@ -47,7 +47,7 @@
                     countEl.textContent = n + (n === 0 ? ' unchecked' : ' checked');
                 }
                 if (clearBtn) {
-                    clearBtn.style.display = n > 0 ? '' : 'none';
+                    clearBtn.hidden = n === 0;
                 }
             }
 

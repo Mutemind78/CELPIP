@@ -2,20 +2,46 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <link rel="icon" href="favicon.svg" type="image/svg+xml">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SelfPIP — Personal CELPIP Study Companion</title>
+    <meta name="description" content="SelfPIP explains the CELPIP test format, teaches a strategy for every task, and gives you original practice, checklists and language guides.">
+    <meta name="color-scheme" content="light dark">
+    <meta name="theme-color" content="#f5f6fb" media="(prefers-color-scheme: light)">
+    <meta name="theme-color" content="#0a0e1f" media="(prefers-color-scheme: dark)">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap">
+    <script>
+        // Runs before first paint: restores the saved theme, otherwise follows
+        // the operating system, and records that JavaScript is available.
+        (function () {
+            var root = document.documentElement;
+            root.className += ' js';
+            var theme = 'light';
+            try {
+                theme = localStorage.getItem('celpip_theme') ||
+                    (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+            } catch (error) { /* storage unavailable */ }
+            root.setAttribute('data-theme', theme === 'dark' ? 'dark' : 'light');
+        }());
+    </script>
     <link rel="stylesheet" href="style.css">
 </head>
-<body data-theme="light">
+<body>
+    <a class="skip-link" href="#main">Skip to content</a>
     <div class="app-container">
-        <!-- Reusable Navigation Bar -->
-        <header>
+        <!-- Global header — identical on every page -->
+        <header class="site-header">
             <div class="nav-container">
-                <a href="index.html" class="logo-link">
-                    Self<span class="logo-accent">PIP</span>
+                <a href="index.html" class="logo-link" aria-label="SelfPIP home">
+                    <span class="logo-mark" aria-hidden="true">SP</span>
+                    <span class="logo-text">Self<span class="logo-accent">PIP</span></span>
                 </a>
-                <nav class="desktop-nav">
-                    <a href="index.html" class="nav-item active">Home</a>
+
+                <nav class="desktop-nav" aria-label="Primary">
+                    <a href="index.html" class="nav-item" aria-current="page">Home</a>
+                    <a href="test-format.html" class="nav-item">Test Format</a>
                     <a href="listening.html" class="nav-item">Listening</a>
                     <a href="reading.html" class="nav-item">Reading</a>
                     <a href="writing.html" class="nav-item">Writing</a>
@@ -23,41 +49,54 @@
                     <a href="language.html" class="nav-item">Language</a>
                     <a href="practice.html" class="nav-item">Practice</a>
                 </nav>
-                                <div class="nav-actions">
-                    <button type="button" class="nav-theme" id="themeToggleBtn" aria-pressed="false" aria-label="Switch to dark mode">🌙</button>
-                    <button class="menu-toggle" aria-label="Toggle Navigation Menu" onclick="toggleMobileMenu()">
-                    ☰
-                </button>
+
+                <div class="nav-actions">
+                    <button type="button" class="icon-button theme-toggle" id="theme-toggle" aria-pressed="false" aria-label="Switch to dark theme">
+                        <svg class="icon icon-moon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8Z"/></svg>
+                        <svg class="icon icon-sun" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.5v2.2M12 19.3v2.2M4.2 4.2l1.6 1.6M18.2 18.2l1.6 1.6M2.5 12h2.2M19.3 12h2.2M4.2 19.8l1.6-1.6M18.2 5.8l1.6-1.6"/></svg>
+                    </button>
+                    <button type="button" class="icon-button menu-toggle" id="menu-toggle" aria-expanded="false" aria-controls="mobile-nav" aria-label="Open navigation menu">
+                        <svg class="icon icon-bars" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+                        <svg class="icon icon-close" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6 6l12 12M18 6 6 18"/></svg>
+                    </button>
                 </div>
             </div>
-            <div class="mobile-nav" id="mobileNav">
-                <a href="index.html" class="nav-item active">Home</a>
+
+            <nav class="mobile-nav" id="mobile-nav" aria-label="Mobile">
+                <a href="index.html" class="nav-item" aria-current="page">Home</a>
+                <a href="test-format.html" class="nav-item">Test Format</a>
                 <a href="listening.html" class="nav-item">Listening</a>
                 <a href="reading.html" class="nav-item">Reading</a>
                 <a href="writing.html" class="nav-item">Writing</a>
                 <a href="speaking.html" class="nav-item">Speaking</a>
                 <a href="language.html" class="nav-item">Language</a>
                 <a href="practice.html" class="nav-item">Practice</a>
-            </div>
+            </nav>
         </header>
 
         <!-- Main Content Area -->
-        <main class="main-content">
+        <main class="main-content" id="main">
             <!-- Hero Dashboard Header -->
             <section class="dashboard-hero">
-                <h1>SelfPIP</h1>
-                <p>Prepare for CELPIP with structured, self-study content: every task explained, a strategy for each part, interactive examples, and checklists that save in your browser.</p>
-                <ul class="hero-stats" aria-label="What is inside SelfPIP">
-                    <li><strong>6</strong><span>Listening parts</span></li>
-                    <li><strong>4</strong><span>Reading parts</span></li>
-                    <li><strong>2</strong><span>Writing tasks</span></li>
-                    <li><strong>8</strong><span>Speaking tasks</span></li>
-                    <li><strong>5</strong><span>Language guides</span></li>
+                <p class="hero-eyebrow">Independent CELPIP study resource</p>
+                <h1 class="hero-title">Understand CELPIP. Learn the format. Build your English. Prepare smarter.</h1>
+                <p class="hero-lead">SelfPIP explains every CELPIP task in plain language, gives you a step-by-step strategy for each one, and adds original practice, interactive checklists and language guides — free, with no account and nothing to install.</p>
+                <div class="hero-actions">
+                    <a class="btn" href="practice.html">Start practising</a>
+                    <a class="btn btn--outline" href="test-format.html">See the test format</a>
+                </div>
+                <ul class="hero-stats" aria-label="Explore SelfPIP coverage">
+                    <li><a href="listening.html"><strong>6</strong><span>Listening parts</span></a></li>
+                    <li><a href="reading.html"><strong>4</strong><span>Reading parts</span></a></li>
+                    <li><a href="writing.html"><strong>2</strong><span>Writing tasks</span></a></li>
+                    <li><a href="speaking.html"><strong>8</strong><span>Speaking tasks</span></a></li>
+                    <li><a href="language.html"><strong>5</strong><span>Language guides</span></a></li>
                 </ul>
             </section>
 
             <!-- What is CELPIP? — orient first-time visitors before the study sections -->
-            <h2 class="section-heading">🇨🇦 What is CELPIP?</h2>
+            <section class="section" aria-labelledby="what-is-celpip">
+                <h2 class="section-heading" id="what-is-celpip">What is CELPIP?</h2>
             <div class="home-help-grid">
                 <div class="home-help-card">
                     <h3>The test</h3>
@@ -77,8 +116,11 @@
                 </div>
             </div>
 
+            </section>
+
             <!-- How SelfPIP Helps -->
-            <h2 class="section-heading">🧭 How SelfPIP Helps</h2>
+            <section class="section" aria-labelledby="how-selfpip-helps">
+                <h2 class="section-heading" id="how-selfpip-helps">How SelfPIP Helps</h2>
             <div class="home-help-grid">
                 <div class="home-help-card">
                     <h3>1 · Learn the task</h3>
@@ -98,70 +140,162 @@
                 </div>
             </div>
 
-            <!-- Section Title -->
-            <h2 class="section-heading">📚 Study Sections</h2>
+            </section>
 
-            <!-- Dashboard Navigation Cards -->
-            <div class="dashboard-grid">
+            <!-- Explore SelfPIP -->
+            <section class="section" aria-labelledby="explore-selfpip">
+                <h2 class="section-heading" id="explore-selfpip">Explore SelfPIP</h2>
+
+                <!-- Section navigation cards -->
+                <div class="dashboard-grid">
                 <a href="listening.html" class="nav-card">
                     <div>
-                        <h3 class="nav-card-title">🎧 Listening</h3>
-                        <p class="nav-card-desc">6 Parts — Problem solving, daily conversation, news items, viewpoints, and discussion forums.</p>
+                        <h3 class="nav-card-title">Listening</h3>
+                        <p class="nav-card-desc">6 parts — problem solving, daily conversations, a news item, viewpoints and discussion forums.</p>
                     </div>
-                    <span class="nav-card-footer">Go to Listening →</span>
+                    <span class="nav-card-footer">Go to Listening<svg class="icon icon-xs" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
                 </a>
 
                 <a href="reading.html" class="nav-card">
                     <div>
-                        <h3 class="nav-card-title">📖 Reading</h3>
-                        <p class="nav-card-desc">4 Parts — Correspondence, applying diagrams, reading for information, and reading viewpoints.</p>
+                        <h3 class="nav-card-title">Reading</h3>
+                        <p class="nav-card-desc">4 parts — correspondence, applying diagrams, reading for information and reading viewpoints.</p>
                     </div>
-                    <span class="nav-card-footer">Go to Reading →</span>
+                    <span class="nav-card-footer">Go to Reading<svg class="icon icon-xs" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
                 </a>
 
                 <a href="writing.html" class="nav-card">
                     <div>
-                        <h3 class="nav-card-title">✍️ Writing</h3>
-                        <p class="nav-card-desc">2 Tasks — Professional emails and responding to survey/opinion questions.</p>
+                        <h3 class="nav-card-title">Writing</h3>
+                        <p class="nav-card-desc">2 tasks — professional emails and responding to survey and opinion questions.</p>
                     </div>
-                    <span class="nav-card-footer">Go to Writing →</span>
+                    <span class="nav-card-footer">Go to Writing<svg class="icon icon-xs" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
                 </a>
 
                 <a href="speaking.html" class="nav-card">
                     <div>
-                        <h3 class="nav-card-title">🗣️ Speaking</h3>
-                        <p class="nav-card-desc">8 Tasks — Giving advice, personal experience, predictions, comparisons, and difficult decisions.</p>
+                        <h3 class="nav-card-title">Speaking</h3>
+                        <p class="nav-card-desc">8 tasks — giving advice, personal experience, predictions, comparisons and difficult decisions.</p>
                     </div>
-                    <span class="nav-card-footer">Go to Speaking →</span>
+                    <span class="nav-card-footer">Go to Speaking<svg class="icon icon-xs" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
                 </a>
 
                 <a href="language.html" class="nav-card">
                     <div>
-                        <h3 class="nav-card-title">📚 Language</h3>
-                        <p class="nav-card-desc">Grammar corrections, active vocabulary database, transition connectors, and pronunciation tips.</p>
+                        <h3 class="nav-card-title">Language</h3>
+                        <p class="nav-card-desc">Grammar fixes, sentence patterns, vocabulary banks, connectors and pronunciation tips.</p>
                     </div>
-                    <span class="nav-card-footer">Go to Language →</span>
+                    <span class="nav-card-footer">Go to Language<svg class="icon icon-xs" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
                 </a>
 
                 <a href="practice.html" class="nav-card">
                     <div>
-                        <h3 class="nav-card-title">📝 Practice</h3>
-                        <p class="nav-card-desc">Personalized practice templates and future mock simulations.</p>
+                        <h3 class="nav-card-title">Practice</h3>
+                        <p class="nav-card-desc">Quick activities, skill-focused practice, a self-review tool and curated resources.</p>
                     </div>
-                    <span class="nav-card-footer">Go to Practice →</span>
+                    <span class="nav-card-footer">Go to Practice<svg class="icon icon-xs" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
                 </a>
             </div>
 
-            </main>
+            </section>
 
-        <!-- Shared Footer -->
-        <footer>
+            <!-- Test at a glance -->
+            <section class="section" aria-labelledby="test-at-a-glance">
+                <h2 class="section-heading" id="test-at-a-glance">Test at a glance</h2>
+                <p class="lead">Four timed components, one sitting. Every SelfPIP section page follows the official part and task types — start with the overview below, then go deeper.</p>
+                <div class="glance-grid">
+                <div class="glance-card">
+                    <h3 class="glance-title"><span class="card-icon" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24"><path d="M4 15v-2a8 8 0 0 1 16 0v2"/><rect x="3" y="14" width="4" height="7" rx="1.5"/><rect x="17" y="14" width="4" height="7" rx="1.5"/></svg></span>Listening</h3>
+                    <ul class="glance-facts">
+                        <li><strong>6</strong> parts &middot; <strong>38</strong> questions</li>
+                        <li><strong>46–55</strong> minutes</li>
+                        <li>Conversations, news, viewpoints</li>
+                    </ul>
+                    <a class="glance-link" href="listening.html">Study Listening<svg class="icon icon-xs" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+                </div>
+                <div class="glance-card">
+                    <h3 class="glance-title"><span class="card-icon" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24"><path d="M4 6c2.5 0 4.5-1 8-1s5.5 1 8 1v13c-2.5 0-4.5-1-8-1s-5.5 1-8 1V6Z"/><path d="M12 5v14"/></svg></span>Reading</h3>
+                    <ul class="glance-facts">
+                        <li><strong>4</strong> parts &middot; <strong>38</strong> questions</li>
+                        <li><strong>43–56</strong> minutes</li>
+                        <li>Correspondence, diagrams, viewpoints</li>
+                    </ul>
+                    <a class="glance-link" href="reading.html">Study Reading<svg class="icon icon-xs" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+                </div>
+                <div class="glance-card">
+                    <h3 class="glance-title"><span class="card-icon" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24"><path d="M12 20h9"/><path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4Z"/></svg></span>Writing</h3>
+                    <ul class="glance-facts">
+                        <li><strong>2</strong> tasks</li>
+                        <li><strong>53</strong> minutes</li>
+                        <li>An email, a survey response</li>
+                    </ul>
+                    <a class="glance-link" href="writing.html">Study Writing<svg class="icon icon-xs" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+                </div>
+                <div class="glance-card">
+                    <h3 class="glance-title"><span class="card-icon" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24"><rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5 11a7 7 0 0 0 14 0M12 18v3"/></svg></span>Speaking</h3>
+                    <ul class="glance-facts">
+                        <li><strong>8</strong> tasks</li>
+                        <li><strong>15</strong> minutes</li>
+                        <li>Advice, views, decisions</li>
+                    </ul>
+                    <a class="glance-link" href="speaking.html">Study Speaking<svg class="icon icon-xs" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+                </div>
+                </div>
+                <div class="tip-box">
+                    <strong>Full breakdown:</strong> the <a href="test-format.html">Test Format page</a> lays out every part, its official task name and timing in one place.
+                </div>
+            </section>
+
+            <!-- Quick Start -->
+            <section class="section" aria-labelledby="quick-start">
+                <h2 class="section-heading" id="quick-start">Quick Start</h2>
+                <div class="home-help-grid">
+                    <div class="home-help-card">
+                        <h3>New to CELPIP?</h3>
+                        <p>Read the <a href="test-format.html">Test Format</a> page first so the four modules make sense, then work through Listening Part 1.</p>
+                    </div>
+                    <div class="home-help-card">
+                        <h3>Preparing for one section?</h3>
+                        <p>Jump straight to <a href="listening.html">Listening</a>, <a href="reading.html">Reading</a>, <a href="writing.html">Writing</a> or <a href="speaking.html">Speaking</a> and follow each task in order.</p>
+                    </div>
+                    <div class="home-help-card">
+                        <h3>Want to improve your English?</h3>
+                        <p>Start with the <a href="language.html">Language guides</a>, then try a <a href="practice.html#quick-practice">Quick Practice activity</a>.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Disclaimer -->
+            <section class="section" aria-labelledby="independent-resource">
+                <h2 class="section-heading" id="independent-resource">An independent resource</h2>
+                <div class="info-box">
+                    <strong>Official information vs SelfPIP advice.</strong> Task names, question counts and component times are official CELPIP format facts. Strategies, examples and practice are original SelfPIP study guidance — they are not official CELPIP instruction, and no advice can promise a particular score. Official registration, preparation materials and results are available only at <a href="https://www.celpip.ca/" target="_blank" rel="noopener noreferrer">celpip.ca</a>.
+                </div>
+            </section>
+        </main>
+
+        <!-- Global footer — identical on every page -->
+        <footer class="site-footer">
             <div class="footer-content">
-                <div class="footer-title">SelfPIP</div>
-                <div class="footer-tagline">Personal CELPIP Study Companion</div>
+                <div class="footer-brand">
+                    <p class="footer-title">SelfPIP</p>
+                    <p class="footer-tagline">An independent educational resource for CELPIP learners.</p>
+                </div>
+
+                <nav class="footer-nav" aria-label="Footer">
+                    <a href="index.html">Home</a>
+                    <a href="test-format.html">Test Format</a>
+                    <a href="listening.html">Listening</a>
+                    <a href="reading.html">Reading</a>
+                    <a href="writing.html">Writing</a>
+                    <a href="speaking.html">Speaking</a>
+                    <a href="language.html">Language</a>
+                    <a href="practice.html">Practice</a>
+                </nav>
+
                 <div class="footer-disclaimer">
-                    <p>© 2026 SelfPIP. An independent, unofficial study resource — not affiliated with, endorsed by, or sponsored by Paragon Testing Enterprises Inc. or Immigration, Refugees and Citizenship Canada (IRCC).</p>
-                    <p>Registration, official preparation materials and results for the CELPIP test are available only through the official site, celpip.ca. This site does not administer the test.</p>
+                    <p>&copy; <span data-current-year>2026</span> SelfPIP. SelfPIP is an independent educational resource and is not affiliated with, endorsed by, or sponsored by CELPIP or Paragon Testing Enterprises, or by Immigration, Refugees and Citizenship Canada (IRCC).</p>
+                    <p>Registration, official preparation materials and results for the CELPIP test are available only through the official site, <a href="https://www.celpip.ca/" target="_blank" rel="noopener noreferrer">celpip.ca</a>. SelfPIP does not administer the test.</p>
                 </div>
             </div>
         </footer>

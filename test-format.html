@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" href="favicon.svg" type="image/svg+xml">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Format — SelfPIP</title>
+    <meta name="description" content="Understand the CELPIP test format at a glance: the four modules, task names, question counts, component times, the two test versions, and how results are reported.">
+    <meta name="color-scheme" content="light dark">
+    <meta name="theme-color" content="#f5f6fb" media="(prefers-color-scheme: light)">
+    <meta name="theme-color" content="#0a0e1f" media="(prefers-color-scheme: dark)">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap">
+    <script>
+        // Runs before first paint: restores the saved theme, otherwise follows
+        // the operating system, and records that JavaScript is available.
+        (function () {
+            var root = document.documentElement;
+            root.className += ' js';
+            var theme = 'light';
+            try {
+                theme = localStorage.getItem('celpip_theme') ||
+                    (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+            } catch (error) { /* storage unavailable */ }
+            root.setAttribute('data-theme', theme === 'dark' ? 'dark' : 'light');
+        }());
+    </script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <div class="app-container">
+        <!-- Global header — identical on every page -->
+        <header class="site-header">
+            <div class="nav-container">
+                <a href="index.html" class="logo-link" aria-label="SelfPIP home">
+                    <span class="logo-mark" aria-hidden="true">SP</span>
+                    <span class="logo-text">Self<span class="logo-accent">PIP</span></span>
+                </a>
+
+                <nav class="desktop-nav" aria-label="Primary">
+                    <a href="index.html" class="nav-item">Home</a>
+                    <a href="test-format.html" class="nav-item" aria-current="page">Test Format</a>
+                    <a href="listening.html" class="nav-item">Listening</a>
+                    <a href="reading.html" class="nav-item">Reading</a>
+                    <a href="writing.html" class="nav-item">Writing</a>
+                    <a href="speaking.html" class="nav-item">Speaking</a>
+                    <a href="language.html" class="nav-item">Language</a>
+                    <a href="practice.html" class="nav-item">Practice</a>
+                </nav>
+
+                <div class="nav-actions">
+                    <button type="button" class="icon-button theme-toggle" id="theme-toggle" aria-pressed="false" aria-label="Switch to dark theme">
+                        <svg class="icon icon-moon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8Z"/></svg>
+                        <svg class="icon icon-sun" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.5v2.2M12 19.3v2.2M4.2 4.2l1.6 1.6M18.2 18.2l1.6 1.6M2.5 12h2.2M19.3 12h2.2M4.2 19.8l1.6-1.6M18.2 5.8l1.6-1.6"/></svg>
+                    </button>
+                    <button type="button" class="icon-button menu-toggle" id="menu-toggle" aria-expanded="false" aria-controls="mobile-nav" aria-label="Open navigation menu">
+                        <svg class="icon icon-bars" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+                        <svg class="icon icon-close" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6 6l12 12M18 6 6 18"/></svg>
+                    </button>
+                </div>
+            </div>
+
+            <nav class="mobile-nav" id="mobile-nav" aria-label="Mobile">
+                <a href="index.html" class="nav-item">Home</a>
+                <a href="test-format.html" class="nav-item" aria-current="page">Test Format</a>
+                <a href="listening.html" class="nav-item">Listening</a>
+                <a href="reading.html" class="nav-item">Reading</a>
+                <a href="writing.html" class="nav-item">Writing</a>
+                <a href="speaking.html" class="nav-item">Speaking</a>
+                <a href="language.html" class="nav-item">Language</a>
+                <a href="practice.html" class="nav-item">Practice</a>
+            </nav>
+        </header>
+
+        <!-- Main Content Area -->
+        <main class="main-content" id="main">
+            <div class="page-header">
+                <p class="page-kicker">Test format</p>
+                <h1 class="page-title">Know the format before you practise</h1>
+                <p class="page-lead">Every CELPIP task has a fixed structure. Learn the parts, question counts and component times once, and you can spend your practice time on the language itself.</p>
+            </div>
+
+            <div class="info-box">
+                <strong>Official format information.</strong> The task names, question counts and component times on this page are published CELPIP format facts. The strategies, checklists and examples that accompany them are SelfPIP study guidance — not official CELPIP instruction, and no advice can promise a particular score. Always confirm current requirements at <a href="https://www.celpip.ca/" target="_blank" rel="noopener noreferrer">celpip.ca</a>.
+            </div>
+
+            <section class="section" aria-labelledby="test-overview">
+                <h2 class="section-heading" id="test-overview">Test at a glance</h2>
+                <div class="glance-grid">
+                    <article class="glance-card">
+                        <h3 class="glance-title">
+                            <span class="glance-icon" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24" focusable="false"><path d="M3 12a9 9 0 0 1 18 0M12 12l4-3"/><circle cx="12" cy="12" r="9"/></svg></span>
+                            Listening
+                        </h3>
+                        <p class="glance-text">Six parts, from daily conversations to viewpoints. Aimed at practical communication and information.</p>
+                        <ul class="glance-facts">
+                            <li><strong>6 parts</strong> &middot; 38 questions</li>
+                            <li>Approx. 46–55 minutes</li>
+                        </ul>
+                        <a class="glance-link" href="listening.html">Explore Listening <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></a>
+                    </article>
+
+                    <article class="glance-card">
+                        <h3 class="glance-title">
+                            <span class="glance-icon" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24" focusable="false"><path d="M4 6c2.5 0 4.5-1 8-1s5.5 1 8 1v13c-2.5 0-4.5-1-8-1s-5.5 1-8 1V6Z"/><path d="M12 5v14"/></svg></span>
+                            Reading
+                        </h3>
+                        <p class="glance-text">Four parts built around correspondence, diagrams, factual information and viewpoints.</p>
+                        <ul class="glance-facts">
+                            <li><strong>4 parts</strong> &middot; 38 questions</li>
+                            <li>Approx. 43–56 minutes</li>
+                        </ul>
+                        <a class="glance-link" href="reading.html">Explore Reading <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></a>
+                    </article>
+
+                    <article class="glance-card">
+                        <h3 class="glance-title">
+                            <span class="glance-icon" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24" focusable="false"><path d="M12 20h9"/><path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4Z"/></svg></span>
+                            Writing
+                        </h3>
+                        <p class="glance-text">Two production tasks: write an email and respond to a survey question.</p>
+                        <ul class="glance-facts">
+                            <li><strong>2 tasks</strong></li>
+                            <li>53 minutes in total</li>
+                        </ul>
+                        <a class="glance-link" href="writing.html">Explore Writing <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></a>
+                    </article>
+
+                    <article class="glance-card">
+                        <h3 class="glance-title">
+                            <span class="glance-icon" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24" focusable="false"><rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5 11a7 7 0 0 0 14 0M12 18v3"/></svg></span>
+                            Speaking
+                        </h3>
+                        <p class="glance-text">Eight short tasks covering advice, experiences, scenes, predictions and opinions.</p>
+                        <ul class="glance-facts">
+                            <li><strong>8 tasks</strong></li>
+                            <li>15 minutes in total</li>
+                        </ul>
+                        <a class="glance-link" href="speaking.html">Explore Speaking <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></a>
+                    </article>
+                </div>
+            </section>
+
+            <section class="section" aria-labelledby="test-flow">
+                <h2 class="section-heading" id="test-flow">The test at a glance</h2>
+                <p class="lead">One sitting, four ability areas. Use the sequence below as a map, then open the relevant SelfPIP section for task strategies and original practice.</p>
+                <ol class="timeline">
+                    <li>
+                        <span class="timeline-num" aria-hidden="true">1</span>
+                        <h3 class="timeline-title">Listening</h3>
+                        <p class="timeline-meta">Six parts &middot; approximately 46–55 minutes</p>
+                        <p class="timeline-body">Follow conversations, talks, news, discussions and viewpoints. Track what changes, what speakers mean and which detail supports each answer.</p>
+                    </li>
+                    <li>
+                        <span class="timeline-num" aria-hidden="true">2</span>
+                        <h3 class="timeline-title">Reading</h3>
+                        <p class="timeline-meta">Four parts &middot; approximately 43–56 minutes</p>
+                        <p class="timeline-body">Read correspondence, apply a diagram, find information and compare viewpoints while moving between purpose, detail and evidence.</p>
+                    </li>
+                    <li>
+                        <span class="timeline-num" aria-hidden="true">3</span>
+                        <h3 class="timeline-title">Writing</h3>
+                        <p class="timeline-meta">Two tasks &middot; approximately 53 minutes</p>
+                        <p class="timeline-body">Write one email and one survey response. There is no official per-task time limit, so practise completing both clearly and on topic.</p>
+                    </li>
+                    <li>
+                        <span class="timeline-num" aria-hidden="true">4</span>
+                        <h3 class="timeline-title">Speaking</h3>
+                        <p class="timeline-meta">Eight tasks &middot; 15 minutes</p>
+                        <p class="timeline-body">Respond to eight short situations. Clear organisation, relevant language and a steady attempt matter more than complicated vocabulary.</p>
+                    </li>
+                </ol>
+                <div class="info-box">
+                    <strong>Plan for the whole test.</strong> The component times explain the shape of the test, not a promise about question-by-question timing. Build accuracy first, then practise staying calm and moving on when a question is difficult.
+                </div>
+            </section>
+
+
+            <section class="section" aria-labelledby="task-map">
+                <h2 class="section-heading" id="task-map">Task map</h2>
+                <p class="lead">Open any module to see its task names and question counts. Every task links to a dedicated SelfPIP guide with a practical strategy and original practice.</p>
+                <div class="format-task-grid">
+                    <details class="accordion format-task" open>
+                        <summary>
+                            <span class="format-task-icon format-task-icon--blue" aria-hidden="true">L</span>
+                            <span><strong>Listening</strong><small>6 parts &middot; 38 questions</small></span>
+                        </summary>
+                        <div class="accordion-body">
+                            <ol class="data-list">
+                                <li><strong>Part 1:</strong> Listening to Problem Solving — 8 questions</li>
+                                <li><strong>Part 2:</strong> Listening to a Daily Life Conversation — 5 questions</li>
+                                <li><strong>Part 3:</strong> Listening for Information — 6 questions</li>
+                                <li><strong>Part 4:</strong> Listening to a News Item — 5 questions</li>
+                                <li><strong>Part 5:</strong> Listening to a Discussion — 8 questions</li>
+                                <li><strong>Part 6:</strong> Listening to Viewpoints — 6 questions</li>
+                            </ol>
+                            <a class="btn btn--sm" href="listening.html">Explore all Listening parts</a>
+                        </div>
+                    </details>
+
+                    <details class="accordion format-task">
+                        <summary>
+                            <span class="format-task-icon format-task-icon--teal" aria-hidden="true">R</span>
+                            <span><strong>Reading</strong><small>4 parts &middot; 38 questions</small></span>
+                        </summary>
+                        <div class="accordion-body">
+                            <ol class="data-list">
+                                <li><strong>Part 1:</strong> Reading Correspondence — 11 questions</li>
+                                <li><strong>Part 2:</strong> Reading to Apply a Diagram — 8 questions</li>
+                                <li><strong>Part 3:</strong> Reading for Information — 9 questions</li>
+                                <li><strong>Part 4:</strong> Reading for Viewpoints — 10 questions</li>
+                            </ol>
+                            <a class="btn btn--sm" href="reading.html">Explore all Reading parts</a>
+                        </div>
+                    </details>
+
+                <details class="accordion format-task">
+                    <summary>
+                        <span class="format-task-icon format-task-icon--amber" aria-hidden="true">W</span>
+                        <span><strong>Writing</strong><small>2 tasks &middot; 53 minutes</small></span>
+                    </summary>
+                    <div class="accordion-body">
+                        <ol class="data-list">
+                            <li><strong>Task 1:</strong> Write an email for a specific situation.</li>
+                            <li><strong>Task 2:</strong> Respond to a survey question by choosing and defending a position.</li>
+                        </ol>
+                        <div class="info-box"><strong>No fixed per-task timer.</strong> The official time is for the whole Writing component. Practise completing both responses clearly rather than racing between them.</div>
+                        <a class="btn btn--sm" href="writing.html">Explore both Writing tasks</a>
+                    </div>
+                </details>
+
+                <details class="accordion format-task">
+                    <summary>
+                        <span class="format-task-icon format-task-icon--violet" aria-hidden="true">S</span>
+                        <span><strong>Speaking</strong><small>8 tasks &middot; 15 minutes</small></span>
+                    </summary>
+                    <div class="accordion-body">
+                        <ol class="data-list">
+                            <li><strong>Task 1:</strong> Giving Advice</li>
+                            <li><strong>Task 2:</strong> Talking about a Personal Experience</li>
+                            <li><strong>Task 3:</strong> Describing a Scene</li>
+                            <li><strong>Task 4:</strong> Making Predictions</li>
+                            <li><strong>Task 5:</strong> Comparing and Persuading</li>
+                            <li><strong>Task 6:</strong> Dealing with a Difficult Situation</li>
+                            <li><strong>Task 7:</strong> Expressing Opinions</li>
+                            <li><strong>Task 8:</strong> Describing an Unusual Situation</li>
+                        </ol>
+                        <a class="btn btn--sm" href="speaking.html">Explore all Speaking tasks</a>
+                    </div>
+                </details>
+                </div>
+            </section>
+
+            <section class="section" aria-labelledby="versions-scores">
+                <h2 class="section-heading" id="versions-scores">Versions and score reporting</h2>
+                <div class="grid-2">
+                    <article class="card card--featured">
+                        <span class="card-icon" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24"><path d="M8 7h11v11H8z"/><path d="M5 4h11v3M5 4v11h3"/></svg></span>
+                        <h3 class="card-title">Two test versions</h3>
+                        <p class="card-text">The CELPIP General Training test is available in two versions. They cover the same four ability areas, so prepare every task type rather than studying for one specific version.</p>
+                    </article>
+                    <article class="card card--featured">
+                        <span class="card-icon" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24"><path d="M5 20V10m7 10V4m7 16v-7"/><path d="M3 20h18"/></svg></span>
+                        <h3 class="card-title">Four CLB scores</h3>
+                        <p class="card-text">Listening, Reading, Writing and Speaking are reported separately on the Canadian Language Benchmark scale from CLB 1 to CLB 10. The organization you apply to decides which levels it requires.</p>
+                    </article>
+                </div>
+                <div class="warning-box">
+                    <strong>Check current requirements before you register.</strong> SelfPIP is an independent study resource. Test access, version assignment, result delivery and accepted score requirements are handled by CELPIP, Paragon Testing Enterprises and the organization requesting the score. <a href="https://www.celpip.ca/" target="_blank" rel="noopener noreferrer">Confirm current details at celpip.ca<span class="sr-only"> (opens in a new tab)</span></a>.
+                </div>
+            </section>
+        </main>
+
+        <!-- Global footer — identical on every page -->
+        <footer class="site-footer">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <p class="footer-title">SelfPIP</p>
+                    <p class="footer-tagline">An independent educational resource for CELPIP learners.</p>
+                </div>
+                <nav class="footer-nav" aria-label="Footer">
+                    <a href="index.html">Home</a>
+                    <a href="test-format.html">Test Format</a>
+                    <a href="listening.html">Listening</a>
+                    <a href="reading.html">Reading</a>
+                    <a href="writing.html">Writing</a>
+                    <a href="speaking.html">Speaking</a>
+                    <a href="language.html">Language</a>
+                    <a href="practice.html">Practice</a>
+                </nav>
+                <div class="footer-disclaimer">
+                    <p>&copy; <span data-current-year>2026</span> SelfPIP. SelfPIP is an independent educational resource and is not affiliated with, endorsed by, or sponsored by CELPIP or Paragon Testing Enterprises, or by Immigration, Refugees and Citizenship Canada (IRCC).</p>
+                    <p>Registration, official preparation materials and results for the CELPIP test are available only through the official site, <a href="https://www.celpip.ca/" target="_blank" rel="noopener noreferrer">celpip.ca</a>. SelfPIP does not administer the test.</p>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
